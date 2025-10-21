@@ -1,46 +1,9 @@
-import { Resend } from "resend";
-import { z } from "zod";
-
-const schema = z.object({
-	name: z.string().min(2),
-	email: z.string().email(),
-	phone: z.string().optional().default(""),
-	message: z.string().min(5),
-});
-
-export async function POST(req: Request) {
-	try {
-		const data = schema.parse(await req.json());
-		const resendApiKey = process.env.RESEND_API_KEY;
-		const contactTo = process.env.CONTACT_TO_EMAIL;
-
-		if (!resendApiKey || !contactTo) {
-			return new Response(
-				JSON.stringify({ ok: true, delivery: "skipped" }),
-				{ status: 200 }
-			);
-		}
-
-		const resend = new Resend(resendApiKey);
-		const { error } = await resend.emails.send({
-			from: "Evoliq <noreply@evoliq.dev>",
-			to: [contactTo],
-			reply_to: data.email,
-			subject: `Nová správa — ${data.name}`,
-			text: `Meno: ${data.name}\nEmail: ${data.email}\nTelefón: ${data.phone}\n\nSpráva:\n${data.message}`,
-		});
-
-		if (error) {
-			return new Response(JSON.stringify({ error: error.message }), {
-				status: 500,
-			});
-		}
-
-		return new Response(JSON.stringify({ ok: true }), { status: 200 });
-	} catch (error: unknown) {
-		return new Response(
-			JSON.stringify({ error: (error as Error)?.message || "Invalid request" }),
-			{ status: 400 }
-		);
-	}
-}
+import { Resend } from 'resend'; import { z } from 'zod';
+const schema = z.object({name:z.string().min(2),email:z.string().email(),phone:z.string().optional().default(''),message:z.string().min(5)});
+export async function POST(req:Request){try{const d=schema.parse(await req.json());
+ if(!process.env.RESEND_API_KEY) return new Response(JSON.stringify({error:'RESEND_API_KEY not configured'}),{status:500});
+ if(!process.env.CONTACT_TO_EMAIL) return new Response(JSON.stringify({error:'CONTACT_TO_EMAIL not configured'}),{status:500});
+ const resend = new Resend(process.env.RESEND_API_KEY);
+ const {error}=await resend.emails.send({from:'Evoliq <noreply@evoliq.dev>',to:[process.env.CONTACT_TO_EMAIL!],reply_to:d.email,subject:`Nová správa — ${d.name}`,text:`Meno: ${d.name}\nEmail: ${d.email}\nTelefón: ${d.phone}\n\nSpráva:\n${d.message}`});
+ if(error) return new Response(JSON.stringify({error:error.message}),{status:500});
+ return new Response(JSON.stringify({ok:true}),{status:200});}catch(e:any){return new Response(JSON.stringify({error:e?.message||'Invalid request'}),{status:400})}}

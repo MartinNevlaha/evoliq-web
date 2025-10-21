@@ -12,10 +12,3 @@ npm run dev
 
 ## Deploy na Vercel
 Importni repo z GitHubu a v Project Settings pridaj env vars.
-
-
-## i18n (SK/CZ/EN)
-- Prefixované trasy: `/sk`, `/cz`, `/en`
-- Preklady v `app/i18n/*.json`
-- Prepínač jazyka v navigácii (`components/LanguageSwitcher.tsx`)
-- `middleware.ts` presmeruje `/` → `/sk`

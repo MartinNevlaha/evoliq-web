@@ -1,24 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@keyframes drift {
-	0% {
-		transform: translate3d(-2%, -1%, 0) scale(1.05);
-	}
-	25% {
-		transform: translate3d(1%, -3%, 0) scale(1.08);
-	}
-	50% {
-		transform: translate3d(3%, 2%, 0) scale(1.03);
-	}
-	75% {
-		transform: translate3d(-1%, 3%, 0) scale(1.07);
-	}
-	100% {
-		transform: translate3d(-2%, -1%, 0) scale(1.05);
-	}
-}
 .text-gradient{background-clip:text;-webkit-background-clip:text}
 
 /* Light/Dark tokens */
