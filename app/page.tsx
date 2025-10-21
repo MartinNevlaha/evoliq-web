@@ -1,14 +1,37 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useSpring } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Code2, Gauge, Boxes, Mail, Phone, MapPin } from 'lucide-react';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Sparkles, ShieldCheck, Code2, Gauge, Boxes, Mail, Phone, MapPin, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const fadeUp = { hidden:{opacity:0,y:24}, show:{opacity:1,y:0,transition:{duration:0.6,ease:[0.22,1,0.36,1] as const}} };
 const stagger = { hidden:{}, show:{transition:{staggerChildren:0.1}} };
+
+function ImageModal({src, alt, onClose}:{src:string; alt:string; onClose:()=>void}){
+  React.useEffect(()=>{
+    const handleEsc = (e:KeyboardEvent) => e.key === 'Escape' && onClose();
+    document.addEventListener('keydown', handleEsc);
+    return () => document.removeEventListener('keydown', handleEsc);
+  }, [onClose]);
+
+  return (
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+      <motion.div initial={{scale:0.9, opacity:0}} animate={{scale:1, opacity:1}} exit={{scale:0.9, opacity:0}} transition={{duration:0.3}} onClick={(e)=>e.stopPropagation()} className="relative max-w-6xl w-full max-h-[90vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl">
+        <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 dark:bg-neutral-800/90 hover:bg-white dark:hover:bg-neutral-800 transition-colors">
+          <X className="h-5 w-5"/>
+        </button>
+        <div className="relative w-full h-full flex items-center justify-center p-8">
+          <div className="relative w-full" style={{aspectRatio:'16/9'}}>
+            <Image alt={alt} src={src} fill className="object-contain"/>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 function SectionTitle({kicker,title,subtitle}:{kicker?:string;title:string;subtitle?:string}){
   return (<motion.div variants={fadeUp} className="mx-auto max-w-2xl text-center">
@@ -25,15 +48,14 @@ function NavBar(){
     <motion.div style={{scaleX}} className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500"/>
     <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
       <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
-        <span className="relative inline-block h-7 w-7">
-          <Image alt="Evoliq" src="/logo-evoliq-dark.png" fill className="rounded-md object-contain dark:hidden"/>
-          <Image alt="Evoliq" src="/logo-evoliq-light.png" fill className="rounded-md object-contain hidden dark:block"/>
+        <span className="relative inline-block h-32 w-32">
+          <Image alt="Evoliq" src="/logo-dark.png" fill className="rounded-md object-contain dark:hidden"/>
+          <Image alt="Evoliq" src="/logo-white.png" fill className="rounded-md object-contain hidden dark:block"/>
         </span>
-        <span>Evoliq</span>
       </a>
       <nav className="hidden items-center gap-6 text-sm sm:flex">
         <a href="#services" className="opacity-80 hover:opacity-100">Služby</a>
-        <a href="#projects" className="opacity-80 hover:opacity-100">Projekty</a>
+        <a href="#products" className="opacity-80 hover:opacity-100">Produkty</a>
         <a href="#about" className="opacity-80 hover:opacity-100">O nás</a>
         <a href="#contact" className="opacity-80 hover:opacity-100">Kontakt</a>
       </nav>
@@ -64,9 +86,9 @@ function Hero(){
       </motion.div>
       <motion.div initial={{opacity:0,scale:0.95}} whileInView={{opacity:1,scale:1}} viewport={{ once:true, amount:0.3 }} transition={{duration:0.7,ease:[0.22,1,0.36,1]}}>
         <div className="relative"><div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-indigo-500/20 via-sky-500/10 to-emerald-500/20 blur-xl"/>
-          <Card className="relative rounded-3xl border bg-white/80 shadow-xl backdrop-blur"><CardContent className="p-6">
+          <Card className="relative rounded-3xl border bg-white/80 dark:bg-neutral-900/80 shadow-xl backdrop-blur"><CardContent className="p-6">
             <div className="grid gap-4">
-              <div className="flex items-center justify-between rounded-2xl border bg-white/80 p-4"><div className="flex items-center gap-3"><span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"/><div className="text-sm">CI/CD nasadenie</div></div><Gauge className="h-5 w-5 opacity-70"/></div>
+              <div className="flex items-center justify-between rounded-2xl border bg-white/80 dark:bg-neutral-800/80 p-4"><div className="flex items-center gap-3"><span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"/><div className="text-sm">CI/CD nasadenie</div></div><Gauge className="h-5 w-5 opacity-70"/></div>
               <div className="grid grid-cols-3 gap-3">{[{icon:<ShieldCheck className='h-4 w-4'/>,label:'Bezpečnosť'},{icon:<Code2 className='h-4 w-4'/>,label:'Čistý kód'},{icon:<Boxes className='h-4 w-4'/>,label:'Modularita'}].map((it,i)=>(<div key={i} className="rounded-xl border p-3 text-center text-xs opacity-80"><div className="mx-auto mb-1.5 inline-flex h-7 w-7 items-center justify-center rounded-full border">{it.icon}</div>{it.label}</div>))}</div>
             </div>
           </CardContent></Card>
@@ -89,13 +111,13 @@ function Contact(){
   }
   return (<section id="contact" className="relative">
     <div className="mx-auto max-w-6xl px-4 py-20">
-      <SectionTitle kicker="Kontakt" title="Povedzte nám o svojom projekte" subtitle="Odpovieme do 24 hodín a navrhneme ďalší postup." />
-      <div className="rounded-3xl border bg-white/70 p-6 backdrop-blur">
+      <SectionTitle kicker="Kontakt" title="Kontaktuj nás" subtitle="Odpovieme do 24 hodín a navrhneme ďalší postup." />
+      <div className="rounded-3xl border bg-white/70 dark:bg-neutral-900/70 p-6 backdrop-blur">
         <form ref={formRef} onSubmit={onSubmit} className="grid gap-4 text-sm">
-          <input name="name" placeholder="Meno" required className="w-full rounded-xl border px-3 py-2"/>
-          <input name="email" type="email" placeholder="Email" required className="w-full rounded-xl border px-3 py-2"/>
-          <input name="phone" placeholder="Telefón" className="w-full rounded-xl border px-3 py-2"/>
-          <textarea name="message" rows={4} placeholder="Správa" required className="w-full rounded-xl border px-3 py-2"/>
+          <input name="name" placeholder="Meno" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
+          <input name="email" type="email" placeholder="Email" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
+          <input name="phone" placeholder="Telefón" className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
+          <textarea name="message" rows={4} placeholder="Správa" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4 text-sm opacity-80"><span className="inline-flex items-center gap-2"><Mail className="h-4 w-4"/> hello@evoliq.dev</span><span className="inline-flex items-center gap-2"><Phone className="h-4 w-4"/> +421 900 000 000</span><span className="hidden sm:inline-flex items-center gap-2"><MapPin className="h-4 w-4"/> Bratislava, SK</span></div>
             <Button className="rounded-2xl" disabled={loading}>{loading?'Odosielam...':'Odoslať'} <ArrowRight className="ml-2 h-4 w-4"/></Button>
@@ -108,17 +130,37 @@ function Contact(){
   </section>);
 }
 
-function Footer(){return (<footer className="border-t"><div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-8"><div className="text-sm opacity-80">© {new Date().getFullYear()} Evoliq</div><div className="text-sm opacity-70">IT solutions tailored.</div></div></footer>);}
+function Footer(){return (<footer className="border-t"><div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-8">
+  <div className="flex items-center gap-3">
+    <span className="relative inline-block h-24 w-24">
+      <Image alt="Evoliq" src="/logo-evoliq-dark.png" fill className="rounded-md object-contain dark:hidden"/>
+      <Image alt="Evoliq" src="/logo-evoliq-light.png" fill className="rounded-md object-contain hidden dark:block"/>
+    </span>
+    <div className="text-sm opacity-80">© {new Date().getFullYear()} Evoliq</div>
+  </div>
+  <div className="text-sm opacity-70">IT solutions tailored.</div>
+</div></footer>);}
 
-export default function Page(){return (<div className="min-h-dvh bg-white text-black">
+export default function Page(){return (<div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
   <NavBar/><Hero/><Services/><Products/><Contact/><Footer/>
 </div>);}
 
 
 function Products(){
+  const [selectedImage, setSelectedImage] = React.useState<{src:string; alt:string} | null>(null);
+  
   return (
     <section id="products" className="mx-auto max-w-6xl px-4 py-20">
+      <AnimatePresence>
+        {selectedImage && <ImageModal src={selectedImage.src} alt={selectedImage.alt} onClose={()=>setSelectedImage(null)}/>}
+      </AnimatePresence>
+      
       <div className="mx-auto max-w-2xl text-center mb-12">
+        <div className="mb-6 flex justify-center">
+          <div className="relative h-24 w-48">
+            <Image alt="AI-Control" src="/logo-removebg-preview.png" fill className="object-contain"/>
+          </div>
+        </div>
         <div className="mb-2 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs tracking-wide text-neutral-600"><Sparkles className="h-3.5 w-3.5"/>Produkt</div>
         <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">AI-Control — Audit & Compliance</h2>
         <p className="mt-3 text-neutral-600">Modulárna platforma pre plánovanie, realizáciu a vyhodnocovanie auditov s pomocou AI. Pre certifikačné spoločnosti, konzultantov aj interné audity.</p>
@@ -126,18 +168,28 @@ function Products(){
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-3xl border p-6">
-          <h3 className="text-lg font-medium mb-2">Kľúčové prínosy</h3>
-          <ul className="space-y-2 text-sm">
-            <li className="flex gap-2"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-2"></span>AI asistované <strong>plánovanie auditov</strong> (termíny, tímy, harmonogram) a generovanie programu auditu, checklistov a reportov.</li>
-            <li className="flex gap-2"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-2"></span><strong>Správa auditovaných spoločností</strong>, audítorov a technických expertov s internými profilmi generovanými AI.</li>
-            <li className="flex gap-2"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-2"></span>Mobilná aplikácia (online/offline), foto/audio dôkazy, <strong>elektronický podpis</strong> a export prezenčnej listiny.</li>
-            <li className="flex gap-2"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-2"></span><strong>Nápravné opatrenia</strong> s termínmi, zodpovednosťou a notifikáciami až po overenie a uzavretie.</li>
-            <li className="flex gap-2"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-2"></span>Moduly: ISO 9001, 14001, 27001, 45001, interné audity; legislatívny modul; <strong>role & licencie</strong>.</li>
+          <h3 className="text-lg font-medium mb-4">Kľúčové prínosy</h3>
+          <ul className="space-y-3 text-sm">
+            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>AI asistované <strong>plánovanie auditov</strong> (termíny, tímy, harmonogram) a generovanie programu auditu, checklistov a reportov.</span></li>
+            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span><strong>Správa auditovaných spoločností</strong>, audítorov a technických expertov s internými profilmi generovanými AI.</span></li>
+            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>Mobilná aplikácia (online/offline), foto/audio dôkazy, <strong>elektronický podpis</strong> a export prezenčnej listiny.</span></li>
+            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span><strong>Nápravné opatrenia</strong> s termínmi, zodpovednosťou a notifikáciami až po overenie a uzavretie.</span></li>
+            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>Moduly: ISO 9001, 14001, 27001, 45001, interné audity; legislatívny modul; <strong>role & licencie</strong>.</span></li>
           </ul>
         </div>
         <div className="grid gap-4">
-          <div className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-300">Screenshot placeholder</div>
-          <div className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-300">Screenshot placeholder</div>
+          <motion.div whileHover={{scale:1.02, y:-4}} transition={{duration:0.3}} onClick={()=>setSelectedImage({src:'/audit-plan.png', alt:'Audit Plan'})} className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group">
+            <Image alt="Audit Plan" src="/audit-plan.png" fill className="object-cover transition-transform duration-300 group-hover:scale-105"/>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">Kliknite pre zväčšenie</span>
+            </div>
+          </motion.div>
+          <motion.div whileHover={{scale:1.02, y:-4}} transition={{duration:0.3}} onClick={()=>setSelectedImage({src:'/swot.png', alt:'SWOT Analysis'})} className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group">
+            <Image alt="SWOT Analysis" src="/swot.png" fill className="object-cover transition-transform duration-300 group-hover:scale-105"/>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">Kliknite pre zväčšenie</span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
