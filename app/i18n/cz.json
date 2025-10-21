@@ -1,0 +1,79 @@
+{
+  "brand": "Evoliq",
+  "nav": {
+    "services": "Služby",
+    "projects": "Projekty",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "products": "Produkty"
+  },
+  "cta": {
+    "contact": "Kontaktujte nás",
+    "start": "Začít projekt",
+    "viewProjects": "Zobrazit projekty",
+    "send": "Odeslat",
+    "sending": "Odesílám..."
+  },
+  "hero": {
+    "kicker": "Evoliq",
+    "title": "IT řešení na míru pro váš byznys",
+    "desc": "Tvoříme moderní weby, AI asistované aplikace a integrace na míru. Od nápadu po produkci – bezpečně, výkonně a udržitelně."
+  },
+  "services": {
+    "kicker": "Co děláme",
+    "title": "IT řešení na míru",
+    "subtitle": "Od prototypu po škálovanou produkci – pokrýváme celý cyklus vývoje.",
+    "cards": [
+      {
+        "title": "Web & Portály",
+        "desc": "Next.js weby, klientské portály, CMS, SEO a analytika.",
+        "points": [
+          "SSR/SSG",
+          "Tailwind UI",
+          "Formuláře & e-maily"
+        ]
+      },
+      {
+        "title": "AI & Automatizace",
+        "desc": "Chatboti, RAG, OCR, integrace s interními systémy.",
+        "points": [
+          "OpenAI/HF",
+          "Qdrant / Redis",
+          "Pipelines"
+        ]
+      },
+      {
+        "title": "Integrace & DevOps",
+        "desc": "API, webhooks, CI/CD, monitoring, škálování.",
+        "points": [
+          "Docker",
+          "K8s / VPS",
+          "Logging & APM"
+        ]
+      }
+    ]
+  },
+  "products": {
+    "kicker": "Produkt",
+    "title": "AI-Control — Audit & Compliance",
+    "desc": "Modulární platforma pro plánování, realizaci a vyhodnocování auditů s pomocí AI. Pro certifikační společnosti, konzultanty i interní audity.",
+    "benefitsTitle": "Klíčové přínosy",
+    "benefits": [
+      "AI asistované plánování auditů (termíny, týmy, harmonogram) a generování programu auditu, checklistů a reportů.",
+      "Správa auditovaných společností, auditorů a technických expertů s interními profily generovanými AI.",
+      "Mobilní aplikace (online/offline), foto/audio důkazy, elektronický podpis a export prezenční listiny.",
+      "Nápravná opatření s termíny, odpovědností a notifikacemi až po ověření a uzavření.",
+      "Moduly: ISO 9001, 14001, 27001, 45001, interní audity; legislativní modul; role & licence."
+    ]
+  },
+  "contact": {
+    "kicker": "Kontakt",
+  "title": "Kontaktujte nás",
+    "subtitle": "Odpovíme do 24 hodin a navrhneme další postup.",
+    "success": "Zpráva byla odeslána. Děkujeme!",
+    "error": "Jejda, něco se pokazilo. Zkuste to prosím později."
+  },
+  "footer": {
+    "tagline": "IT solutions tailored."
+  }
+}

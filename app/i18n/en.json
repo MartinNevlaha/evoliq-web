@@ -1,0 +1,79 @@
+{
+  "brand": "Evoliq",
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "products": "Products"
+  },
+  "cta": {
+    "contact": "Contact us",
+    "start": "Start a project",
+    "viewProjects": "View projects",
+    "send": "Send",
+    "sending": "Sending..."
+  },
+  "hero": {
+    "kicker": "Evoliq",
+    "title": "IT solutions tailored for your business",
+    "desc": "We build modern websites, AI‑assisted apps and custom integrations. From idea to production — secure, fast and maintainable."
+  },
+  "services": {
+    "kicker": "What we do",
+    "title": "Tailored IT solutions",
+    "subtitle": "From prototype to scaled production — we cover the entire development cycle.",
+    "cards": [
+      {
+        "title": "Web & Portals",
+        "desc": "Next.js sites, client portals, CMS, SEO & analytics.",
+        "points": [
+          "SSR/SSG",
+          "Tailwind UI",
+          "Forms & email"
+        ]
+      },
+      {
+        "title": "AI & Automation",
+        "desc": "Chatbots, RAG, OCR, integrations with internal systems.",
+        "points": [
+          "OpenAI/HF",
+          "Qdrant / Redis",
+          "Pipelines"
+        ]
+      },
+      {
+        "title": "Integrations & DevOps",
+        "desc": "APIs, webhooks, CI/CD, monitoring, scaling.",
+        "points": [
+          "Docker",
+          "K8s / VPS",
+          "Logging & APM"
+        ]
+      }
+    ]
+  },
+  "products": {
+    "kicker": "Product",
+    "title": "AI-Control — Audit & Compliance",
+    "desc": "A modular platform for planning, conducting and evaluating audits with AI assistance. For certification bodies, consultants and internal audits.",
+    "benefitsTitle": "Key benefits",
+    "benefits": [
+      "AI‑assisted audit planning (dates, teams, schedule) and generation of audit programs, checklists and reports.",
+      "Management of auditees, auditors and technical experts with AI‑generated internal profiles.",
+      "Mobile app (online/offline), photo/audio evidence, electronic signature and attendance export.",
+      "Corrective actions with due dates, ownership and notifications through verification and closure.",
+      "Modules: ISO 9001, 14001, 27001, 45001, internal audits; legal module; roles & licensing."
+    ]
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Contact us",
+    "subtitle": "We’ll get back within 24 hours and suggest next steps.",
+    "success": "Message sent. Thank you!",
+    "error": "Something went wrong. Please try again later."
+  },
+  "footer": {
+    "tagline": "IT solutions tailored."
+  }
+}
