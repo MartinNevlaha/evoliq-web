@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   
   // Verification
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 's-ASQ9Xk8RyL781u85FtENLjytCgHR8nQ6wXCjRPArQ',
     // yandex: 'your-yandex-verification-code',
     // other: 'your-other-verification-code',
   },
