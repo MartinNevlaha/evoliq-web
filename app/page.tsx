@@ -405,16 +405,169 @@ function Footer(){
 }
 
 export default function Page(){
+  // JSON-LD Structured Data pro SEO
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Evoliq s.r.o.",
+    "url": "https://evoliq.cz",
+    "logo": "https://evoliq.cz/logo-dark.png",
+    "description": "Česká IT společnost specializující se na vývoj webových aplikací, mobilních aplikací, AI řešení a automatizaci procesů.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CZ",
+      "addressLocality": "Praha"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/evoliq",
+      "https://github.com/evoliq"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "info@evoliq.cz",
+      "availableLanguage": ["Czech", "English"]
+    }
+  };
+
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "IT Development & Consulting",
+    "provider": {
+      "@type": "Organization",
+      "name": "Evoliq s.r.o."
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Czech Republic"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Vývoj webových aplikací",
+            "description": "Moderní responzivní webové aplikace na míru s důrazem na uživatelskou přívětivost a výkon."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobilní aplikace",
+            "description": "Nativní a cross-platform mobilní aplikace pro iOS a Android."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI řešení",
+            "description": "Implementace umělé inteligence a strojového učení do vašich procesů."
+          }
+        }
+      ]
+    }
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI-Control",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "Modulární platforma pro plánování, realizaci a vyhodnocování auditů s pomocí AI. Pro certifikační společnosti, konzultanty i interní audity.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CZK",
+      "availability": "https://schema.org/InDevelopment"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Evoliq s.r.o."
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Domů",
+        "item": "https://evoliq.cz"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Služby",
+        "item": "https://evoliq.cz#služby"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Produkty",
+        "item": "https://evoliq.cz#produkty"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "O nás",
+        "item": "https://evoliq.cz#onás"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Kontakt",
+        "item": "https://evoliq.cz#kontakt"
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
-      <NavBar/>
-      <Hero/>
-      <Services/>
-      <Products/>
-      <About/>
-      <Contact/>
-      <Footer/>
-      <CookieConsent/>
-    </div>
+    <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
+      
+      <div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
+        <NavBar/>
+        <Hero/>
+        <Services/>
+        <Products/>
+        <About/>
+        <Contact/>
+        <Footer/>
+        <CookieConsent/>
+      </div>
+    </>
   );
 }

@@ -8,12 +8,17 @@ import { stagger, staggerFast, scaleIn, fadeUp, slideInLeft } from '@/lib/animat
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section 
+      id="home" 
+      className="relative overflow-hidden"
+      aria-label="Úvodní sekce"
+    >
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }} 
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="pointer-events-none absolute -top-32 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-500/20 via-sky-500/10 to-emerald-500/20 blur-3xl"
+        aria-hidden="true"
       />
       
       {/* Floating particles */}
@@ -36,6 +41,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: i * 0.5,
           }}
+          aria-hidden="true"
         />
       ))}
       
@@ -45,10 +51,12 @@ export default function Hero() {
             variants={scaleIn} 
             whileHover={{ scale: 1.05, rotate: 5 }}
             className="mb-4 inline-flex items-center gap-3 rounded-full border px-3 py-1 cursor-pointer"
+            role="img"
+            aria-label="Logo Evoliq"
           >
             <span className="relative inline-block h-5 w-5">
-              <Image alt="Evoliq" src="/logo-evoliq-dark.png" fill className="object-contain dark:hidden"/>
-              <Image alt="Evoliq" src="/logo-evoliq-light.png" fill className="object-contain hidden dark:block"/>
+              <Image alt="Evoliq logo" src="/logo-evoliq-dark.png" fill className="object-contain dark:hidden"/>
+              <Image alt="Evoliq logo" src="/logo-evoliq-light.png" fill className="object-contain hidden dark:block"/>
             </span>
             <span className="text-xs opacity-70">Evoliq</span>
           </motion.div>
