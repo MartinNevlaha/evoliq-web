@@ -1,150 +1,15 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Code2, Gauge, Boxes, Mail, Phone, MapPin, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles, ShieldCheck, Code2, X, Boxes, Cookie } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import ThemeToggle from '@/components/ThemeToggle';
-
-const fadeUp = { hidden:{opacity:0,y:24}, show:{opacity:1,y:0,transition:{duration:0.6,ease:[0.22,1,0.36,1] as const}} };
-const stagger = { hidden:{}, show:{transition:{staggerChildren:0.1}} };
-
-function ImageModal({src, alt, onClose}:{src:string; alt:string; onClose:()=>void}){
-  React.useEffect(()=>{
-    const handleEsc = (e:KeyboardEvent) => e.key === 'Escape' && onClose();
-    document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
-  }, [onClose]);
-
-  return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-      <motion.div initial={{scale:0.9, opacity:0}} animate={{scale:1, opacity:1}} exit={{scale:0.9, opacity:0}} transition={{duration:0.3}} onClick={(e)=>e.stopPropagation()} className="relative max-w-6xl w-full max-h-[90vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl">
-        <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/90 dark:bg-neutral-800/90 hover:bg-white dark:hover:bg-neutral-800 transition-colors">
-          <X className="h-5 w-5"/>
-        </button>
-        <div className="relative w-full h-full flex items-center justify-center p-8">
-          <div className="relative w-full" style={{aspectRatio:'16/9'}}>
-            <Image alt={alt} src={src} fill className="object-contain"/>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-function SectionTitle({kicker,title,subtitle}:{kicker?:string;title:string;subtitle?:string}){
-  return (<motion.div variants={fadeUp} className="mx-auto max-w-2xl text-center">
-    {kicker && (<div className="mb-2 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs tracking-wide text-neutral-600"><Sparkles className="h-3.5 w-3.5"/>{kicker}</div>)}
-    <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">{title}</h2>
-    {subtitle && <p className="mt-3 text-neutral-600">{subtitle}</p>}
-  </motion.div>);
-}
-
-function NavBar(){
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress,{stiffness:100,damping:30,mass:0.2});
-  return (<div className="sticky top-0 z-50 w-full backdrop-blur-lg">
-    <motion.div style={{scaleX}} className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500"/>
-    <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-      <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
-        <span className="relative inline-block h-32 w-32">
-          <Image alt="Evoliq" src="/logo-dark.png" fill className="rounded-md object-contain dark:hidden"/>
-          <Image alt="Evoliq" src="/logo-white.png" fill className="rounded-md object-contain hidden dark:block"/>
-        </span>
-      </a>
-      <nav className="hidden items-center gap-6 text-sm sm:flex">
-        <a href="#services" className="opacity-80 hover:opacity-100">Služby</a>
-        <a href="#products" className="opacity-80 hover:opacity-100">Produkty</a>
-        <a href="#about" className="opacity-80 hover:opacity-100">O nás</a>
-        <a href="#contact" className="opacity-80 hover:opacity-100">Kontakt</a>
-      </nav>
-      <div className="flex items-center gap-2"><ThemeToggle /><a href="#contact"><Button className="rounded-2xl">Kontaktuj nás</Button></a></div>
-    </div>
-  </div>);
-}
-
-function Hero(){
-  return (<section id="home" className="relative overflow-hidden">
-    <div className="pointer-events-none absolute -top-32 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-500/20 via-sky-500/10 to-emerald-500/20 blur-3xl"/>
-    <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-24 sm:py-28 md:grid-cols-2">
-      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once:true, amount:0.4 }}>
-        <motion.div variants={fadeUp} className="mb-4 inline-flex items-center gap-3 rounded-full border px-3 py-1">
-          <span className="relative inline-block h-5 w-5">
-            <Image alt="Evoliq" src="/logo-evoliq-dark.png" fill className="object-contain dark:hidden"/>
-            <Image alt="Evoliq" src="/logo-evoliq-light.png" fill className="object-contain hidden dark:block"/>
-          </span><span className="text-xs opacity-70">Evoliq</span>
-        </motion.div>
-        <motion.h1 variants={fadeUp} className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-          IT solutions tailored <span className="text-gradient bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 bg-clip-text text-transparent">for your business</span>
-        </motion.h1>
-        <motion.p variants={fadeUp} className="mt-4 max-w-xl text-neutral-600">Tvoríme moderné weby, AI asistované aplikácie a integrácie na mieru. Od nápadu po produkciu – bezpečne, výkonne a udržateľne.</motion.p>
-        <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3">
-          <a href="#contact"><Button className="rounded-2xl">Začať projekt <ArrowRight className="ml-2 h-4 w-4"/></Button></a>
-          <a href="#projects"><Button variant="outline" className="rounded-2xl">Pozrieť projekty</Button></a>
-        </motion.div>
-      </motion.div>
-      <motion.div initial={{opacity:0,scale:0.95}} whileInView={{opacity:1,scale:1}} viewport={{ once:true, amount:0.3 }} transition={{duration:0.7,ease:[0.22,1,0.36,1]}}>
-        <div className="relative"><div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-indigo-500/20 via-sky-500/10 to-emerald-500/20 blur-xl"/>
-          <Card className="relative rounded-3xl border bg-white/80 dark:bg-neutral-900/80 shadow-xl backdrop-blur"><CardContent className="p-6">
-            <div className="grid gap-4">
-              <div className="flex items-center justify-between rounded-2xl border bg-white/80 dark:bg-neutral-800/80 p-4"><div className="flex items-center gap-3"><span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"/><div className="text-sm">CI/CD nasadenie</div></div><Gauge className="h-5 w-5 opacity-70"/></div>
-              <div className="grid grid-cols-3 gap-3">{[{icon:<ShieldCheck className='h-4 w-4'/>,label:'Bezpečnosť'},{icon:<Code2 className='h-4 w-4'/>,label:'Čistý kód'},{icon:<Boxes className='h-4 w-4'/>,label:'Modularita'}].map((it,i)=>(<div key={i} className="rounded-xl border p-3 text-center text-xs opacity-80"><div className="mx-auto mb-1.5 inline-flex h-7 w-7 items-center justify-center rounded-full border">{it.icon}</div>{it.label}</div>))}</div>
-            </div>
-          </CardContent></Card>
-        </div>
-      </motion.div>
-    </div>
-  </section>);
-}
-
-function Services(){return (<section id="services" className="mx-auto max-w-6xl px-4 py-20">
-  <SectionTitle kicker="Čo robíme" title="IT riešenia na mieru" subtitle="Od prototypu po škálovanú produkciu – pokrývame celý cyklus vývoja." />
-</section>);}
-
-function Contact(){
-  const [loading,setLoading]=React.useState(false); const [ok,setOk]=React.useState<null|boolean>(null); const formRef=React.useRef<HTMLFormElement|null>(null);
-  async function onSubmit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setLoading(true);setOk(null);
-    const fd = new FormData(e.currentTarget); const payload = Object.fromEntries(fd.entries());
-    const res = await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-    setLoading(false); setOk(res.ok); if(res.ok) formRef.current?.reset();
-  }
-  return (<section id="contact" className="relative">
-    <div className="mx-auto max-w-6xl px-4 py-20">
-      <SectionTitle kicker="Kontakt" title="Kontaktuj nás" subtitle="Odpovieme do 24 hodín a navrhneme ďalší postup." />
-      <div className="rounded-3xl border bg-white/70 dark:bg-neutral-900/70 p-6 backdrop-blur">
-        <form ref={formRef} onSubmit={onSubmit} className="grid gap-4 text-sm">
-          <input name="name" placeholder="Meno" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
-          <input name="email" type="email" placeholder="Email" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
-          <input name="phone" placeholder="Telefón" className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
-          <textarea name="message" rows={4} placeholder="Správa" required className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2"/>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4 text-sm opacity-80"><span className="inline-flex items-center gap-2"><Mail className="h-4 w-4"/> hello@evoliq.dev</span><span className="inline-flex items-center gap-2"><Phone className="h-4 w-4"/> +421 900 000 000</span><span className="hidden sm:inline-flex items-center gap-2"><MapPin className="h-4 w-4"/> Bratislava, SK</span></div>
-            <Button className="rounded-2xl" disabled={loading}>{loading?'Odosielam...':'Odoslať'} <ArrowRight className="ml-2 h-4 w-4"/></Button>
-          </div>
-          {ok===true && <p className="text-sm text-green-600">Správa bola odoslaná.</p>}
-          {ok===false && <p className="text-sm text-red-600">Ups, niečo sa pokazilo.</p>}
-        </form>
-      </div>
-    </div>
-  </section>);
-}
-
-function Footer(){return (<footer className="border-t"><div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-8">
-  <div className="flex items-center gap-3">
-    <span className="relative inline-block h-24 w-24">
-      <Image alt="Evoliq" src="/logo-evoliq-dark.png" fill className="rounded-md object-contain dark:hidden"/>
-      <Image alt="Evoliq" src="/logo-evoliq-light.png" fill className="rounded-md object-contain hidden dark:block"/>
-    </span>
-    <div className="text-sm opacity-80">© {new Date().getFullYear()} Evoliq</div>
-  </div>
-  <div className="text-sm opacity-70">IT solutions tailored.</div>
-</div></footer>);}
-
-export default function Page(){return (<div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
-  <NavBar/><Hero/><Services/><Products/><Contact/><Footer/>
-</div>);}
-
+import { NavBar, Hero, Services, Contact } from '@/components/sections';
+import SectionTitle from '@/components/common/SectionTitle';
+import ImageModal from '@/components/common/ImageModal';
+import CookieConsent from '@/components/common/CookieConsent';
+import { stagger, fadeUp, slideInLeft, slideInRight } from '@/lib/animations';
 
 function Products(){
   const [selectedImage, setSelectedImage] = React.useState<{src:string; alt:string} | null>(null);
@@ -155,44 +20,401 @@ function Products(){
         {selectedImage && <ImageModal src={selectedImage.src} alt={selectedImage.alt} onClose={()=>setSelectedImage(null)}/>}
       </AnimatePresence>
       
-      <div className="mx-auto max-w-2xl text-center mb-12">
-        <div className="mb-6 flex justify-center">
-          <div className="relative h-24 w-48">
+      <motion.div 
+        className="mx-auto max-w-2xl text-center mb-12"
+        initial={{opacity:0, y:30}}
+        whileInView={{opacity:1, y:0}}
+        viewport={{once:true}}
+        transition={{duration:0.6}}
+      >
+        <motion.div 
+          className="mb-6 flex justify-center"
+          initial={{scale:0, rotate:-180}}
+          whileInView={{scale:1, rotate:0}}
+          viewport={{once:true}}
+          transition={{duration:0.6, type:"spring", stiffness:200}}
+        >
+          <motion.div 
+            className="relative h-24 w-48"
+            whileHover={{scale:1.1, rotate:5}}
+            transition={{duration:0.3}}
+          >
             <Image alt="AI-Control" src="/logo-removebg-preview.png" fill className="object-contain"/>
-          </div>
-        </div>
-        <div className="mb-2 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs tracking-wide text-neutral-600"><Sparkles className="h-3.5 w-3.5"/>Produkt</div>
-        <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">AI-Control — Audit & Compliance</h2>
-        <p className="mt-3 text-neutral-600">Modulárna platforma pre plánovanie, realizáciu a vyhodnocovanie auditov s pomocou AI. Pre certifikačné spoločnosti, konzultantov aj interné audity.</p>
-      </div>
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className="mb-2 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs tracking-wide text-neutral-600"
+          initial={{opacity:0, scale:0.8}}
+          whileInView={{opacity:1, scale:1}}
+          viewport={{once:true}}
+          whileHover={{scale:1.05}}
+        >
+          <motion.div
+            animate={{rotate: [0, 360]}}
+            transition={{duration: 3, repeat: Infinity, ease: "linear"}}
+          >
+            <Sparkles className="h-3.5 w-3.5"/>
+          </motion.div>
+          Produkt
+        </motion.div>
+        <motion.h2 
+          className="text-3xl font-semibold leading-tight sm:text-4xl"
+          initial={{opacity:0, y:20}}
+          whileInView={{opacity:1, y:0}}
+          viewport={{once:true}}
+          transition={{delay:0.2}}
+        >
+          AI-Control — <motion.span 
+            className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent inline-block"
+            animate={{
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{backgroundSize: '200% 200%'}}
+          >Audit & Compliance</motion.span>
+        </motion.h2>
+        <motion.p 
+          className="mt-3 text-neutral-600 dark:text-neutral-400"
+          initial={{opacity:0, y:20}}
+          whileInView={{opacity:1, y:0}}
+          viewport={{once:true}}
+          transition={{delay:0.3}}
+        >
+          Modulární platforma pro plánování, realizaci a vyhodnocování auditů s pomocí AI. Pro certifikační společnosti, konzultanty i interní audity.
+        </motion.p>
+      </motion.div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-3xl border p-6">
-          <h3 className="text-lg font-medium mb-4">Kľúčové prínosy</h3>
-          <ul className="space-y-3 text-sm">
-            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>AI asistované <strong>plánovanie auditov</strong> (termíny, tímy, harmonogram) a generovanie programu auditu, checklistov a reportov.</span></li>
-            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span><strong>Správa auditovaných spoločností</strong>, audítorov a technických expertov s internými profilmi generovanými AI.</span></li>
-            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>Mobilná aplikácia (online/offline), foto/audio dôkazy, <strong>elektronický podpis</strong> a export prezenčnej listiny.</span></li>
-            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span><strong>Nápravné opatrenia</strong> s termínmi, zodpovednosťou a notifikáciami až po overenie a uzavretie.</span></li>
-            <li className="flex gap-3"><span className="h-1.5 w-1.5 rounded-full bg-black/40 dark:bg-white/70 mt-1.5 flex-shrink-0"></span><span>Moduly: ISO 9001, 14001, 27001, 45001, interné audity; legislatívny modul; <strong>role & licencie</strong>.</span></li>
-          </ul>
-        </div>
-        <div className="grid gap-4">
-          <motion.div whileHover={{scale:1.02, y:-4}} transition={{duration:0.3}} onClick={()=>setSelectedImage({src:'/audit-plan.png', alt:'Audit Plan'})} className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group">
-            <Image alt="Audit Plan" src="/audit-plan.png" fill className="object-cover transition-transform duration-300 group-hover:scale-105"/>
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">Kliknite pre zväčšenie</span>
-            </div>
+      <motion.div 
+        className="grid gap-6 lg:grid-cols-3 md:grid-cols-2 mb-12"
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{once:true, amount:0.1}}
+      >
+        {[
+          {icon:'📋', title:'Modul plánování auditů', desc:'AI asistované plánování (termíny, týmy, harmonogram) a automatické generování programů auditu, checklistů a reportů.'},
+          {icon:'🏢', title:'Modul správy společností', desc:'Komplexní správa auditovaných společností, auditorů a technických expertů s interními profily generovanými AI.'},
+          {icon:'📱', title:'Mobilní aplikace', desc:'Offline/online režim, foto a audio důkazy, elektronický podpis a export prezenční listiny přímo z terénu.'},
+          {icon:'✅', title:'Modul nápravných opatření', desc:'Sledování nápravných opatření s termíny, zodpovědností a notifikacemi až po ověření a uzavření.'},
+          {icon:'🏅', title:'Certifikační moduly', desc:'Specializované moduly pro ISO 9001, 14001, 27001, 45001 a interní audity s předpřipravenými kontrolními seznamy.'},
+          {icon:'📚', title:'Legislativní modul', desc:'Databáze zákonů a norem s aktualizacemi, propojení s audity a automatické kontroly shody s legislativou.'},
+          {icon:'👥', title:'Modul rolí a licencí', desc:'Pokročilá správa uživatelských práv, rolí a licencí s flexibilním nastavením přístupů pro různé typy uživatelů.'},
+          {icon:'📊', title:'Analytický modul', desc:'Reporty, statistiky, trendy a prediktivní analýzy pomocí AI pro efektivnější řízení auditních procesů.'},
+          {icon:'🔗', title:'Integrační modul', desc:'API a integrace s externími systémy (ERP, CRM, dokumentové systémy) pro plynulý tok dat.'},
+        ].map((module, i) => (
+          <motion.div 
+            key={i}
+            variants={fadeUp}
+            whileHover={{
+              scale:1.05, 
+              y:-10,
+              boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+              transition: {duration:0.3, type:"spring", stiffness:300}
+            }}
+            className="rounded-3xl border p-6 bg-white/50 dark:bg-neutral-900/50 hover:bg-white dark:hover:bg-neutral-900 transition-colors cursor-pointer group relative overflow-hidden"
+          >
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-sky-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"
+              initial={false}
+            />
+            <motion.div
+              initial={{rotate:0}}
+              whileHover={{rotate:[0, -10, 10, -10, 0], scale:1.2}}
+              transition={{duration:0.5}}
+              className="text-3xl mb-3 inline-block"
+            >
+              {module.icon}
+            </motion.div>
+            <h3 className="text-lg font-medium mb-3 relative">{module.title}</h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 relative">{module.desc}</p>
           </motion.div>
-          <motion.div whileHover={{scale:1.02, y:-4}} transition={{duration:0.3}} onClick={()=>setSelectedImage({src:'/swot.png', alt:'SWOT Analysis'})} className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group">
-            <Image alt="SWOT Analysis" src="/swot.png" fill className="object-cover transition-transform duration-300 group-hover:scale-105"/>
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">Kliknite pre zväčšenie</span>
-            </div>
+        ))}
+      </motion.div>
+
+      <motion.div 
+        className="grid gap-4 md:grid-cols-2"
+        variants={stagger}
+        initial="hidden"
+        whileInView="show"
+        viewport={{once:true}}
+      >
+        <motion.div 
+          variants={slideInLeft}
+          whileHover={{scale:1.05, y:-10, rotateY:5}} 
+          transition={{duration:0.3, type:"spring", stiffness:300}} 
+          onClick={()=>setSelectedImage({src:'/audit-plan.png', alt:'Plán auditu'})} 
+          className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group"
+          style={{perspective:1000}}
+        >
+          <motion.div
+            whileHover={{scale:1.1}}
+            transition={{duration:0.5}}
+          >
+            <Image alt="Plán auditu" src="/audit-plan.png" fill className="object-cover"/>
           </motion.div>
-        </div>
-      </div>
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 flex items-center justify-center"
+            initial={{opacity:0}}
+            whileHover={{opacity:1}}
+            transition={{duration:0.3}}
+          >
+            <motion.span 
+              className="text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm"
+              initial={{y:20, opacity:0}}
+              whileHover={{y:0, opacity:1}}
+              transition={{delay:0.1}}
+            >
+              Klikněte pro zvětšení
+            </motion.span>
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          variants={slideInRight}
+          whileHover={{scale:1.05, y:-10, rotateY:-5}} 
+          transition={{duration:0.3, type:"spring", stiffness:300}} 
+          onClick={()=>setSelectedImage({src:'/swot.png', alt:'SWOT analýza'})} 
+          className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group"
+          style={{perspective:1000}}
+        >
+          <motion.div
+            whileHover={{scale:1.1}}
+            transition={{duration:0.5}}
+          >
+            <Image alt="SWOT analýza" src="/swot.png" fill className="object-cover"/>
+          </motion.div>
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 flex items-center justify-center"
+            initial={{opacity:0}}
+            whileHover={{opacity:1}}
+            transition={{duration:0.3}}
+          >
+            <motion.span 
+              className="text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm"
+              initial={{y:20, opacity:0}}
+              whileHover={{y:0, opacity:1}}
+              transition={{delay:0.1}}
+            >
+              Klikněte pro zvětšení
+            </motion.span>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
 
+function About(){
+  return (<section id="about" className="mx-auto max-w-6xl px-4 py-20">
+    <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once:true, amount:0.3 }}>
+      <SectionTitle kicker="O nás" title="Česká společnost zaměřená na IT" subtitle="Pomáháme organizacím digitalizovat procesy, automatizovat rutinní úkony a efektivně využívat moderní technologie pro růst jejich podnikání." />
+      
+      <motion.div 
+        variants={stagger} 
+        className="mt-12 grid gap-8 md:grid-cols-3"
+      >
+        {[
+          {icon: Code2, bg:'indigo', title:'Expertíza', desc:'Tým zkušených vývojářů a konzultantů s hlubokými znalostmi moderních technologií a best practices.'},
+          {icon: ShieldCheck, bg:'sky', title:'Spolehlivost', desc:'Důraz na kvalitu kódu, bezpečnost a dlouhodobou udržitelnost vytvářených řešení.'},
+          {icon: Sparkles, bg:'emerald', title:'Inovace', desc:'Využíváme nejnovější technologie včetně AI a strojového učení pro vytváření inteligentních řešení.'},
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            variants={fadeUp}
+            whileHover={{y:-10, scale:1.03}}
+            transition={{type:"spring", stiffness:300}}
+          >
+            <Card className="rounded-3xl border bg-white/70 dark:bg-neutral-900/70 hover:shadow-2xl transition-shadow cursor-pointer overflow-hidden group">
+              <CardContent className="p-6 relative">
+                <motion.div
+                  className={`absolute top-0 right-0 w-32 h-32 bg-${item.bg}-500/10 rounded-full blur-3xl`}
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.5,
+                  }}
+                />
+                <motion.div 
+                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-${item.bg}-100 dark:bg-${item.bg}-900/30 relative`}
+                  whileHover={{rotate:360, scale:1.1}}
+                  transition={{duration:0.5}}
+                >
+                  <item.icon className={`h-6 w-6 text-${item.bg}-600 dark:text-${item.bg}-400`}/>
+                </motion.div>
+                <h3 className="text-lg font-semibold mb-2 relative">{item.title}</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 relative">{item.desc}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  </section>);
+}
+
+function Footer(){
+  const [showPrivacy, setShowPrivacy] = React.useState(false);
+  const [showGDPR, setShowGDPR] = React.useState(false);
+
+  return (<footer className="border-t">
+    <div className="mx-auto max-w-6xl px-4 py-8">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">© 2025 Evoliq s.r.o. Všechna práva vyhrazena.</p>
+        <div className="flex gap-4">
+          <button onClick={()=>setShowPrivacy(true)} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+            Ochrana soukromí
+          </button>
+          <button onClick={()=>setShowGDPR(true)} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
+            GDPR
+          </button>
+          <button onClick={()=>{
+            const event = new CustomEvent('openCookieSettings');
+            window.dispatchEvent(event);
+          }} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors inline-flex items-center gap-1">
+            <Cookie className="h-3.5 w-3.5"/>
+            Nastavení cookies
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <AnimatePresence>
+      {showPrivacy && (
+        <motion.div 
+          initial={{opacity:0}} 
+          animate={{opacity:1}} 
+          exit={{opacity:0}} 
+          onClick={()=>setShowPrivacy(false)} 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+        >
+          <motion.div 
+            initial={{scale:0.9, opacity:0}} 
+            animate={{scale:1, opacity:1}} 
+            exit={{scale:0.9, opacity:0}} 
+            transition={{duration:0.3}} 
+            onClick={(e)=>e.stopPropagation()} 
+            className="relative max-w-2xl w-full max-h-[80vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <div className="sticky top-0 bg-white dark:bg-neutral-900 border-b px-6 py-4 flex items-center justify-between z-10">
+              <h3 className="text-lg font-semibold">Zásady ochrany osobních údajů</h3>
+              <button onClick={()=>setShowPrivacy(false)} className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                <X className="h-5 w-5"/>
+              </button>
+            </div>
+            <div className="px-6 py-4 overflow-y-auto max-h-[calc(80vh-5rem)]">
+              <div className="prose dark:prose-invert max-w-none">
+                <h4>1. Správce osobních údajů</h4>
+                <p>Správcem vašich osobních údajů je Evoliq s.r.o., se sídlem [adresa], IČ: [IČO].</p>
+                
+                <h4>2. Jaké údaje zpracováváme</h4>
+                <p>Zpracováváme následující kategorie osobních údajů:</p>
+                <ul>
+                  <li>Identifikační údaje (jméno, příjmení, e-mail, telefon)</li>
+                  <li>Údaje o využívání našich služeb</li>
+                  <li>Cookies a další analytické údaje</li>
+                </ul>
+
+                <h4>3. Účel zpracování</h4>
+                <p>Vaše osobní údaje zpracováváme za účelem:</p>
+                <ul>
+                  <li>Poskytování našich služeb a produktů</li>
+                  <li>Komunikace s vámi ohledně našich služeb</li>
+                  <li>Zlepšování kvality našich služeb</li>
+                  <li>Plnění zákonných povinností</li>
+                </ul>
+
+                <h4>4. Právní základ zpracování</h4>
+                <p>Údaje zpracováváme na základě:</p>
+                <ul>
+                  <li>Vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR)</li>
+                  <li>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR)</li>
+                  <li>Oprávněného zájmu (čl. 6 odst. 1 písm. f) GDPR)</li>
+                </ul>
+
+                <h4>5. Doba uložení</h4>
+                <p>Osobní údaje uchováváme po dobu nezbytně nutnou k naplnění účelu zpracování, minimálně však po dobu stanovenou právními předpisy.</p>
+
+                <h4>6. Vaše práva</h4>
+                <p>Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. V případě otázek nás kontaktujte na [kontaktní e-mail].</p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+
+    <AnimatePresence>
+      {showGDPR && (
+        <motion.div 
+          initial={{opacity:0}} 
+          animate={{opacity:1}} 
+          exit={{opacity:0}} 
+          onClick={()=>setShowGDPR(false)} 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+        >
+          <motion.div 
+            initial={{scale:0.9, opacity:0}} 
+            animate={{scale:1, opacity:1}} 
+            exit={{scale:0.9, opacity:0}} 
+            transition={{duration:0.3}} 
+            onClick={(e)=>e.stopPropagation()} 
+            className="relative max-w-2xl w-full max-h-[80vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <div className="sticky top-0 bg-white dark:bg-neutral-900 border-b px-6 py-4 flex items-center justify-between z-10">
+              <h3 className="text-lg font-semibold">Informace o GDPR</h3>
+              <button onClick={()=>setShowGDPR(false)} className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                <X className="h-5 w-5"/>
+              </button>
+            </div>
+            <div className="px-6 py-4 overflow-y-auto max-h-[calc(80vh-5rem)]">
+              <div className="prose dark:prose-invert max-w-none">
+                <h4>General Data Protection Regulation (GDPR)</h4>
+                <p>GDPR je nařízení EU na ochranu osobních údajů, které vstoupilo v platnost 25. května 2018. Zajišťuje jednotná pravidla ochrany osobních údajů napříč Evropskou unií.</p>
+
+                <h4>Vaše práva podle GDPR:</h4>
+                <ul>
+                  <li><strong>Právo na přístup:</strong> Máte právo získat informace o tom, jaké osobní údaje o vás zpracováváme.</li>
+                  <li><strong>Právo na opravu:</strong> Máte právo požadovat opravu nepřesných nebo neúplných údajů.</li>
+                  <li><strong>Právo na výmaz:</strong> Můžete požádat o vymazání svých osobních údajů („právo být zapomenut").</li>
+                  <li><strong>Právo na omezení zpracování:</strong> Můžete požádat o omezení zpracování vašich údajů.</li>
+                  <li><strong>Právo na přenositelnost:</strong> Máte právo získat své údaje ve strukturovaném, běžně používaném formátu.</li>
+                  <li><strong>Právo vznést námitku:</strong> Můžete vznést námitku proti zpracování vašich údajů.</li>
+                  <li><strong>Právo odvolat souhlas:</strong> Pokud je zpracování založeno na souhlasu, můžete jej kdykoli odvolat.</li>
+                </ul>
+
+                <h4>Jak uplatnit svá práva:</h4>
+                <p>Pro uplatnění svých práv nás kontaktujte na e-mailu: [kontaktní e-mail]</p>
+                <p>Odpovíme vám bez zbytečného odkladu, nejpozději do 1 měsíce od obdržení žádosti.</p>
+
+                <h4>Stížnost u dozorového úřadu:</h4>
+                <p>Máte právo podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz), pokud se domníváte, že zpracování vašich osobních údajů porušuje GDPR.</p>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </footer>);
+}
+
+export default function Page(){
+  return (
+    <div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
+      <NavBar/>
+      <Hero/>
+      <Services/>
+      <Products/>
+      <About/>
+      <Contact/>
+      <Footer/>
+      <CookieConsent/>
+    </div>
+  );
+}
