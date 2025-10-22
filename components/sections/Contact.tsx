@@ -4,24 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SectionTitle from '@/components/common/SectionTitle';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function Contact() {
   const [loading, setLoading] = React.useState(false); 
   const [ok, setOk] = React.useState<null|boolean>(null); 
   const formRef = React.useRef<HTMLFormElement|null>(null);
-  const [captcha, setCaptcha] = React.useState({num1: 0, num2: 0, answer: ''});
-  
-  React.useEffect(() => {
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    setCaptcha({num1, num2, answer: ''});
-  }, []);
+  const [turnstileToken, setTurnstileToken] = React.useState<string>('');
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     
-    // Kontrola CAPTCHA
-    if (parseInt(captcha.answer) !== captcha.num1 + captcha.num2) {
+    // Kontrola Turnstile tokenu
+    if (!turnstileToken) {
       setOk(false);
       return;
     }
@@ -29,16 +24,16 @@ export default function Contact() {
     setLoading(true);
     setOk(null);
     const fd = new FormData(e.currentTarget); 
-    const payload = Object.fromEntries(fd.entries());
+    const payload = {
+      ...Object.fromEntries(fd.entries()),
+      turnstileToken
+    };
     const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     setLoading(false); 
     setOk(res.ok); 
     if (res.ok) {
       formRef.current?.reset();
-      // Vygenerovat novou CAPTCHA
-      const num1 = Math.floor(Math.random() * 10) + 1;
-      const num2 = Math.floor(Math.random() * 10) + 1;
-      setCaptcha({num1, num2, answer: ''});
+      setTurnstileToken('');
     }
   }
   
@@ -142,28 +137,17 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <label htmlFor="captcha" className="block text-xs font-medium mb-2 text-neutral-700 dark:text-neutral-300">Ochrana proti robotům *</label>
-              <div className="flex items-center gap-3">
-                <motion.span 
-                  className="text-lg font-semibold"
-                  key={`${captcha.num1}-${captcha.num2}`}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {captcha.num1} + {captcha.num2} =
-                </motion.span>
-                <motion.input 
-                  id="captcha"
-                  type="number" 
-                  placeholder="?" 
-                  required
-                  value={captcha.answer}
-                  onChange={(e) => setCaptcha({...captcha, answer: e.target.value})}
-                  whileFocus={{ scale: 1.05, boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)" }}
-                  className="w-20 rounded-lg border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2 text-center transition-all"
-                />
-              </div>
+              <label className="block text-xs font-medium mb-2 text-neutral-700 dark:text-neutral-300">Ochrana proti robotům *</label>
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => setTurnstileToken('')}
+                onExpire={() => setTurnstileToken('')}
+                options={{
+                  theme: 'auto',
+                  size: 'normal',
+                }}
+              />
             </motion.div>
 
             <motion.div 

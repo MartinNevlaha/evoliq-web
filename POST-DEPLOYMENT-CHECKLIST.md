@@ -10,7 +10,16 @@
 - [ ] Odešlete sitemap: `https://evoliq.cz/sitemap.xml`
 - [ ] Sledujte indexaci stránky
 
-### 2. Google Analytics 4
+### 2. Cloudflare Turnstile (CAPTCHA)
+✅ **Implementováno!** Navštivte `TURNSTILE-SETUP.md` pro kompletní návod.
+
+- [ ] Zaregistrujte se na https://dash.cloudflare.com/sign-up
+- [ ] Vytvořte Turnstile widget
+- [ ] Zkopírujte Site Key a Secret Key
+- [ ] Přidejte klíče do `.env.local` a Vercel Environment Variables
+- [ ] Otestujte kontaktní formulář
+
+### 3. Google Analytics 4
 - [ ] Vytvořte GA4 property na https://analytics.google.com
 - [ ] Získejte Measurement ID (G-XXXXXXXXXX)
 - [ ] Přidejte Google Analytics script do `app/layout.tsx`
