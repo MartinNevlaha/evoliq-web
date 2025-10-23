@@ -23,17 +23,36 @@ export default function Contact() {
     
     setLoading(true);
     setOk(null);
-    const fd = new FormData(e.currentTarget); 
-    const payload = {
-      ...Object.fromEntries(fd.entries()),
-      turnstileToken
-    };
-    const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-    setLoading(false); 
-    setOk(res.ok); 
-    if (res.ok) {
+    
+    try {
+      const fd = new FormData(e.currentTarget); 
+      const payload = {
+        ...Object.fromEntries(fd.entries()),
+        turnstileToken
+      };
+      
+      const res = await fetch('/api/contact', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify(payload) 
+      });
+      
+      const data = await res.json();
+      
+      if (!res.ok) {
+        console.error('Contact form error:', data);
+        setOk(false);
+        return;
+      }
+      
+      setOk(true);
       formRef.current?.reset();
       setTurnstileToken('');
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      setOk(false);
+    } finally {
+      setLoading(false);
     }
   }
   
@@ -140,12 +159,22 @@ export default function Contact() {
               <label className="block text-xs font-medium mb-2 text-neutral-700 dark:text-neutral-300">Ochrana proti robotům *</label>
               <Turnstile
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
-                onSuccess={(token) => setTurnstileToken(token)}
-                onError={() => setTurnstileToken('')}
-                onExpire={() => setTurnstileToken('')}
+                onSuccess={(token) => {
+                  setTurnstileToken(token);
+                  setOk(null); // Reset error state when token is obtained
+                }}
+                onError={() => {
+                  setTurnstileToken('');
+                  console.error('Turnstile verification failed');
+                }}
+                onExpire={() => {
+                  setTurnstileToken('');
+                  console.warn('Turnstile token expired');
+                }}
                 options={{
                   theme: 'auto',
                   size: 'normal',
+                  language: 'cs',
                 }}
               />
             </motion.div>
@@ -162,7 +191,6 @@ export default function Contact() {
                   className="inline-flex items-center gap-2"
                   whileHover={{ x: 5, opacity: 1 }}
                 >
-                  <Mail className="h-3.5 w-3.5"/> hello@evoliq.dev
                 </motion.span>
                 <motion.span 
                   className="inline-flex items-center gap-2"
@@ -174,7 +202,6 @@ export default function Contact() {
                   className="inline-flex items-center gap-2"
                   whileHover={{ x: 5, opacity: 1 }}
                 >
-                  <MapPin className="h-3.5 w-3.5"/> Brno, Česká republika
                 </motion.span>
               </div>
               <motion.div

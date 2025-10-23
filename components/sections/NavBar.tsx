@@ -9,10 +9,10 @@ export default function NavBar() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.2 });
   
   const navItems = [
-    { label: 'Služby', href: '#services' },
-    { label: 'Produkty', href: '#products' },
-    { label: 'O nás', href: '#about' },
-    { label: 'Kontakt', href: '#contact' },
+    { label: 'Služby', href: '/#services' },
+    { label: 'Produkty', href: '/#products' },
+    { label: 'O nás', href: '/#about' },
+    { label: 'Kontakt', href: '/#contact' },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function NavBar() {
       />
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <motion.a 
-          href="#home" 
+          href="/" 
           className="flex items-center gap-2 font-semibold tracking-tight"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -62,7 +62,7 @@ export default function NavBar() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <motion.a 
-            href="#contact"
+            href="/#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -1,8 +1,9 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ShieldCheck, Code2, X, Boxes, Cookie } from 'lucide-react';
+import { Sparkles, ShieldCheck, Code2, X, Boxes, Cookie, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { NavBar, Hero, Services, Contact } from '@/components/sections';
@@ -86,6 +87,21 @@ function Products(){
         >
           Modulární platforma pro plánování, realizaci a vyhodnocování auditů s pomocí AI. Pro certifikační společnosti, konzultanty i interní audity.
         </motion.p>
+        <motion.div
+          initial={{opacity:0, y:20}}
+          whileInView={{opacity:1, y:0}}
+          viewport={{once:true}}
+          transition={{delay:0.4}}
+          className="mt-6"
+        >
+          <Link 
+            href="/products/ai-control"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/40"
+          >
+            Viac informácií o AI Control
+            <ChevronRight className="h-4 w-4" />
+          </Link>
+        </motion.div>
       </motion.div>
 
       <motion.div 

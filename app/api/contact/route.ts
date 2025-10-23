@@ -3,11 +3,11 @@ import { z } from 'zod';
 import { NextRequest, NextResponse } from 'next/server';
 
 const schema = z.object({
-  name: z.string().min(2).max(100),
-  email: z.string().email(),
+  name: z.string().min(2, 'Jméno musí mít alespoň 2 znaky').max(100, 'Jméno je příliš dlouhé'),
+  email: z.string().email('Neplatná emailová adresa'),
   phone: z.string().optional().default(''),
-  message: z.string().min(5).max(2000),
-  turnstileToken: z.string().min(1),
+  message: z.string().min(5, 'Zpráva musí mít alespoň 5 znaků').max(2000, 'Zpráva je příliš dlouhá'),
+  turnstileToken: z.string().min(1, 'Chybí ověření proti robotům'),
 });
 
 async function verifyTurnstileToken(token: string, ip?: string): Promise<boolean> {
@@ -73,24 +73,53 @@ export async function POST(req: NextRequest) {
 
     // Send email
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({
-      from: 'Evoliq <noreply@evoliq.dev>',
-      to: [process.env.CONTACT_TO_EMAIL],
-      reply_to: email,
-      subject: `Nová zpráva od ${name}`,
-      text: `Jméno: ${name}\nEmail: ${email}\nTelefon: ${phone}\n\nZpráva:\n${message}`,
-    });
+    
+    try {
+      const { data, error } = await resend.emails.send({
+        from: 'Evoliq <info@evoliq.cz>',
+        to: [process.env.CONTACT_TO_EMAIL],
+        reply_to: email,
+        subject: `Nová zpráva od ${name}`,
+        text: `Jméno: ${name}\nEmail: ${email}\nTelefon: ${phone || 'Neuvedeno'}\n\nZpráva:\n${message}`,
+        html: `
+          <h2>Nová zpráva z kontaktního formuláře</h2>
+          <p><strong>Jméno:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Telefon:</strong> ${phone || 'Neuvedeno'}</p>
+          <h3>Zpráva:</h3>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      });
 
-    if (error) {
+      if (error) {
+        console.error('Resend API error:', error);
+        return NextResponse.json(
+          { error: 'Chyba při odesílání emailu. Zkuste to prosím znovu později.' },
+          { status: 500 }
+        );
+      }
+
+      console.log('Email sent successfully:', data);
+      return NextResponse.json({ ok: true, message: 'Email byl úspěšně odeslán' }, { status: 200 });
+      
+    } catch (emailError: any) {
+      console.error('Email sending error:', emailError);
       return NextResponse.json(
-        { error: error.message },
+        { error: 'Chyba při odesílání emailu. Zkuste to prosím znovu.' },
         { status: 500 }
       );
     }
-
-    return NextResponse.json({ ok: true }, { status: 200 });
   } catch (e: any) {
     console.error('Contact form error:', e);
+    
+    // Zod validation error
+    if (e?.issues) {
+      return NextResponse.json(
+        { error: 'Neplatné údaje ve formuláři. Zkontrolujte prosím všechna pole.' },
+        { status: 400 }
+      );
+    }
+    
     return NextResponse.json(
       { error: e?.message || 'Neplatný požadavek' },
       { status: 400 }
