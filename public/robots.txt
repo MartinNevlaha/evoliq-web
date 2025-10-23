@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+Sitemap: https://evoliq.cz/sitemap.xml
+Host: https://evoliq.cz
