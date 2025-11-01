@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   },
   description: 'Česká IT společnost specializující se na vývoj webových aplikací, mobilních aplikací, AI řešení a automatizaci procesů. Komplexní digitalizace vašeho podnikání s důrazem na kvalitu a inovace.',
   keywords: [
+    'Evoliq',
+    'Evoliq s.r.o.',
     'IT řešení Česko',
     'vývoj webových aplikací',
     'mobilní aplikace',

@@ -23,6 +23,22 @@ const nextConfig = {
   // Power by header removal
   poweredByHeader: false,
 
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.evoliq.cz',
+          },
+        ],
+        destination: 'https://evoliq.cz/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for SEO and security
   async headers() {
     return [
@@ -32,6 +48,10 @@ const nextConfig = {
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
           },
           {
             key: 'Strict-Transport-Security',

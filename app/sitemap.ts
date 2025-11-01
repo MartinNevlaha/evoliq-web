@@ -15,13 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/products/ai-control`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.95,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/products/ai-control/case-study`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.85,
+      priority: 0.7,
     },
   ];
 }
