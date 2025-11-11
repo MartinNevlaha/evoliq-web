@@ -196,7 +196,7 @@ export default function Contact() {
                   className="inline-flex items-center gap-2"
                   whileHover={{ x: 5, opacity: 1 }}
                 >
-                  <Phone className="h-3.5 w-3.5"/> +421 900 000 000
+                  <Phone className="h-3.5 w-3.5"/> +421 903 769 547 +420 725 384 866
                 </motion.span>
                 <motion.span 
                   className="inline-flex items-center gap-2"
