@@ -23,6 +23,23 @@ const nextConfig = {
   // Power by header removal
   poweredByHeader: false,
 
+  // Redirects for canonical URL
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.evoliq.cz',
+          },
+        ],
+        destination: 'https://evoliq.cz/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   // Headers for SEO and security
   async headers() {
     return [

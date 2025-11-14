@@ -106,6 +106,27 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Evoliq s.r.o.',
+    url: 'https://evoliq.cz',
+    logo: 'https://evoliq.cz/logo.png',
+    description: 'Česká IT společnost specializující se na vývoj webových aplikací, mobilních aplikací, AI řešení a automatizaci procesů.',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'CZ',
+    },
+    sameAs: [
+      'https://www.linkedin.com/company/evoliq',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: ['cs', 'en'],
+    },
+  };
+
   return(
     <html lang="cs" suppressHydrationWarning>
       <head>
@@ -113,6 +134,10 @@ export default function RootLayout({children}:{children:React.ReactNode}){
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body>
         <script
