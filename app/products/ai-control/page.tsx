@@ -3,7 +3,7 @@ import AIControlPage from "./AIControlPage";
 
 export const metadata: Metadata = {
   title: "AI Control - Inteligentní systém řízení auditů | Evoliq",
-  description: "AI Control je cloudové multitenant řešení pro komplexní správu auditů s umělou inteligencí. Automatizace plánů, checklistů, zpráv a certifikací. Start cloudového provozu 1.1.2026.",
+  description: "AI Control je cloudové multitenant řešení pro komplexní správu auditů s umělou inteligencí. Automatizace plánů, checklistů, zpráv a certifikací. Start cloudového provozu 1.2.2026.",
   keywords: [
     "AI audit systém",
     "cloudový audit software",

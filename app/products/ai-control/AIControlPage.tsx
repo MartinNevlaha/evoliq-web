@@ -282,7 +282,7 @@ export default function AIControlPage() {
             >
               <div className="flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-3 text-white shadow-lg">
                 <Calendar className="h-5 w-5" />
-                <span className="font-semibold">Start cloudové provozu: 1.1.2026</span>
+                <span className="font-semibold">Start cloudové provozu: 1.2.2026</span>
               </div>
             </motion.div>
 
