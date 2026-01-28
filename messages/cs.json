@@ -142,7 +142,6 @@
   "NotFound": {
     "title": "Stránka nenalezena",
     "description": "Omlouváme se, ale požadovaná stránka neexistuje."
-  }
   },
   "AIControl": {
     "hero": {
@@ -275,117 +274,6 @@
       "contact": "Kontaktujte nás",
       "caseStudy": "Případová studie",
       "backHome": "Zpět na hlavní stránku"
-    }
-  },
-  "CaseStudy": {
-    "badge": "Případová studie",
-    "titlePrefix": "Jak",
-    "titleMiddle": "AI Control ušetřil",
-    "titleSuffix": "94 hodin ročně",
-    "subtitle": "Reálné srovnání tradičního auditního procesu oproti automatizaci s umělou inteligencí. Zjistěte, proč výrobní společnosti přecházejí na digitální řešení interních auditů.",
-    "stats": {
-      "timeSaved": "úspora času",
-      "moneySaved": "roční úspora",
-      "qualityIncreased": "vyšší kvalita"
-    },
-    "companyProfile": {
-      "title": "O společnosti",
-      "type": {
-        "label": "Typ společnosti",
-        "value": "Výrobní společnost střední velikosti"
-      },
-      "focus": {
-        "label": "Zaměření",
-        "value": "ISO 9001, ISO 27001, ISO 45001"
-      },
-      "audits": {
-        "label": "Počet auditů ročně",
-        "value": "30 interních auditů"
-      },
-      "team": {
-        "label": "Tým auditorů",
-        "value": "2 interní auditoři"
-      }
-    },
-    "comparison": {
-      "title": "Detailní srovnání procesu",
-      "subtitle": "Časová náročnost jednotlivých fází auditu - tradiční přístup vs. AI Control",
-      "phases": {
-        "planning": {
-          "title": "Příprava plánu auditu",
-          "traditional": "Manuální tvorba v Word/Excel, kontrola norem",
-          "ai": "AI generuje plán podle vybrané normy"
-        },
-        "checklist": {
-          "title": "Tvorba checklistu",
-          "traditional": "Ruční výběr otázek, formátování",
-          "ai": "AI vytvoří kontextový checklist automaticky"
-        },
-        "execution": {
-          "title": "Provedení auditu",
-          "traditional": "Papírové poznámky, fotky v telefonu",
-          "ai": "Digitální UI, strukturované záznamy"
-        },
-        "reporting": {
-          "title": "Zpracování zprávy",
-          "traditional": "Přepisování poznámek, formátování reportu",
-          "ai": "AI vygeneruje profesionální zprávu"
-        },
-        "corrective": {
-          "title": "Správa nápravných opatření",
-          "traditional": "Email komunikace, Excel sledování",
-          "ai": "Automatické notifikace, centrální dashboard"
-        }
-      },
-      "labels": {
-        "traditional": "Tradiční proces",
-        "ai": "S AI Control",
-        "timeSaved": "Úspora času",
-        "hoursSaved": "h ušetřeno",
-        "totalSavings": "celková úspora"
-      }
-    },
-    "results": {
-      "title": "Měřitelné výsledky",
-      "items": {
-        "time": {
-          "title": "Úspora času",
-          "value": "94 hodin/rok",
-          "desc": "Pro výrobní společnost s 30 interními audity ročně"
-        },
-        "money": {
-          "title": "Finanční úspora",
-          "value": "235 000 Kč/rok",
-          "desc": "Při průměrné hodinové sazbě 2 500 Kč"
-        },
-        "quality": {
-          "title": "Zvýšení kvality",
-          "value": "+40%",
-          "desc": "Méně chyb, konzistentnější výstupy"
-        },
-        "capacity": {
-          "title": "Větší kapacita",
-          "value": "+35%",
-          "desc": "Více auditů bez náboru nových auditorů"
-        }
-      }
-    },
-    "transformation": {
-      "title": "Transformace v číslech",
-      "before": "Před implementací",
-      "after": "Po implementaci",
-      "metrics": {
-        "avgTime": "Průměrný čas/audit",
-        "admin": "Administrativa",
-        "fieldwork": "Terénní práce",
-        "errorRate": "Chybovost"
-      }
-    },
-    "cta": {
-      "title": "Připraveni dosáhnout podobných výsledků?",
-      "desc": "Kontaktujte nás pro personalizovanou demo prezentaci a zjistěte, kolik času a peněz můžete ušetřit ve vaší organizaci.",
-      "demo": "Chci demo prezentaci",
-      "moreInfo": "Více o AI Control"
     }
   },
   "CaseStudy": {
