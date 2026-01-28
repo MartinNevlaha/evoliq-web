@@ -274,6 +274,28 @@ export default function AIControlPage() {
               vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině.
             </motion.p>
 
+            {/* Video Preview */}
+            <motion.div
+              className="mb-10 flex justify-center px-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+            >
+              <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl border-4 border-white/50 bg-slate-900 shadow-2xl dark:border-neutral-800/50">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                  controls={false}
+                >
+                  <source src="/ai_control.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </motion.div>
+
             <motion.div 
               className="mb-12 flex flex-wrap items-center justify-center gap-4"
               initial={{opacity:0, y:20}}
