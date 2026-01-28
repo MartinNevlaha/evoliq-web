@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ChevronRight } from 'lucide-react';
 import { stagger, fadeUp, slideInLeft, slideInRight } from '@/lib/animations';

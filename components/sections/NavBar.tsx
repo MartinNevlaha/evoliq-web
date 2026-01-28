@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -43,23 +44,20 @@ export default function NavBar() {
         </motion.a>
         <nav className="hidden items-center gap-6 text-sm sm:flex">
           {navItems.map((item, i) => (
-            <motion.a 
+            <Link 
               key={item.label}
               href={item.href}
               className="opacity-80 hover:opacity-100 transition-opacity relative"
-              whileHover={{ y: -2 }}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 0.8, y: 0 }}
-              transition={{ delay: i * 0.1 }}
             >
               {item.label}
+              {/* Simplified hover effect for now or wrap Link with motion if needed, but standard Link is key here */}
               <motion.div 
                 className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 to-emerald-500"
                 initial={{ scaleX: 0 }}
                 whileHover={{ scaleX: 1 }}
                 transition={{ duration: 0.3 }}
               />
-            </motion.a>
+            </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
