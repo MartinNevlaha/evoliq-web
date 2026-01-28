@@ -143,5 +143,249 @@
     "title": "Stránka nenalezena",
     "description": "Omlouváme se, ale požadovaná stránka neexistuje."
   }
-}
+  },
+  "AIControl": {
+    "hero": {
+      "product": "Produkt",
+      "titlePrefix": "AI-Control —",
+      "titleSuffix": "Audit & Compliance",
+      "subtitle": "Inteligentní cloudový systém pro komplexní správu auditů, certifikací a kvality",
+      "description": "Multitenant platforma s umělou inteligencí, která automatizuje plánování, vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině.",
+      "startDate": "Start cloudové provozu: 1.2.2026"
+    },
+    "benefits": {
+      "cloud": {
+        "title": "Cloudové řešení",
+        "desc": "Žádná potřeba instalace či údržby serverů. Přístup odkudkoliv přes webový prohlížeč. Automatické zálohování a dostupnost."
+      },
+      "multitenant": {
+        "title": "Multitenant architektura",
+        "desc": "Každá organizace má své izolované datové prostředí. Škálovatelnost, bezpečnost a GDPR compliance zaručeny na úrovni infrastruktury."
+      },
+      "collaborative": {
+        "title": "Kolaborativní",
+        "desc": "Týmová spolupráce v reálném čase. Více auditorů může pracovat současně na jednom auditu. Integrovaný schvalovací proces."
+      }
+    },
+    "features": {
+      "titlePrefix": "Komplexní funkce pro",
+      "titleSuffix": "moderní audit",
+      "subtitle": "Všechno, co potřebujete pro efektivní správu auditů a certifikací na jednom místě",
+      "profile": {
+        "title": "Profil společnosti s AI",
+        "desc": "Automatické vyplňování firemního profilu pomocí umělé inteligence. Správa oddělení, procesních map a certifikátů. SWOT analýza generovaná AI s aktuálními insights.",
+        "details": [
+          "AI-asistované vyplňování firemních údajů",
+          "Správa organizační struktury a oddělení",
+          "Automatická správa certifikátů s upozorněními",
+          "Procesní mapy generované a optimalizované AI",
+          "AI SWOT analýza s konkurenčním benchmarkingem"
+        ]
+      },
+      "permissions": {
+        "title": "Customizovatelná uživatelská oprávnění",
+        "desc": "Flexibilní systém rolí a oprávnění přizpůsobený vaší organizační struktuře. Granulární kontrola přístupu k jednotlivým modulům, auditům a dokumentům.",
+        "details": [
+          "Víceúrovňový systém rolí a oprávnění",
+          "Přizpůsobitelné role pro audit manažery, auditory, uživatele",
+          "Oprávnění na úrovni projektu, oddělení a dokumentu",
+          "Audit trail pro všechny změny oprávnění",
+          "Jednoduchá správa přes přehledné UI rozhraní"
+        ]
+      },
+      "qualifications": {
+        "title": "Správa kvalifikací a certifikátů",
+        "desc": "Komplexní správa kvalifikací auditorů a interních pracovníků s automatickým sledováním platnosti. AI asistent pro návrhy školení a certifikačních programů.",
+        "details": [
+          "Centrální databáze kvalifikací a certifikátů",
+          "AI-asistované vyplňování údajů",
+          "Automatická upozornění na expirující certifikáty",
+          "AI doporučení pro rozvoj kompetencí",
+          "Historie školení a vzdělávání",
+          "Integrace s certifikačními autoritami"
+        ]
+      },
+      "calendar": {
+        "title": "Kalendář auditů",
+        "desc": "Přehledný kalendář všech plánovaných a probíhajících auditů.",
+        "details": [
+          "Vizuální kalendář s týdenním, měsíčním a ročním pohledem",
+          "Připomínky a notifikace pro účastníky",
+          "Export do CSV formátů"
+        ]
+      },
+      "planning": {
+        "title": "Plán auditu s AI",
+        "desc": "AI generuje komplexní plány auditů na základě norem (ISO 9001, ISO 27001, GDPR a dalších), historie auditů a specifik vaší organizace. Úspora desítek hodin manuální práce.",
+        "details": [
+          "Automatické generování audit plánu podle norem",
+          "Přizpůsobení specifikům organizace a odvětví",
+          "Návrhy kontrolních otázek a checklistů",
+          "Rozdělení zodpovědností a časový harmonogram",
+          "Verzování a schvalovací proces"
+        ]
+      },
+      "checklist": {
+        "title": "AI Checklist",
+        "desc": "Inteligentní generování kontrolních seznamů (checklistů) pro jednotlivé audity. AI analyzuje požadavky norem, minulé nálezy a best practices z odvětví.",
+        "details": [
+          "Generování checklistů podle vybraných standardů",
+          "Kontextové otázky přizpůsobené oddělení",
+          "Přiřazení důkazů a dokumentace",
+          "Scoring a vážení kritérií",
+          "Export do PDF"
+        ]
+      },
+      "execution": {
+        "title": "Výkon auditu v UI",
+        "desc": "Moderní a intuitivní rozhraní pro vykonávání auditů v terénu i na dálku. Jednoduché přidávání zjištění, komentářů a důkazů přímo v aplikaci.",
+        "details": [
+          "Real-time spolupráce více auditorů",
+          "Přímé nahrávaní a dokumentů",
+          "Kategorizace zjištění (shoda, neshoda, pozorování)",
+          "Poznámky, komentáře"
+        ]
+      },
+      "report": {
+        "title": "Zpráva z auditu generovaná AI",
+        "desc": "Profesionální zprávy z auditů generované umělou inteligencí za pár sekund. Automatická analýza zjištění, doporučení na zlepšení.",
+        "details": [
+          "Automatické generování zprávy z nálezů",
+          "AI analýza trendů a rizik",
+          "Doporučení na nápravná opatření",
+          "Profesionální PDF reporty s brandingem",
+          "Multilanguage podpora (SK, CZ, EN)"
+        ]
+      },
+      "multilang": {
+        "title": "Vícejazyčnost",
+        "desc": "Plná podpora slovenského, českého a anglického jazyka v celé aplikaci. Automatický překlad AI generovaných obsahů, reportů.",
+        "details": [
+          "Uživatelské rozhraní v SK, CZ, EN",
+          "AI překlad všech generovaných textů",
+          "Lokalizované formáty datumů a čísel",
+          "Vícejazyčné PDF reporty"
+        ]
+      },
+      "screenshotPlaceholder": "Screenshot bude doplněn"
+    },
+    "cta": {
+      "title": "Připraveni modernizovat váš audit proces?",
+      "desc": "Kontaktujte nás pro demo prezentaci nebo více informací o AI Control systému. Cloudová provoz startuje 1.1.2026.",
+      "contact": "Kontaktujte nás",
+      "caseStudy": "Případová studie",
+      "backHome": "Zpět na hlavní stránku"
+    }
+  },
+  "CaseStudy": {
+    "badge": "Případová studie",
+    "titlePrefix": "Jak",
+    "titleMiddle": "AI Control ušetřil",
+    "titleSuffix": "94 hodin ročně",
+    "subtitle": "Reálné srovnání tradičního auditního procesu oproti automatizaci s umělou inteligencí. Zjistěte, proč výrobní společnosti přecházejí na digitální řešení interních auditů.",
+    "stats": {
+      "timeSaved": "úspora času",
+      "moneySaved": "roční úspora",
+      "qualityIncreased": "vyšší kvalita"
+    },
+    "companyProfile": {
+      "title": "O společnosti",
+      "type": {
+        "label": "Typ společnosti",
+        "value": "Výrobní společnost střední velikosti"
+      },
+      "focus": {
+        "label": "Zaměření",
+        "value": "ISO 9001, ISO 27001, ISO 45001"
+      },
+      "audits": {
+        "label": "Počet auditů ročně",
+        "value": "30 interních auditů"
+      },
+      "team": {
+        "label": "Tým auditorů",
+        "value": "2 interní auditoři"
+      }
+    },
+    "comparison": {
+      "title": "Detailní srovnání procesu",
+      "subtitle": "Časová náročnost jednotlivých fází auditu - tradiční přístup vs. AI Control",
+      "phases": {
+        "planning": {
+          "title": "Příprava plánu auditu",
+          "traditional": "Manuální tvorba v Word/Excel, kontrola norem",
+          "ai": "AI generuje plán podle vybrané normy"
+        },
+        "checklist": {
+          "title": "Tvorba checklistu",
+          "traditional": "Ruční výběr otázek, formátování",
+          "ai": "AI vytvoří kontextový checklist automaticky"
+        },
+        "execution": {
+          "title": "Provedení auditu",
+          "traditional": "Papírové poznámky, fotky v telefonu",
+          "ai": "Digitální UI, strukturované záznamy"
+        },
+        "reporting": {
+          "title": "Zpracování zprávy",
+          "traditional": "Přepisování poznámek, formátování reportu",
+          "ai": "AI vygeneruje profesionální zprávu"
+        },
+        "corrective": {
+          "title": "Správa nápravných opatření",
+          "traditional": "Email komunikace, Excel sledování",
+          "ai": "Automatické notifikace, centrální dashboard"
+        }
+      },
+      "labels": {
+        "traditional": "Tradiční proces",
+        "ai": "S AI Control",
+        "timeSaved": "Úspora času",
+        "hoursSaved": "h ušetřeno",
+        "totalSavings": "celková úspora"
+      }
+    },
+    "results": {
+      "title": "Měřitelné výsledky",
+      "items": {
+        "time": {
+          "title": "Úspora času",
+          "value": "94 hodin/rok",
+          "desc": "Pro výrobní společnost s 30 interními audity ročně"
+        },
+        "money": {
+          "title": "Finanční úspora",
+          "value": "235 000 Kč/rok",
+          "desc": "Při průměrné hodinové sazbě 2 500 Kč"
+        },
+        "quality": {
+          "title": "Zvýšení kvality",
+          "value": "+40%",
+          "desc": "Méně chyb, konzistentnější výstupy"
+        },
+        "capacity": {
+          "title": "Větší kapacita",
+          "value": "+35%",
+          "desc": "Více auditů bez náboru nových auditorů"
+        }
+      }
+    },
+    "transformation": {
+      "title": "Transformace v číslech",
+      "before": "Před implementací",
+      "after": "Po implementaci",
+      "metrics": {
+        "avgTime": "Průměrný čas/audit",
+        "admin": "Administrativa",
+        "fieldwork": "Terénní práce",
+        "errorRate": "Chybovost"
+      }
+    },
+    "cta": {
+      "title": "Připraveni dosáhnout podobných výsledků?",
+      "desc": "Kontaktujte nás pro personalizovanou demo prezentaci a zjistěte, kolik času a peněz můžete ušetřit ve vaší organizaci.",
+      "demo": "Chci demo prezentaci",
+      "moreInfo": "Více o AI Control"
+    }
+  }
 

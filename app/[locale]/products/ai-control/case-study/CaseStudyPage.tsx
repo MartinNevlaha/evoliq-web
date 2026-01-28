@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { motion } from "framer-motion";
 import NavBar from "@/components/sections/NavBar";
+import { useTranslations } from 'next-intl';
 import {
   Clock,
   TrendingDown,
@@ -23,92 +24,93 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const comparisonData = [
-  {
-    phase: "Příprava plánu auditu",
-    traditional: { time: 4, description: "Manuální tvorba v Word/Excel, kontrola norem" },
-    aiControl: { time: 0.5, description: "AI generuje plán podle vybrané normy" },
-    savings: 87.5,
-  },
-  {
-    phase: "Tvorba checklistu",
-    traditional: { time: 3, description: "Ruční výběr otázek, formátování" },
-    aiControl: { time: 0.3, description: "AI vytvoří kontextový checklist automaticky" },
-    savings: 90,
-  },
-  {
-    phase: "Provedení auditu",
-    traditional: { time: 8, description: "Papírové poznámky, fotky v telefonu" },
-    aiControl: { time: 7, description: "Digitální UI, strukturované záznamy" },
-    savings: 12.5,
-  },
-  {
-    phase: "Zpracování zprávy",
-    traditional: { time: 6, description: "Přepisování poznámek, formátování reportu" },
-    aiControl: { time: 0.5, description: "AI vygeneruje profesionální zprávu" },
-    savings: 91.7,
-  },
-  {
-    phase: "Správa nápravných opatření",
-    traditional: { time: 2, description: "Email komunikace, Excel sledování" },
-    aiControl: { time: 0.5, description: "Automatické notifikace, centrální dashboard" },
-    savings: 75,
-  },
-];
-
-const benefits = [
-  {
-    icon: Clock,
-    title: "Úspora času",
-    value: "94 hodin/rok",
-    description: "Pro výrobní společnost s 30 interními audity ročně",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: DollarSign,
-    title: "Finanční úspora",
-    value: "235 000 Kč/rok",
-    description: "Při průměrné hodinové sazbě 2 500 Kč",
-    color: "from-emerald-500 to-teal-500",
-  },
-  {
-    icon: Target,
-    title: "Zvýšení kvality",
-    value: "+40%",
-    description: "Méně chyb, konzistentnější výstupy",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: TrendingUp,
-    title: "Větší kapacita",
-    value: "+35%",
-    description: "Více auditů bez náboru nových auditorů",
-    color: "from-orange-500 to-red-500",
-  },
-];
-
-const realWorldExample = {
-  company: "Výrobní společnost střední velikosti",
-  industry: "ISO 9001, ISO 27001, ISO 45001",
-  auditsPerYear: 30,
-  auditorsCount: 2,
-  beforeState: {
-    avgTimePerAudit: 23,
-    paperworkHours: 13,
-    fieldworkHours: 10,
-    errorRate: 12,
-  },
-  afterState: {
-    avgTimePerAudit: 16,
-    paperworkHours: 6,
-    fieldworkHours: 10,
-    errorRate: 3,
-  },
-};
-
-
-
 export default function CaseStudyPage() {
+  const t = useTranslations('CaseStudy');
+  const tFooter = useTranslations('Footer');
+
+  const comparisonData = [
+    {
+      phase: t('comparison.phases.planning.title'),
+      traditional: { time: 4, description: t('comparison.phases.planning.traditional') },
+      aiControl: { time: 0.5, description: t('comparison.phases.planning.ai') },
+      savings: 87.5,
+    },
+    {
+      phase: t('comparison.phases.checklist.title'),
+      traditional: { time: 3, description: t('comparison.phases.checklist.traditional') },
+      aiControl: { time: 0.3, description: t('comparison.phases.checklist.ai') },
+      savings: 90,
+    },
+    {
+      phase: t('comparison.phases.execution.title'),
+      traditional: { time: 8, description: t('comparison.phases.execution.traditional') },
+      aiControl: { time: 7, description: t('comparison.phases.execution.ai') },
+      savings: 12.5,
+    },
+    {
+      phase: t('comparison.phases.reporting.title'),
+      traditional: { time: 6, description: t('comparison.phases.reporting.traditional') },
+      aiControl: { time: 0.5, description: t('comparison.phases.reporting.ai') },
+      savings: 91.7,
+    },
+    {
+      phase: t('comparison.phases.corrective.title'),
+      traditional: { time: 2, description: t('comparison.phases.corrective.traditional') },
+      aiControl: { time: 0.5, description: t('comparison.phases.corrective.ai') },
+      savings: 75,
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: Clock,
+      title: t('results.items.time.title'),
+      value: t('results.items.time.value'),
+      description: t('results.items.time.desc'),
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: DollarSign,
+      title: t('results.items.money.title'),
+      value: t('results.items.money.value'),
+      description: t('results.items.money.desc'),
+      color: "from-emerald-500 to-teal-500",
+    },
+    {
+      icon: Target,
+      title: t('results.items.quality.title'),
+      value: t('results.items.quality.value'),
+      description: t('results.items.quality.desc'),
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: TrendingUp,
+      title: t('results.items.capacity.title'),
+      value: t('results.items.capacity.value'),
+      description: t('results.items.capacity.desc'),
+      color: "from-orange-500 to-red-500",
+    },
+  ];
+
+  const realWorldExample = {
+    company: t('companyProfile.type.value'),
+    industry: t('companyProfile.focus.value'),
+    auditsPerYear: t('companyProfile.audits.value'),
+    auditorsCount: t('companyProfile.team.value'),
+    beforeState: {
+      avgTimePerAudit: 23,
+      paperworkHours: 13,
+      fieldworkHours: 10,
+      errorRate: 12,
+    },
+    afterState: {
+      avgTimePerAudit: 16,
+      paperworkHours: 6,
+      fieldworkHours: 10,
+      errorRate: 3,
+    },
+  };
+
   const totalTraditionalTime = comparisonData.reduce((sum, item) => sum + item.traditional.time, 0);
   const totalAiTime = comparisonData.reduce((sum, item) => sum + item.aiControl.time, 0);
   const totalSavings = ((totalTraditionalTime - totalAiTime) / totalTraditionalTime) * 100;
@@ -131,35 +133,34 @@ export default function CaseStudyPage() {
           >
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800 bg-white/80 dark:bg-neutral-800/80 px-6 py-2 text-sm font-semibold text-blue-600 dark:text-blue-400 backdrop-blur-sm">
               <Award className="h-4 w-4" />
-              Případová studie
+              {t('badge')}
             </div>
 
             <h1 className="mb-6 text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl">
-              Jak{" "}
+              {t('titlePrefix')}{" "}
               <span className="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent">
-                AI Control ušetřil
+                {t('titleMiddle')}
               </span>
               <br />
-              94 hodin ročně
+              {t('titleSuffix')}
             </h1>
 
             <p className="mx-auto mb-8 max-w-3xl text-xl text-slate-600 dark:text-slate-300">
-              Reálné srovnání tradičního auditního procesu oproti automatizaci s umělou inteligencí.
-              Zjistěte, proč výrobní společnosti přecházejí na digitální řešení interních auditů.
+              {t('subtitle')}
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
               <div className="rounded-2xl border border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-6 py-4">
                 <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">70%</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">úspora času</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">{t('stats.timeSaved')}</div>
               </div>
               <div className="rounded-2xl border border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-6 py-4">
                 <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">235K Kč</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">roční úspora</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">{t('stats.moneySaved')}</div>
               </div>
               <div className="rounded-2xl border border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-6 py-4">
                 <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">+40%</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">vyšší kvalita</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">{t('stats.qualityIncreased')}</div>
               </div>
             </div>
           </motion.div>
@@ -177,7 +178,7 @@ export default function CaseStudyPage() {
             className="rounded-3xl border border-slate-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-8 md:p-12"
           >
             <h2 className="mb-8 text-3xl font-bold text-slate-900 dark:text-white">
-              O společnosti
+              {t('companyProfile.title')}
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="flex items-start gap-4">
@@ -185,7 +186,7 @@ export default function CaseStudyPage() {
                   <Users className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900 dark:text-white">Typ společnosti</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">{t('companyProfile.type.label')}</div>
                   <div className="text-slate-600 dark:text-slate-400">
                     {realWorldExample.company}
                   </div>
@@ -196,7 +197,7 @@ export default function CaseStudyPage() {
                   <Award className="h-6 w-6 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900 dark:text-white">Zaměření</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">{t('companyProfile.focus.label')}</div>
                   <div className="text-slate-600 dark:text-slate-400">{realWorldExample.industry}</div>
                 </div>
               </div>
@@ -205,9 +206,9 @@ export default function CaseStudyPage() {
                   <Calendar className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900 dark:text-white">Počet auditů ročně</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">{t('companyProfile.audits.label')}</div>
                   <div className="text-slate-600 dark:text-slate-400">
-                    {realWorldExample.auditsPerYear} interních auditů
+                    {realWorldExample.auditsPerYear}
                   </div>
                 </div>
               </div>
@@ -216,9 +217,9 @@ export default function CaseStudyPage() {
                   <Users className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <div className="font-semibold text-slate-900 dark:text-white">Tým auditorů</div>
+                  <div className="font-semibold text-slate-900 dark:text-white">{t('companyProfile.team.label')}</div>
                   <div className="text-slate-600 dark:text-slate-400">
-                    {realWorldExample.auditorsCount} interní auditoři
+                    {realWorldExample.auditorsCount}
                   </div>
                 </div>
               </div>
@@ -237,10 +238,10 @@ export default function CaseStudyPage() {
             className="mb-12 text-center"
           >
             <h2 className="mb-4 text-4xl font-bold text-slate-900 dark:text-white">
-              Detailní srovnání procesu
+              {t('comparison.title')}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-              Časová náročnost jednotlivých fází auditu - tradiční přístup vs. AI Control
+              {t('comparison.subtitle')}
             </p>
           </motion.div>
 
@@ -263,7 +264,7 @@ export default function CaseStudyPage() {
                     <div className="mb-2 flex items-center gap-2">
                       <XCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
                       <span className="font-semibold text-slate-900 dark:text-white">
-                        Tradiční proces
+                        {t('comparison.labels.traditional')}
                       </span>
                     </div>
                     <div className="mb-2 text-3xl font-bold text-red-600 dark:text-red-400">
@@ -279,7 +280,7 @@ export default function CaseStudyPage() {
                     <div className="mb-2 flex items-center gap-2">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                       <span className="font-semibold text-slate-900 dark:text-white">
-                        S AI Control
+                        {t('comparison.labels.ai')}
                       </span>
                     </div>
                     <div className="mb-2 text-3xl font-bold text-emerald-600 dark:text-emerald-400">
@@ -296,7 +297,7 @@ export default function CaseStudyPage() {
                   <TrendingDown className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   <div className="flex-1">
                     <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      Úspora času
+                      {t('comparison.labels.timeSaved')}
                     </div>
                     <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                       {item.savings.toFixed(1)}%
@@ -304,7 +305,7 @@ export default function CaseStudyPage() {
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-slate-600 dark:text-slate-400">
-                      {(item.traditional.time - item.aiControl.time).toFixed(1)}h ušetřeno
+                      {(item.traditional.time - item.aiControl.time).toFixed(1)}{t('comparison.labels.hoursSaved')}
                     </div>
                   </div>
                 </div>
@@ -323,7 +324,7 @@ export default function CaseStudyPage() {
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="text-center">
                   <div className="mb-2 text-sm font-medium text-slate-600 dark:text-slate-400">
-                    Tradiční proces
+                    {t('comparison.labels.traditional')}
                   </div>
                   <div className="text-4xl font-bold text-red-600 dark:text-red-400">
                     {totalTraditionalTime}h
@@ -334,11 +335,11 @@ export default function CaseStudyPage() {
                   <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
                     {totalSavings.toFixed(0)}%
                   </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">celková úspora</div>
+                  <div className="text-sm text-slate-600 dark:text-slate-400">{t('comparison.labels.totalSavings')}</div>
                 </div>
                 <div className="text-center">
                   <div className="mb-2 text-sm font-medium text-slate-600 dark:text-slate-400">
-                    S AI Control
+                    {t('comparison.labels.ai')}
                   </div>
                   <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
                     {totalAiTime}h
@@ -359,7 +360,7 @@ export default function CaseStudyPage() {
             viewport={{ once: true }}
             className="mb-12 text-center text-4xl font-bold text-slate-900 dark:text-white"
           >
-            Měřitelné výsledky
+            {t('results.title')}
           </motion.h2>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -399,7 +400,7 @@ export default function CaseStudyPage() {
             viewport={{ once: true }}
             className="mb-12 text-center text-4xl font-bold text-slate-900 dark:text-white"
           >
-            Transformace v číslech
+            {t('transformation.title')}
           </motion.h2>
 
           <div className="grid gap-8 md:grid-cols-2">
@@ -415,31 +416,31 @@ export default function CaseStudyPage() {
                   <XCircle className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Před implementací
+                  {t('transformation.before')}
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-red-200 dark:border-red-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Průměrný čas/audit</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.avgTime')}</span>
                   <span className="text-2xl font-bold text-slate-900 dark:text-white">
                     {realWorldExample.beforeState.avgTimePerAudit}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-b border-red-200 dark:border-red-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Administrativa</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.admin')}</span>
                   <span className="text-2xl font-bold text-slate-900 dark:text-white">
                     {realWorldExample.beforeState.paperworkHours}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-b border-red-200 dark:border-red-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Terénní práce</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.fieldwork')}</span>
                   <span className="text-2xl font-bold text-slate-900 dark:text-white">
                     {realWorldExample.beforeState.fieldworkHours}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-700 dark:text-slate-300">Chybovost</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.errorRate')}</span>
                   <span className="text-2xl font-bold text-red-600 dark:text-red-400">
                     {realWorldExample.beforeState.errorRate}%
                   </span>
@@ -459,31 +460,31 @@ export default function CaseStudyPage() {
                   <CheckCircle2 className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Po implementaci
+                  {t('transformation.after')}
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-emerald-200 dark:border-emerald-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Průměrný čas/audit</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.avgTime')}</span>
                   <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {realWorldExample.afterState.avgTimePerAudit}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-b border-emerald-200 dark:border-emerald-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Administrativa</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.admin')}</span>
                   <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {realWorldExample.afterState.paperworkHours}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between border-b border-emerald-200 dark:border-emerald-800 pb-3">
-                  <span className="text-slate-700 dark:text-slate-300">Terénní práce</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.fieldwork')}</span>
                   <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {realWorldExample.afterState.fieldworkHours}h
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-700 dark:text-slate-300">Chybovost</span>
+                  <span className="text-slate-700 dark:text-slate-300">{t('transformation.metrics.errorRate')}</span>
                   <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {realWorldExample.afterState.errorRate}%
                   </span>
@@ -506,25 +507,24 @@ export default function CaseStudyPage() {
             <div className="rounded-3xl bg-white dark:bg-neutral-900 p-10 text-center md:p-16">
               <Zap className="mx-auto mb-6 h-16 w-16 text-blue-600 dark:text-blue-400" />
               <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
-                Připraveni dosáhnout podobných výsledků?
+                {t('cta.title')}
               </h2>
               <p className="mb-8 text-lg text-slate-600 dark:text-slate-300">
-                Kontaktujte nás pro personalizovanou demo prezentaci a zjistěte, kolik času a peněz
-                můžete ušetřit ve vaší organizaci.
+                {t('cta.desc')}
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/#contact"
                   className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
                 >
-                  Chci demo prezentaci
+                  {t('cta.demo')}
                   <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
                   href="/products/ai-control"
                   className="rounded-full border-2 border-slate-300 dark:border-neutral-600 px-8 py-4 text-lg font-semibold text-slate-700 dark:text-slate-300 transition-all hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950"
                 >
-                  Více o AI Control
+                  {t('cta.moreInfo')}
                 </Link>
               </div>
             </div>
@@ -536,7 +536,7 @@ export default function CaseStudyPage() {
       <footer className="border-t border-slate-200 dark:border-neutral-700 px-6 py-8">
         <div className="container mx-auto text-center">
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            © 2025 Evoliq s.r.o. Všechna práva vyhrazena.
+            {tFooter('copyright')}
           </p>
         </div>
       </footer>

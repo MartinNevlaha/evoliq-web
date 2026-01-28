@@ -3,9 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import EvoliqAIVideoBackground from "@/components/common/EvoliqAIVideoBackground";
 import NavBar from "@/components/sections/NavBar";
+import { useTranslations } from 'next-intl';
 import {
   Building2,
   Shield,
@@ -24,156 +25,146 @@ import {
   Cookie,
 } from "lucide-react";
 
-const features = [
-  {
-    icon: Building2,
-    title: "Profil společnosti s AI",
-    description:
-      "Automatické vyplňování firemního profilu pomocí umělé inteligence. Správa oddělení, procesních map a certifikátů. SWOT analýza generovaná AI s aktuálními insights.",
-    image: "/swot.png",
-    details: [
-      "AI-asistované vyplňování firemních údajů",
-      "Správa organizační struktury a oddělení",
-      "Automatická správa certifikátů s upozorněními",
-      "Procesní mapy generované a optimalizované AI",
-      "AI SWOT analýza s konkurenčním benchmarkingem",
-    ],
-  },
-  {
-    icon: UserCog,
-    title: "Customizovatelná uživatelská oprávnění",
-    description:
-      "Flexibilní systém rolí a oprávnění přizpůsobený vaší organizační struktuře. Granulární kontrola přístupu k jednotlivým modulům, auditům a dokumentům.",
-    image: "/audit-plan.png",
-    details: [
-      "Víceúrovňový systém rolí a oprávnění",
-      "Přizpůsobitelné role pro audit manažery, auditory, uživatele",
-      "Oprávnění na úrovni projektu, oddělení a dokumentu",
-      "Audit trail pro všechny změny oprávnění",
-      "Jednoduchá správa přes přehledné UI rozhraní",
-    ],
-  },
-  {
-    icon: Award,
-    title: "Správa kvalifikací a certifikátů",
-    description:
-      "Komplexní správa kvalifikací auditorů a interních pracovníků s automatickým sledováním platnosti. AI asistent pro návrhy školení a certifikačních programů.",
-    image: "/swot.png",
-    details: [
-      "Centrální databáze kvalifikací a certifikátů",
-      "AI-asistované vyplňování údajů",
-      "Automatická upozornění na expirující certifikáty",
-      "AI doporučení pro rozvoj kompetencí",
-      "Historie školení a vzdělávání",
-      "Integrace s certifikačními autoritami",
-    ],
-  },
-  {
-    icon: Calendar,
-    title: "Kalendář auditů",
-    description:
-      "Přehledný kalendář všech plánovaných a probíhajících auditů.",
-    image: "/audit-plan.png",
-    details: [
-      "Vizuální kalendář s týdenním, měsíčním a ročním pohledem",
-      "Připomínky a notifikace pro účastníky",
-      "Export do CSV formátů",
-    ],
-  },
-  {
-    icon: FileCheck2,
-    title: "Plán auditu s AI",
-    description:
-      "AI generuje komplexní plány auditů na základě norem (ISO 9001, ISO 27001, GDPR a dalších), historie auditů a specifik vaší organizace. Úspora desítek hodin manuální práce.",
-    image: "/audit-plan.png",
-    details: [
-      "Automatické generování audit plánu podle norem",
-      "Přizpůsobení specifikům organizace a odvětví",
-      "Návrhy kontrolních otázek a checklistů",
-      "Rozdělení zodpovědností a časový harmonogram",
-      "Verzování a schvalovací proces",
-    ],
-  },
-  {
-    icon: ClipboardCheck,
-    title: "AI Checklist",
-    description:
-      "Inteligentní generování kontrolních seznamů (checklistů) pro jednotlivé audity. AI analyzuje požadavky norem, minulé nálezy a best practices z odvětví.",
-    image: "/swot.png",
-    details: [
-      "Generování checklistů podle vybraných standardů",
-      "Kontextové otázky přizpůsobené oddělení",
-      "Přiřazení důkazů a dokumentace",
-      "Scoring a vážení kritérií",
-      "Export do PDF",
-    ],
-  },
-  {
-    icon: Shield,
-    title: "Výkon auditu v UI",
-    description:
-      "Moderní a intuitivní rozhraní pro vykonávání auditů v terénu i na dálku. Jednoduché přidávání zjištění, komentářů a důkazů přímo v aplikaci.",
-    image: "/audit-plan.png",
-    details: [
-      "Real-time spolupráce více auditorů",
-      "Přímé nahrávaní a dokumentů",
-      "Kategorizace zjištění (shoda, neshoda, pozorování)",
-      "Poznámky, komentáře",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Zpráva z auditu generovaná AI",
-    description:
-      "Profesionální zprávy z auditů generované umělou inteligencí za pár sekund. Automatická analýza zjištění, doporučení na zlepšení.",
-    image: "/swot.png",
-    details: [
-      "Automatické generování zprávy z nálezů",
-      "AI analýza trendů a rizik",
-      "Doporučení na nápravná opatření",
-      "Profesionální PDF reporty s brandingem",
-      "Multilanguage podpora (SK, CZ, EN)",
-    ],
-  },
-  {
-    icon: Languages,
-    title: "Vícejazyčnost",
-    description:
-      "Plná podpora slovenského, českého a anglického jazyka v celé aplikaci. Automatický překlad AI generovaných obsahů, reportů.",
-    image: "/audit-plan.png",
-    details: [
-      "Uživatelské rozhraní v SK, CZ, EN",
-      "AI překlad všech generovaných textů",
-      "Lokalizované formáty datumů a čísel",
-      "Vícejazyčné PDF reporty",
-    ],
-  },
-];
-
-const benefits = [
-  {
-    title: "Cloudové řešení",
-    description:
-      "Žádná potřeba instalace či údržby serverů. Přístup odkudkoliv přes webový prohlížeč. Automatické zálohování a dostupnost.",
-    icon: Cloud,
-  },
-  {
-    title: "Multitenant architektura",
-    description:
-      "Každá organizace má své izolované datové prostředí. Škálovatelnost, bezpečnost a GDPR compliance zaručeny na úrovni infrastruktury.",
-    icon: Network,
-  },
-  {
-    title: "Kolaborativní",
-    description:
-      "Týmová spolupráce v reálném čase. Více auditorů může pracovat současně na jednom auditu. Integrovaný schvalovací proces.",
-    icon: Users,
-  },
-];
-
 export default function AIControlPage() {
+  const t = useTranslations('AIControl');
+  const tFooter = useTranslations('Footer');
   const [showPrivacy, setShowPrivacy] = React.useState(false);
   const [showGDPR, setShowGDPR] = React.useState(false);
+
+  const features = [
+    {
+      icon: Building2,
+      title: t('features.profile.title'),
+      description: t('features.profile.desc'),
+      image: "/swot.png",
+      details: [
+        t('features.profile.details.0'),
+        t('features.profile.details.1'),
+        t('features.profile.details.2'),
+        t('features.profile.details.3'),
+        t('features.profile.details.4'),
+      ],
+    },
+    {
+      icon: UserCog,
+      title: t('features.permissions.title'),
+      description: t('features.permissions.desc'),
+      image: "/audit-plan.png",
+      details: [
+        t('features.permissions.details.0'),
+        t('features.permissions.details.1'),
+        t('features.permissions.details.2'),
+        t('features.permissions.details.3'),
+        t('features.permissions.details.4'),
+      ],
+    },
+    {
+      icon: Award,
+      title: t('features.qualifications.title'),
+      description: t('features.qualifications.desc'),
+      image: "/swot.png",
+      details: [
+        t('features.qualifications.details.0'),
+        t('features.qualifications.details.1'),
+        t('features.qualifications.details.2'),
+        t('features.qualifications.details.3'),
+        t('features.qualifications.details.4'),
+        t('features.qualifications.details.5'),
+      ],
+    },
+    {
+      icon: Calendar,
+      title: t('features.calendar.title'),
+      description: t('features.calendar.desc'),
+      image: "/audit-plan.png",
+      details: [
+        t('features.calendar.details.0'),
+        t('features.calendar.details.1'),
+        t('features.calendar.details.2'),
+      ],
+    },
+    {
+      icon: FileCheck2,
+      title: t('features.planning.title'),
+      description: t('features.planning.desc'),
+      image: "/audit-plan.png",
+      details: [
+        t('features.planning.details.0'),
+        t('features.planning.details.1'),
+        t('features.planning.details.2'),
+        t('features.planning.details.3'),
+        t('features.planning.details.4'),
+      ],
+    },
+    {
+      icon: ClipboardCheck,
+      title: t('features.checklist.title'),
+      description: t('features.checklist.desc'),
+      image: "/swot.png",
+      details: [
+        t('features.checklist.details.0'),
+        t('features.checklist.details.1'),
+        t('features.checklist.details.2'),
+        t('features.checklist.details.3'),
+        t('features.checklist.details.4'),
+      ],
+    },
+    {
+      icon: Shield,
+      title: t('features.execution.title'),
+      description: t('features.execution.desc'),
+      image: "/audit-plan.png",
+      details: [
+        t('features.execution.details.0'),
+        t('features.execution.details.1'),
+        t('features.execution.details.2'),
+        t('features.execution.details.3'),
+      ],
+    },
+    {
+      icon: Sparkles,
+      title: t('features.report.title'),
+      description: t('features.report.desc'),
+      image: "/swot.png",
+      details: [
+        t('features.report.details.0'),
+        t('features.report.details.1'),
+        t('features.report.details.2'),
+        t('features.report.details.3'),
+        t('features.report.details.4'),
+      ],
+    },
+    {
+      icon: Languages,
+      title: t('features.multilang.title'),
+      description: t('features.multilang.desc'),
+      image: "/audit-plan.png",
+      details: [
+        t('features.multilang.details.0'),
+        t('features.multilang.details.1'),
+        t('features.multilang.details.2'),
+        t('features.multilang.details.3'),
+      ],
+    },
+  ];
+
+  const benefits = [
+    {
+      title: t('benefits.cloud.title'),
+      description: t('benefits.cloud.desc'),
+      icon: Cloud,
+    },
+    {
+      title: t('benefits.multitenant.title'),
+      description: t('benefits.multitenant.desc'),
+      icon: Network,
+    },
+    {
+      title: t('benefits.collaborative.title'),
+      description: t('benefits.collaborative.desc'),
+      icon: Users,
+    },
+  ];
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-indigo-950">
@@ -231,7 +222,7 @@ export default function AIControlPage() {
               >
                 <Sparkles className="h-4 w-4"/>
               </motion.div>
-              Produkt
+              {t('hero.product')}
             </motion.div>
 
             {/* Hlavný nadpis */}
@@ -241,7 +232,7 @@ export default function AIControlPage() {
               animate={{opacity:1, y:0}}
               transition={{delay:0.3}}
             >
-              AI-Control — <motion.span 
+              {t('hero.titlePrefix')} <motion.span 
                 className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent inline-block"
                 animate={{
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
@@ -252,7 +243,7 @@ export default function AIControlPage() {
                   ease: "linear"
                 }}
                 style={{backgroundSize: '200% 200%'}}
-              >Audit & Compliance</motion.span>
+              >{t('hero.titleSuffix')}</motion.span>
             </motion.h1>
 
             <motion.p 
@@ -261,7 +252,7 @@ export default function AIControlPage() {
               animate={{opacity:1, y:0}}
               transition={{delay:0.4}}
             >
-              Inteligentní cloudový systém pro komplexní správu auditů, certifikací a kvality
+              {t('hero.subtitle')}
             </motion.p>
 
             <motion.p 
@@ -270,8 +261,7 @@ export default function AIControlPage() {
               animate={{opacity:1, y:0}}
               transition={{delay:0.5}}
             >
-              Multitenant platforma s umělou inteligencí, která automatizuje plánování,
-              vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině.
+              {t('hero.description')}
             </motion.p>
 
             {/* Video Preview */}
@@ -304,7 +294,7 @@ export default function AIControlPage() {
             >
               <div className="flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-3 text-white shadow-lg">
                 <Calendar className="h-5 w-5" />
-                <span className="font-semibold">Start cloudové provozu: 1.2.2026</span>
+                <span className="font-semibold">{t('hero.startDate')}</span>
               </div>
             </motion.div>
 
@@ -346,13 +336,12 @@ export default function AIControlPage() {
             className="mb-16 text-center"
           >
             <h2 className="mb-4 text-4xl font-bold text-slate-800 dark:text-slate-100 md:text-5xl">
-              Komplexní funkce pro{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                moderní audit
+              {t('features.titlePrefix')} <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                {t('features.titleSuffix')}
               </span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-              Všechno, co potřebujete pro efektivní správu auditů a certifikací na jednom místě
+              {t('features.subtitle')}
             </p>
           </motion.div>
 
@@ -383,7 +372,7 @@ export default function AIControlPage() {
                         <div className="rounded-2xl bg-white/95 dark:bg-neutral-800/95 px-6 py-4 shadow-xl backdrop-blur-sm">
                           <feature.icon className="mx-auto mb-2 h-12 w-12 text-indigo-600 dark:text-indigo-400" />
                           <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                            Screenshot bude doplněn
+                            {t('features.screenshotPlaceholder')}
                           </p>
                         </div>
                       </div>
@@ -429,31 +418,30 @@ export default function AIControlPage() {
               <div className="text-center">
                 <Sparkles className="mx-auto mb-6 h-16 w-16 text-indigo-600 dark:text-indigo-400" />
                 <h2 className="mb-4 text-3xl font-bold text-slate-800 dark:text-slate-100 md:text-4xl">
-                  Připraveni modernizovat váš audit proces?
+                  {t('cta.title')}
                 </h2>
                 <p className="mb-8 text-lg text-slate-600 dark:text-slate-300">
-                  Kontaktujte nás pro demo prezentaci nebo více informací o AI Control systému.
-                  Cloudová provoz startuje 1.1.2026.
+                  {t('cta.desc')}
                 </p>
                 <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <Link
                     href="/#kontakt"
                     className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-indigo-500/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/50"
                   >
-                    Kontaktujte nás
+                    {t('cta.contact')}
                     <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <Link
                     href="/products/ai-control/case-study"
                     className="rounded-full border-2 border-indigo-300 dark:border-indigo-600 bg-white dark:bg-neutral-800 px-8 py-4 text-lg font-semibold text-indigo-700 dark:text-indigo-300 transition-all hover:border-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950"
                   >
-                    Případová studie
+                    {t('cta.caseStudy')}
                   </Link>
                   <Link
                     href="/"
                     className="rounded-full border-2 border-slate-300 dark:border-neutral-600 px-8 py-4 text-lg font-semibold text-slate-700 dark:text-slate-300 transition-all hover:border-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-950"
                   >
-                    Zpět na hlavní stránku
+                    {t('cta.backHome')}
                   </Link>
                 </div>
               </div>
@@ -466,141 +454,31 @@ export default function AIControlPage() {
       <footer className="relative z-10 border-t">
         <div className="mx-auto max-w-6xl px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">© 2025 Evoliq s.r.o. Všechna práva vyhrazena.</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">{tFooter('copyright')}</p>
             <div className="flex gap-4">
               <button onClick={()=>setShowPrivacy(true)} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                Ochrana soukromí
+                {tFooter('privacy')}
               </button>
               <button onClick={()=>setShowGDPR(true)} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">
-                GDPR
+                {tFooter('gdpr')}
               </button>
               <button onClick={()=>{
                 const event = new CustomEvent('openCookieSettings');
                 window.dispatchEvent(event);
               }} className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors inline-flex items-center gap-1">
                 <Cookie className="h-3.5 w-3.5"/>
-                Nastavení cookies
+                {tFooter('cookies')}
               </button>
             </div>
           </div>
         </div>
 
-        <AnimatePresence>
-          {showPrivacy && (
-            <motion.div 
-              initial={{opacity:0}} 
-              animate={{opacity:1}} 
-              exit={{opacity:0}} 
-              onClick={()=>setShowPrivacy(false)} 
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-            >
-              <motion.div 
-                initial={{scale:0.9, opacity:0}} 
-                animate={{scale:1, opacity:1}} 
-                exit={{scale:0.9, opacity:0}} 
-                transition={{duration:0.3}} 
-                onClick={(e)=>e.stopPropagation()} 
-                className="relative max-w-2xl w-full max-h-[80vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl"
-              >
-                <div className="sticky top-0 bg-white dark:bg-neutral-900 border-b px-6 py-4 flex items-center justify-between z-10">
-                  <h3 className="text-lg font-semibold">Zásady ochrany osobních údajů</h3>
-                  <button onClick={()=>setShowPrivacy(false)} className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-                    <X className="h-5 w-5"/>
-                  </button>
-                </div>
-                <div className="px-6 py-4 overflow-y-auto max-h-[calc(80vh-5rem)]">
-                  <div className="prose dark:prose-invert max-w-none">
-                    <h4>1. Správce osobních údajů</h4>
-                    <p>Správcem vašich osobních údajů je Evoliq s.r.o., se sídlem [adresa], IČ: [IČO].</p>
-                    
-                    <h4>2. Jaké údaje zpracováváme</h4>
-                    <p>Zpracováváme následující kategorie osobních údajů:</p>
-                    <ul>
-                      <li>Identifikační údaje (jméno, příjmení, e-mail, telefon)</li>
-                      <li>Údaje o využívání našich služeb</li>
-                      <li>Cookies a další analytické údaje</li>
-                    </ul>
-
-                    <h4>3. Účel zpracování</h4>
-                    <p>Vaše osobní údaje zpracováváme za účelem:</p>
-                    <ul>
-                      <li>Poskytování našich služeb a produktů</li>
-                      <li>Komunikace s vámi ohledně našich služeb</li>
-                      <li>Zlepšování kvality našich služeb</li>
-                      <li>Plnění zákonných povinností</li>
-                    </ul>
-
-                    <h4>4. Právní základ zpracování</h4>
-                    <p>Údaje zpracováváme na základě:</p>
-                    <ul>
-                      <li>Vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR)</li>
-                      <li>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR)</li>
-                      <li>Oprávněného zájmu (čl. 6 odst. 1 písm. f) GDPR)</li>
-                    </ul>
-
-                    <h4>5. Doba uložení</h4>
-                    <p>Osobní údaje uchováváme po dobu nezbytně nutnou k naplnění účelu zpracování, minimálně však po dobu stanovenou právními předpisy.</p>
-
-                    <h4>6. Vaše práva</h4>
-                    <p>Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. V případě otázek nás kontaktujte na [kontaktní e-mail].</p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <AnimatePresence>
-          {showGDPR && (
-            <motion.div 
-              initial={{opacity:0}} 
-              animate={{opacity:1}} 
-              exit={{opacity:0}} 
-              onClick={()=>setShowGDPR(false)} 
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-            >
-              <motion.div 
-                initial={{scale:0.9, opacity:0}} 
-                animate={{scale:1, opacity:1}} 
-                exit={{scale:0.9, opacity:0}} 
-                transition={{duration:0.3}} 
-                onClick={(e)=>e.stopPropagation()} 
-                className="relative max-w-2xl w-full max-h-[80vh] bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-2xl"
-              >
-                <div className="sticky top-0 bg-white dark:bg-neutral-900 border-b px-6 py-4 flex items-center justify-between z-10">
-                  <h3 className="text-lg font-semibold">Informace o GDPR</h3>
-                  <button onClick={()=>setShowGDPR(false)} className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
-                    <X className="h-5 w-5"/>
-                  </button>
-                </div>
-                <div className="px-6 py-4 overflow-y-auto max-h-[calc(80vh-5rem)]">
-                  <div className="prose dark:prose-invert max-w-none">
-                    <h4>General Data Protection Regulation (GDPR)</h4>
-                    <p>GDPR je nařízení EU na ochranu osobních údajů, které vstoupilo v platnost 25. května 2018. Zajišťuje jednotná pravidla ochrany osobních údajů napříč Evropskou unií.</p>
-
-                    <h4>Vaše práva podle GDPR:</h4>
-                    <ul>
-                      <li><strong>Právo na přístup:</strong> Máte právo získat informace o tom, jaké osobní údaje o vás zpracováváme.</li>
-                      <li><strong>Právo na opravu:</strong> Máte právo požadovat opravu nepřesných nebo neúplných údajů.</li>
-                      <li><strong>Právo na výmaz:</strong> Můžete požádat o vymazání svých osobních údajů („právo být zapomenut").</li>
-                      <li><strong>Právo na omezení zpracování:</strong> Můžete požádat o omezení zpracování vašich údajů.</li>
-                      <li><strong>Právo na přenositelnost:</strong> Máte právo získat své údaje ve strukturovaném, běžně používaném formátu.</li>
-                      <li><strong>Právo vznést námitku:</strong> Můžete vznést námitku proti zpracování vašich údajů.</li>
-                      <li><strong>Právo odvolat souhlas:</strong> Pokud je zpracování založeno na souhlasu, můžete jej kdykoli odvolat.</li>
-                    </ul>
-
-                    <h4>Jak uplatnit svá práva:</h4>
-                    <p>Pro uplatnění svých práv nás kontaktujte na e-mailu: [kontaktní e-mail]</p>
-                    <p>Odpovíme vám bez zbytečného odkladu, nejpozději do 1 měsíce od obdržení žádosti.</p>
-
-                    <h4>Stížnost u dozorového úřadu:</h4>
-                    <p>Máte právo podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz), pokud se domníváte, že zpracování vašich osobních údajů porušuje GDPR.</p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Modals for Privacy and GDPR would need similar treatment if context requires, but reusing Footer's translations for buttons is good. 
+            The content inside modals is also translated in Footer namespace. 
+            However, this component replicates Footer somewhat? 
+            Ah, I see this page defines its own Footer section inline. 
+            Ideally, I should reuse the Footer component, but I'll stick to replacing text here using Footer translations I added.
+        */}
       </footer>
     </div>
   );

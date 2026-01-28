@@ -143,5 +143,250 @@
     "title": "Page Not Found",
     "description": "Sorry, but the requested page does not exist."
   }
+  },
+  "AIControl": {
+    "hero": {
+      "product": "Product",
+      "titlePrefix": "AI-Control —",
+      "titleSuffix": "Audit & Compliance",
+      "subtitle": "Intelligent cloud system for comprehensive audit, certification, and quality management",
+      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English.",
+      "startDate": "Cloud operation start: 1.2.2026"
+    },
+    "benefits": {
+      "cloud": {
+        "title": "Cloud Solution",
+        "desc": "No server installation or maintenance required. Access from anywhere via web browser. Automatic backups and availability."
+      },
+      "multitenant": {
+        "title": "Multitenant Architecture",
+        "desc": "Each organization has its isolated data environment. Scalability, security, and GDPR compliance guaranteed at infrastructure level."
+      },
+      "collaborative": {
+        "title": "Collaborative",
+        "desc": "Real-time team collaboration. Multiple auditors can work on one audit simultaneously. Integrated approval process."
+      }
+    },
+    "features": {
+      "titlePrefix": "Comprehensive Features for",
+      "titleSuffix": "Modern Audit",
+      "subtitle": "Everything you need for effective audit and certification management in one place",
+      "profile": {
+        "title": "Company Profile with AI",
+        "desc": "Automatic filling of company profile using artificial intelligence. Management of departments, process maps, and certificates. AI-generated SWOT analysis with current insights.",
+        "details": [
+          "AI-assisted filling of company data",
+          "Management of organizational structure and departments",
+          "Automatic certificate management with notifications",
+          "AI-generated and optimized process maps",
+          "AI SWOT analysis with competitive benchmarking"
+        ]
+      },
+      "permissions": {
+        "title": "Customizable User Permissions",
+        "desc": "Flexible role and permission system adapted to your organizational structure. Granular access control to individual modules, audits, and documents.",
+        "details": [
+          "Multi-level role and permission system",
+          "Customizable roles for audit managers, auditors, users",
+          "Permissions at project, department, and document level",
+          "Audit trail for all permission changes",
+          "Simple management via clear UI interface"
+        ]
+      },
+      "qualifications": {
+        "title": "Qualification & Certificate Management",
+        "desc": "Comprehensive management of auditor and internal staff qualifications with automatic validity tracking. AI assistant for training and certification program proposals.",
+        "details": [
+          "Central database of qualifications and certificates",
+          "AI-assisted data filling",
+          "Automatic notifications for expiring certificates",
+          "AI recommendations for competence development",
+          "Training and education history",
+          "Integration with certification authorities"
+        ]
+      },
+      "calendar": {
+        "title": "Audit Calendar",
+        "desc": "Clear calendar of all planned and ongoing audits.",
+        "details": [
+          "Visual calendar with weekly, monthly, and yearly view",
+          "Reminders and notifications for participants",
+          "Export to CSV formats"
+        ]
+      },
+      "planning": {
+        "title": "AI Audit Planning",
+        "desc": "AI generates comprehensive audit plans based on standards (ISO 9001, ISO 27001, GDPR, etc.), audit history, and your organization's specifics. Saving dozens of hours of manual work.",
+        "details": [
+          "Automatic audit plan generation according to standards",
+          "Adaptation to organization and industry specifics",
+          "Proposals for control questions and checklists",
+          "Distribution of responsibilities and schedule",
+          "Versioning and approval process"
+        ]
+      },
+      "checklist": {
+        "title": "AI Checklist",
+        "desc": "Intelligent generation of checklists for individual audits. AI analyzes standard requirements, past findings, and industry best practices.",
+        "details": [
+          "Checklist generation according to selected standards",
+          "Contextual questions adapted to the department",
+          "Assignment of evidence and documentation",
+          "Scoring and criteria weighting",
+          "Export to PDF"
+        ]
+      },
+      "execution": {
+        "title": "Audit Execution in UI",
+        "desc": "Modern and intuitive interface for performing audits in the field and remotely. Simple addition of findings, comments, and evidence directly in the application.",
+        "details": [
+          "Real-time collaboration of multiple auditors",
+          "Direct uploading of documents",
+          "Categorization of findings (conformity, non-conformity, observation)",
+          "Notes, comments"
+        ]
+      },
+      "report": {
+        "title": "AI-Generated Audit Report",
+        "desc": "Professional audit reports generated by artificial intelligence in seconds. Automatic analysis of findings, recommendations for improvement.",
+        "details": [
+          "Automatic report generation from findings",
+          "AI analysis of trends and risks",
+          "Recommendations for corrective actions",
+          "Professional PDF reports with branding",
+          "Multilanguage support (SK, CZ, EN)"
+        ]
+      },
+      "multilang": {
+        "title": "Multilingualism",
+        "desc": "Full support for Slovak, Czech, and English languages throughout the application. Automatic translation of AI-generated content and reports.",
+        "details": [
+          "User interface in SK, CZ, EN",
+          "AI translation of all generated texts",
+          "Localized date and number formats",
+          "Multilingual PDF reports"
+        ]
+      },
+      "screenshotPlaceholder": "Screenshot will be added"
+    },
+    "cta": {
+      "title": "Ready to modernize your audit process?",
+      "desc": "Contact us for a demo presentation or more information about the AI Control system. Cloud operation starts 1.2.2026.",
+      "contact": "Contact Us",
+      "caseStudy": "Case Study",
+      "backHome": "Back to Home"
+    }
+  },
+  "CaseStudy": {
+    "badge": "Case Study",
+    "titlePrefix": "How",
+    "titleMiddle": "AI Control Saved",
+    "titleSuffix": "94 Hours Annually",
+    "subtitle": "Real comparison of traditional audit process vs. automation with artificial intelligence. Find out why manufacturing companies are switching to digital internal audit solutions.",
+    "stats": {
+      "timeSaved": "time saved",
+      "moneySaved": "annual savings",
+      "qualityIncreased": "higher quality"
+    },
+    "companyProfile": {
+      "title": "About Company",
+      "type": {
+        "label": "Company Type",
+        "value": "Medium-sized manufacturing company"
+      },
+      "focus": {
+        "label": "Focus",
+        "value": "ISO 9001, ISO 27001, ISO 45001"
+      },
+      "audits": {
+        "label": "Audits per Year",
+        "value": "30 internal audits"
+      },
+      "team": {
+        "label": "Audit Team",
+        "value": "2 internal auditors"
+      }
+    },
+    "comparison": {
+      "title": "Detailed Process Comparison",
+      "subtitle": "Time requirements of individual audit phases - traditional approach vs. AI Control",
+      "phases": {
+        "planning": {
+          "title": "Audit Plan Preparation",
+          "traditional": "Manual creation in Word/Excel, standards check",
+          "ai": "AI generates plan according to selected standard"
+        },
+        "checklist": {
+          "title": "Checklist Creation",
+          "traditional": "Manual selection of questions, formatting",
+          "ai": "AI creates contextual checklist automatically"
+        },
+        "execution": {
+          "title": "Audit Execution",
+          "traditional": "Paper notes, photos on phone",
+          "ai": "Digital UI, structured records"
+        },
+        "reporting": {
+          "title": "Report Processing",
+          "traditional": "Transcribing notes, formatting report",
+          "ai": "AI generates professional report"
+        },
+        "corrective": {
+          "title": "Corrective Actions Management",
+          "traditional": "Email communication, Excel tracking",
+          "ai": "Automatic notifications, central dashboard"
+        }
+      },
+      "labels": {
+        "traditional": "Traditional Process",
+        "ai": "With AI Control",
+        "timeSaved": "Time Savings",
+        "hoursSaved": "h saved",
+        "totalSavings": "total savings"
+      }
+    },
+    "results": {
+      "title": "Measurable Results",
+      "items": {
+        "time": {
+          "title": "Time Savings",
+          "value": "94 hours/year",
+          "desc": "For a manufacturing company with 30 internal audits per year"
+        },
+        "money": {
+          "title": "Financial Savings",
+          "value": "235,000 CZK/year",
+          "desc": "At an average hourly rate of 2,500 CZK"
+        },
+        "quality": {
+          "title": "Quality Increase",
+          "value": "+40%",
+          "desc": "Fewer errors, more consistent outputs"
+        },
+        "capacity": {
+          "title": "Greater Capacity",
+          "value": "+35%",
+          "desc": "More audits without hiring new auditors"
+        }
+      }
+    },
+    "transformation": {
+      "title": "Transformation in Numbers",
+      "before": "Before Implementation",
+      "after": "After Implementation",
+      "metrics": {
+        "avgTime": "Avg Time/Audit",
+        "admin": "Administration",
+        "fieldwork": "Fieldwork",
+        "errorRate": "Error Rate"
+      }
+    },
+    "cta": {
+      "title": "Ready to achieve similar results?",
+      "desc": "Contact us for a personalized demo presentation and find out how much time and money you can save in your organization.",
+      "demo": "I Want a Demo",
+      "moreInfo": "More about AI Control"
+    }
+  }
 }
 
