@@ -5,8 +5,10 @@ import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SectionTitle from '@/components/common/SectionTitle';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
+  const t = useTranslations('Contact');
   const [loading, setLoading] = React.useState(false); 
   const [ok, setOk] = React.useState<null|boolean>(null); 
   const formRef = React.useRef<HTMLFormElement|null>(null);
@@ -59,7 +61,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative">
       <div className="mx-auto max-w-6xl px-4 py-20">
-        <SectionTitle kicker="Kontakt" title="Kontaktujte nás" />
+        <SectionTitle kicker={t('kicker')} title={t('title')} />
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,11 +88,11 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <label htmlFor="name" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">Jméno *</label>
+              <label htmlFor="name" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">{t('form.name')}</label>
               <motion.input 
                 id="name" 
                 name="name" 
-                placeholder="Vaše jméno" 
+                placeholder={t('form.namePlaceholder')}
                 required 
                 whileFocus={{ scale: 1.02, boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)" }}
                 className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2 transition-all"
@@ -103,12 +105,12 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
             >
-              <label htmlFor="email" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">Email *</label>
+              <label htmlFor="email" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">{t('form.email')}</label>
               <motion.input 
                 id="email" 
                 name="email" 
                 type="email" 
-                placeholder="vas@email.cz" 
+                placeholder={t('form.emailPlaceholder')}
                 required 
                 whileFocus={{ scale: 1.02, boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)" }}
                 className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2 transition-all"
@@ -121,11 +123,11 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <label htmlFor="phone" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">Telefon</label>
+              <label htmlFor="phone" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">{t('form.phone')}</label>
               <motion.input 
                 id="phone" 
                 name="phone" 
-                placeholder="+420 xxx xxx xxx" 
+                placeholder={t('form.phonePlaceholder')}
                 whileFocus={{ scale: 1.02, boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)" }}
                 className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2 transition-all"
               />
@@ -137,12 +139,12 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
             >
-              <label htmlFor="message" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">Zpráva *</label>
+              <label htmlFor="message" className="block text-xs font-medium mb-1.5 text-neutral-700 dark:text-neutral-300">{t('form.message')}</label>
               <motion.textarea 
                 id="message" 
                 name="message" 
                 rows={4} 
-                placeholder="Popište váš projekt nebo dotaz..." 
+                placeholder={t('form.messagePlaceholder')}
                 required 
                 whileFocus={{ scale: 1.02, boxShadow: "0 0 0 3px rgba(99, 102, 241, 0.1)" }}
                 className="w-full rounded-xl border bg-white dark:bg-neutral-800 dark:border-neutral-700 px-3 py-2 transition-all"
@@ -156,7 +158,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <label className="block text-xs font-medium mb-2 text-neutral-700 dark:text-neutral-300">Ochrana proti robotům *</label>
+              <label className="block text-xs font-medium mb-2 text-neutral-700 dark:text-neutral-300">{t('form.antiBot')}</label>
               <Turnstile
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
                 onSuccess={(token) => {
@@ -209,7 +211,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button className="rounded-2xl w-full sm:w-auto" disabled={loading}>
-                  {loading ? 'Odesílám...' : 'Odeslat zprávu'} 
+                  {loading ? t('form.sending') : t('form.submit')} 
                   <motion.div
                     className="ml-2 inline-block"
                     animate={loading ? { x: [0, 5, 0] } : {}}
@@ -238,7 +240,7 @@ export default function Contact() {
                   >
                     ✓
                   </motion.span>
-                  Zpráva byla úspěšně odeslána. Brzy se vám ozveme!
+                  {t('form.success')}
                 </motion.p>
               )}
               {ok === false && (
@@ -257,7 +259,7 @@ export default function Contact() {
                   >
                     ✗
                   </motion.span>
-                  Chyba při odesílání. Zkontrolujte prosím všechna pole a zkuste to znovu.
+                  {t('form.error')}
                 </motion.p>
               )}
             </AnimatePresence>

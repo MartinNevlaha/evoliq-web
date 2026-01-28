@@ -4,24 +4,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://evoliq.cz';
   const currentDate = new Date();
 
-  return [
-    {
-      url: baseUrl,
+  const locales = ['cs', 'en', 'sk'];
+  const routes = ['', '/products/ai-control', '/products/ai-control/case-study'];
+
+  return routes.flatMap(route => 
+    locales.map(locale => ({
+      url: `${baseUrl}/${locale}${route}`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/products/ai-control`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/products/ai-control/case-study`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ];
+      changeFrequency: 'weekly' as const,
+      priority: route === '' ? 1 : 0.9,
+    }))
+  );
 }

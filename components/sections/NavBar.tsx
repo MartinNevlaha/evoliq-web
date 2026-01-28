@@ -3,16 +3,18 @@ import Image from 'next/image';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle';
+import { useTranslations } from 'next-intl';
 
 export default function NavBar() {
+  const t = useTranslations('NavBar');
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.2 });
   
   const navItems = [
-    { label: 'Služby', href: '/#services' },
-    { label: 'Produkty', href: '/#products' },
-    { label: 'O nás', href: '/#about' },
-    { label: 'Kontakt', href: '/#contact' },
+    { label: t('services'), href: '/#services' },
+    { label: t('products'), href: '/#products' },
+    { label: t('about'), href: '/#about' },
+    { label: t('contact'), href: '/#contact' },
   ];
 
   return (
@@ -66,7 +68,7 @@ export default function NavBar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="rounded-2xl">Kontaktujte nás</Button>
+            <Button className="rounded-2xl">{t('contactUs')}</Button>
           </motion.a>
         </div>
       </div>

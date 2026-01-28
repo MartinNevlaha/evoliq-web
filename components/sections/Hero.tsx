@@ -5,8 +5,11 @@ import { ArrowRight, ShieldCheck, Code2, Gauge, Boxes } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { stagger, staggerFast, scaleIn, fadeUp, slideInLeft } from '@/lib/animations';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+
   return (
     <section 
       id="home" 
@@ -58,10 +61,10 @@ export default function Hero() {
               <Image alt="Evoliq logo" src="/logo-evoliq-dark.png" fill className="object-contain dark:hidden"/>
               <Image alt="Evoliq logo" src="/logo-evoliq-light.png" fill className="object-contain hidden dark:block"/>
             </span>
-            <span className="text-xs opacity-70">Evoliq</span>
+            <span className="text-xs opacity-70">{t('badge')}</span>
           </motion.div>
           <motion.h1 variants={fadeUp} className="text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            IT řešení šitá na míru <motion.span 
+             {t('titlePrefix')} <motion.span 
               className="text-gradient bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500 bg-clip-text text-transparent inline-block"
               animate={{
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
@@ -72,17 +75,17 @@ export default function Hero() {
                 ease: "linear"
               }}
               style={{ backgroundSize: '200% 200%' }}
-            >vašemu podnikání</motion.span>
+            >{t('titleSuffix')}</motion.span>
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-4 max-w-xl text-neutral-600 dark:text-neutral-400">
-            Tvoříme moderní weby, AI asistované aplikace a integrace na míru. Od nápadu po produkci – bezpečně, výkonně a udržitelně.
+            {t('description')}
           </motion.p>
           <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3">
             <motion.a href="#contact" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="rounded-2xl">Začít projekt <ArrowRight className="ml-2 h-4 w-4"/></Button>
+              <Button className="rounded-2xl">{t('startProject')} <ArrowRight className="ml-2 h-4 w-4"/></Button>
             </motion.a>
             <motion.a href="#projects" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="outline" className="rounded-2xl">Zobrazit projekty</Button>
+              <Button variant="outline" className="rounded-2xl">{t('viewProjects')}</Button>
             </motion.a>
           </motion.div>
         </motion.div>
@@ -125,7 +128,7 @@ export default function Hero() {
                         animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
-                      <div className="text-sm">CI/CD nasazení</div>
+                      <div className="text-sm">{t('cicd')}</div>
                     </div>
                     <motion.div
                       animate={{ rotate: 360 }}
@@ -136,9 +139,9 @@ export default function Hero() {
                   </motion.div>
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { icon: <ShieldCheck className='h-4 w-4'/>, label: 'Bezpečnost' },
-                      { icon: <Code2 className='h-4 w-4'/>, label: 'Čistý kód' },
-                      { icon: <Boxes className='h-4 w-4'/>, label: 'Modularita' }
+                      { icon: <ShieldCheck className='h-4 w-4'/>, label: t('security') },
+                      { icon: <Code2 className='h-4 w-4'/>, label: t('cleanCode') },
+                      { icon: <Boxes className='h-4 w-4'/>, label: t('modularity') }
                     ].map((it, i) => (
                       <motion.div 
                         key={i} 

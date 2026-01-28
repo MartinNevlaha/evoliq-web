@@ -1,0 +1,147 @@
+{
+  "Metadata": {
+    "title": "Evoliq s.r.o. — Profesionální IT řešení a AI vývoj | Česká softwarová společnost",
+    "description": "Česká IT společnost specializující se na vývoj webových aplikací, mobilních aplikací, AI řešení a automatizaci procesů. Komplexní digitalizace vašeho podnikání s důrazem na kvalitu a inovace."
+  },
+  "NavBar": {
+    "services": "Služby",
+    "products": "Produkty",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "contactUs": "Kontaktujte nás"
+  },
+  "Hero": {
+    "badge": "Evoliq",
+    "titlePrefix": "IT řešení šitá na míru",
+    "titleSuffix": "vašemu podnikání",
+    "description": "Tvoříme moderní weby, AI asistované aplikace a integrace na míru. Od nápadu po produkci – bezpečně, výkonně a udržitelně.",
+    "startProject": "Začít projekt",
+    "viewProjects": "Zobrazit projekty",
+    "cicd": "CI/CD nasazení",
+    "security": "Bezpečnost",
+    "cleanCode": "Čistý kód",
+    "modularity": "Modularita"
+  },
+  "Services": {
+    "kicker": "Co děláme",
+    "title": "IT řešení na míru",
+    "subtitle": "Vývoj softwaru na míru přináší inovativní řešení na specifické problémy tam, kde běžný software nestačí. Zaměřujeme se primárně na webová řešení a enterprise systémy, které připravujeme vždy v souladu s aktuálními standardy a trendy.",
+    "intro": "Každý náš projekt na míru je jedinečný a podle toho k našim zákazníkům také přistupujeme.",
+    "processTitle": "Naše práce se skládá z:",
+    "steps": {
+      "0": "Analýza existujícího stavu a požadavků",
+      "1": "Technický koncept s demonstrací funkcionalit",
+      "2": "Uživatelský prototyp",
+      "3": "Designová specifikace a detailní technický návrh",
+      "4": "Vývoj aplikace",
+      "5": "Integrace",
+      "6": "Testování výkonu a optimalizace",
+      "7": "Instalace řešení",
+      "8": "Nasazení a testování",
+      "9": "Postimplementační podpora"
+    }
+  },
+  "Products": {
+    "badge": "Produkt",
+    "titlePrefix": "AI-Control —",
+    "titleSuffix": "Audit & Compliance",
+    "description": "Modulární platforma pro plánování, realizaci a vyhodnocování auditů s pomocí AI. Pro certifikační společnosti, konzultanty i interní audity.",
+    "moreInfo": "Viac informácií o AI Control",
+    "modules": {
+      "planning": {
+        "title": "Modul plánování auditů",
+        "desc": "AI asistované plánování (termíny, týmy, harmonogram) a automatické generování programů auditu, checklistů a reportů."
+      },
+      "companies": {
+        "title": "Modul správy společností",
+        "desc": "Komplexní správa auditovaných společností, auditorů a technických expertů s interními profily generovanými AI."
+      },
+      "mobile": {
+        "title": "Mobilní aplikace",
+        "desc": "Offline/online režim, foto a audio důkazy, elektronický podpis a export prezenční listiny přímo z terénu."
+      },
+      "corrective": {
+        "title": "Modul nápravných opatření",
+        "desc": "Sledování nápravných opatření s termíny, zodpovědností a notifikacemi až po ověření a uzavření."
+      },
+      "certification": {
+        "title": "Certifikační moduly",
+        "desc": "Specializované moduly pro ISO 9001, 14001, 27001, 45001 a interní audity s předpřipravenými kontrolními seznamy."
+      },
+      "legislative": {
+        "title": "Legislativní modul",
+        "desc": "Databáze zákonů a norem s aktualizacemi, propojení s audity a automatické kontroly shody s legislativou."
+      },
+      "roles": {
+        "title": "Modul rolí a licencí",
+        "desc": "Pokročilá správa uživatelských práv, rolí a licencí s flexibilním nastavením přístupů pro různé typy uživatelů."
+      },
+      "analytics": {
+        "title": "Analytický modul",
+        "desc": "Reporty, statistiky, trendy a prediktivní analýzy pomocí AI pro efektivnější řízení auditních procesů."
+      },
+      "integration": {
+        "title": "Integrační modul",
+        "desc": "API a integrace s externími systémy (ERP, CRM, dokumentové systémy) pro plynulý tok dat."
+      }
+    },
+    "clickToZoom": "Klikněte pro zvětšení",
+    "images": {
+      "auditPlan": "Plán auditu",
+      "swot": "SWOT analýza"
+    }
+  },
+  "About": {
+    "kicker": "O nás",
+    "title": "Česká společnost zaměřená na IT",
+    "subtitle": "Pomáháme organizacím digitalizovat procesy, automatizovat rutinní úkony a efektivně využívat moderní technologie pro růst jejich podnikání.",
+    "cards": {
+      "expertise": {
+        "title": "Expertíza",
+        "desc": "Tým zkušených vývojářů a konzultantů s hlubokými znalostmi moderních technologií a best practices."
+      },
+      "reliability": {
+        "title": "Spolehlivost",
+        "desc": "Důraz na kvalitu kódu, bezpečnost a dlouhodobou udržitelnost vytvářených řešení."
+      },
+      "innovation": {
+        "title": "Inovace",
+        "desc": "Využíváme nejnovější technologie včetně AI a strojového učení pro vytváření inteligentních řešení."
+      }
+    }
+  },
+  "Contact": {
+    "kicker": "Kontakt",
+    "title": "Kontaktujte nás",
+    "form": {
+      "name": "Jméno *",
+      "namePlaceholder": "Vaše jméno",
+      "email": "Email *",
+      "emailPlaceholder": "vas@email.cz",
+      "phone": "Telefon",
+      "phonePlaceholder": "+420 xxx xxx xxx",
+      "message": "Zpráva *",
+      "messagePlaceholder": "Popište váš projekt nebo dotaz...",
+      "antiBot": "Ochrana proti robotům *",
+      "submit": "Odeslat zprávu",
+      "sending": "Odesílám...",
+      "success": "Zpráva byla úspěšně odeslána. Brzy se vám ozveme!",
+      "error": "Chyba při odesílání. Zkontrolujte prosím všechna pole a zkuste to znovu."
+    }
+  },
+  "Footer": {
+    "copyright": "© 2025 Evoliq s.r.o. Všechna práva vyhrazena.",
+    "privacy": "Ochrana soukromí",
+    "gdpr": "GDPR",
+    "cookies": "Nastavení cookies",
+    "privacyTitle": "Zásady ochrany osobních údajů",
+    "gdprTitle": "Informace o GDPR",
+    "privacyContent": "<h4>1. Správce osobních údajů</h4><p>Správcem vašich osobních údajů je Evoliq s.r.o., se sídlem [adresa], IČ: [IČO].</p><h4>2. Jaké údaje zpracováváme</h4><p>Zpracováváme následující kategorie osobních údajů:</p><ul><li>Identifikační údaje (jméno, příjmení, e-mail, telefon)</li><li>Údaje o využívání našich služeb</li><li>Cookies a další analytické údaje</li></ul><h4>3. Účel zpracování</h4><p>Vaše osobní údaje zpracováváme za účelem:</p><ul><li>Poskytování našich služeb a produktů</li><li>Komunikace s vámi ohledně našich služeb</li><li>Zlepšování kvality našich služeb</li><li>Plnění zákonných povinností</li></ul><h4>4. Právní základ zpracování</h4><p>Údaje zpracováváme na základě:</p><ul><li>Vašeho souhlasu (čl. 6 odst. 1 písm. a) GDPR)</li><li>Plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR)</li><li>Oprávněného zájmu (čl. 6 odst. 1 písm. f) GDPR)</li></ul><h4>5. Doba uložení</h4><p>Osobní údaje uchováváme po dobu nezbytně nutnou k naplnění účelu zpracování, minimálně však po dobu stanovenou právními předpisy.</p><h4>6. Vaše práva</h4><p>Máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. V případě otázek nás kontaktujte na [kontaktní e-mail].</p>",
+    "gdprContent": "<h4>General Data Protection Regulation (GDPR)</h4><p>GDPR je nařízení EU na ochranu osobních údajů, které vstoupilo v platnost 25. května 2018. Zajišťuje jednotná pravidla ochrany osobních údajů napříč Evropskou unií.</p><h4>Vaše práva podle GDPR:</h4><ul><li><strong>Právo na přístup:</strong> Máte právo získat informace o tom, jaké osobní údaje o vás zpracováváme.</li><li><strong>Právo na opravu:</strong> Máte právo požadovat opravu nepřesných nebo neúplných údajů.</li><li><strong>Právo na výmaz:</strong> Můžete požádat o vymazání svých osobních údajů („právo být zapomenut\").</li><li><strong>Právo na omezení zpracování:</strong> Můžete požádat o omezení zpracování vašich údajů.</li><li><strong>Právo na přenositelnost:</strong> Máte právo získat své údaje ve strukturovaném, běžně používaném formátu.</li><li><strong>Právo vznést námitku:</strong> Můžete vznést námitku proti zpracování vašich údajů.</li><li><strong>Právo odvolat souhlas:</strong> Pokud je zpracování založeno na souhlasu, můžete jej kdykoli odvolat.</li></ul><h4>Jak uplatnit svá práva:</h4><p>Pro uplatnění svých práv nás kontaktujte na e-mailu: [kontaktní e-mail]</p><p>Odpovíme vám bez zbytečného odkladu, nejpozději do 1 měsíce od obdržení žádosti.</p><h4>Stížnost u dozorového úřadu:</h4><p>Máte právo podat stížnost u Úřadu pro ochranu osobních údajů (www.uoou.cz), pokud se domníváte, že zpracování vašich osobních údajů porušuje GDPR.</p>"
+  },
+  "NotFound": {
+    "title": "Stránka nenalezena",
+    "description": "Omlouváme se, ale požadovaná stránka neexistuje."
+  }
+}
+

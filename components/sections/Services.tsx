@@ -3,33 +3,35 @@ import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import SectionTitle from '@/components/common/SectionTitle';
 import { stagger, fadeUp } from '@/lib/animations';
+import { useTranslations } from 'next-intl';
 
 export default function Services() {
+  const t = useTranslations('Services');
   const steps = [
-    'Analýza existujícího stavu a požadavků',
-    'Technický koncept s demonstrací funkcionalit',
-    'Uživatelský prototyp',
-    'Designová specifikace a detailní technický návrh',
-    'Vývoj aplikace',
-    'Integrace',
-    'Testování výkonu a optimalizace',
-    'Instalace řešení',
-    'Nasazení a testování',
-    'Postimplementační podpora'
+    t('steps.0'),
+    t('steps.1'),
+    t('steps.2'),
+    t('steps.3'),
+    t('steps.4'),
+    t('steps.5'),
+    t('steps.6'),
+    t('steps.7'),
+    t('steps.8'),
+    t('steps.9')
   ];
 
   return (
     <section id="services" className="mx-auto max-w-6xl px-4 py-20">
       <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
         <SectionTitle 
-          kicker="Co děláme" 
-          title="IT řešení na míru" 
-          subtitle="Vývoj softwaru na míru přináší inovativní řešení na specifické problémy tam, kde běžný software nestačí. Zaměřujeme se primárně na webová řešení a enterprise systémy, které připravujeme vždy v souladu s aktuálními standardy a trendy." 
+          kicker={t('kicker')}
+          title={t('title')} 
+          subtitle={t('subtitle')}
         />
         
         <motion.div variants={fadeUp} className="mt-12 text-center">
           <p className="text-lg text-neutral-700 dark:text-neutral-300 max-w-3xl mx-auto">
-            Každý náš projekt na míru je jedinečný a podle toho k našim zákazníkům také přistupujeme.
+            {t('intro')}
           </p>
         </motion.div>
 
@@ -40,7 +42,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Naše práce se skládá z:
+            {t('processTitle')}
           </motion.h3>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {steps.map((step, i) => (
