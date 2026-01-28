@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageSwitcher from '@/components/common/LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 
 export default function NavBar() {
@@ -63,6 +64,7 @@ export default function NavBar() {
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <LanguageSwitcher />
           <motion.a 
             href="/#contact"
             whileHover={{ scale: 1.05 }}
