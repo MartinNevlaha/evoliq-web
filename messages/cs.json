@@ -147,8 +147,8 @@
   "AIControl": {
     "hero": {
       "product": "Produkt",
-      "titlePrefix": "AI-Control —",
-      "titleSuffix": "Audit & Compliance",
+      "titlePrefix": "Posilte své podnikání s",
+      "titleSuffix": "Inteligencí",
       "subtitle": "Inteligentní cloudový systém pro komplexní správu auditů, certifikací a kvality",
       "description": "Multitenant platforma s umělou inteligencí, která automatizuje plánování, vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině.",
       "startDate": "Start cloudové provozu: 1.2.2026"
@@ -387,5 +387,115 @@
       "demo": "Chci demo prezentaci",
       "moreInfo": "Více o AI Control"
     }
+  },
+  "CaseStudy": {
+    "badge": "Případová studie",
+    "titlePrefix": "Jak",
+    "titleMiddle": "transformovalo svůj auditní proces",
+    "titleSuffix": "s AI Control",
+    "subtitle": "Detailní pohled na zvýšení efektivity a kvality",
+    "companyProfile": {
+      "title": "Profil společnosti",
+      "type": {
+        "label": "Odvětví",
+        "value": "Výroba"
+      },
+      "focus": {
+        "label": "Zaměření",
+        "value": "Automobilové díly"
+      },
+      "audits": {
+        "label": "Roční audity",
+        "value": "50+"
+      },
+      "team": {
+        "label": "Auditní tým",
+        "value": "12 Členů"
+      }
+    },
+    "stats": {
+      "timeSaved": "Ušetřený čas",
+      "moneySaved": "Ušetřené náklady",
+      "qualityIncreased": "Zvýšení kvality"
+    },
+    "comparison": {
+      "title": "Srovnání procesů",
+      "subtitle": "Tradiční vs AI vylepšený workflow",
+      "labels": {
+        "traditional": "Tradiční",
+        "ai": "AI Control",
+        "timeSaved": "Ušetřený čas",
+        "hoursSaved": "Ušetřené hodiny",
+        "totalSavings": "Celková úspora"
+      },
+      "phases": {
+        "planning": {
+          "title": "Fáze plánování",
+          "traditional": "Tradiční metody plánování",
+          "ai": "AI asistované plánování"
+        },
+        "checklist": {
+          "title": "Tvorba checklistů",
+          "traditional": "Manuální tvorba checklistů",
+          "ai": "AI generované checklisty"
+        },
+        "execution": {
+          "title": "Provedení auditu",
+          "traditional": "Manuální poznámky a sběr důkazů",
+          "ai": "Digitální provedení s AI asistencí"
+        },
+        "reporting": {
+          "title": "Reportování",
+          "traditional": "Manuální psaní zpráv",
+          "ai": "Generování zpráv jedním kliknutím"
+        },
+        "corrective": {
+          "title": "Nápravná opatření",
+          "traditional": "Manuální sledování",
+          "ai": "Automatizovaný follow-up"
+        }
+      }
+    },
+    "results": {
+      "title": "Klíčové výsledky",
+      "items": {
+        "time": {
+          "title": "Časová efektivita",
+          "value": "60%",
+          "desc": "Snížení celkového času auditu"
+        },
+        "money": {
+          "title": "Úspora nákladů",
+          "value": "40%",
+          "desc": "Snížení provozních nákladů"
+        },
+        "quality": {
+          "title": "Skóre kvality",
+          "value": "95/100",
+          "desc": "Zlepšená konzistence auditů"
+        },
+        "capacity": {
+          "title": "Kapacita",
+          "value": "2x",
+          "desc": "Zvýšení auditní kapacity"
+        }
+      }
+    },
+    "transformation": {
+      "title": "Digitální transformace",
+      "before": "Před AI Control",
+      "after": "Po AI Control",
+      "metrics": {
+        "avgTime": "Průměrný čas",
+        "admin": "Administrativa",
+        "fieldwork": "Práce v terénu",
+        "errorRate": "Chybovost"
+      }
+    },
+    "cta": {
+      "title": "Jste připraveni transformovat váš auditní proces?",
+      "desc": "Začněte zkušební verzi zdarma ještě dnes."
+    }
   }
+}
 

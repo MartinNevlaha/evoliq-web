@@ -147,8 +147,8 @@
   "AIControl": {
     "hero": {
       "product": "Product",
-      "titlePrefix": "AI-Control —",
-      "titleSuffix": "Audit & Compliance",
+      "titlePrefix": "Empower your business with",
+      "titleSuffix": "Intelligence",
       "subtitle": "Intelligent cloud system for comprehensive audit, certification, and quality management",
       "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English.",
       "startDate": "Cloud operation start: 1.2.2026"
@@ -382,11 +382,8 @@
       }
     },
     "cta": {
-      "title": "Ready to achieve similar results?",
-      "desc": "Contact us for a personalized demo presentation and find out how much time and money you can save in your organization.",
-      "demo": "I Want a Demo",
-      "moreInfo": "More about AI Control"
+      "title": "Ready to transform your audit process?",
+      "desc": "Start your free trial today."
     }
   }
 }
-
