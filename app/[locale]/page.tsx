@@ -18,8 +18,8 @@ export default function Page(){
       <div className="min-h-dvh bg-white dark:bg-neutral-950 text-black dark:text-white">
         <NavBar/>
         <Hero/>
-        <Services/>
         <Products/>
+        <Services/>
         <About/>
         <Contact/>
         <Footer/>

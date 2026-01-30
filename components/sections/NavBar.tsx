@@ -13,8 +13,8 @@ export default function NavBar() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, mass: 0.2 });
   
   const navItems = [
-    { label: t('services'), href: '/services' },
     { label: t('products'), href: '/#products' },
+    { label: t('services'), href: '/services' },
     { label: t('about'), href: '/#about' },
     { label: t('contact'), href: '/#contact' },
   ];
