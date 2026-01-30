@@ -23,23 +23,68 @@
     "modularity": "Modularita"
   },
   "Services": {
-    "kicker": "Co děláme",
-    "title": "IT řešení na míru",
-    "subtitle": "Vývoj softwaru na míru přináší inovativní řešení na specifické problémy tam, kde běžný software nestačí. Zaměřujeme se primárně na webová řešení a enterprise systémy, které připravujeme vždy v souladu s aktuálními standardy a trendy.",
-    "intro": "Každý náš projekt na míru je jedinečný a podle toho k našim zákazníkům také přistupujeme.",
-    "processTitle": "Naše práce se skládá z:",
-    "steps": {
-      "0": "Analýza existujícího stavu a požadavků",
-      "1": "Technický koncept s demonstrací funkcionalit",
-      "2": "Uživatelský prototyp",
-      "3": "Designová specifikace a detailní technický návrh",
-      "4": "Vývoj aplikace",
-      "5": "Integrace",
-      "6": "Testování výkonu a optimalizace",
-      "7": "Instalace řešení",
-      "8": "Nasazení a testování",
-      "9": "Postimplementační podpora"
-    }
+    "kicker": "Komplexní audity",
+    "title": "Nezávazné audity BOZP, PO a kvality",
+    "subtitle": "V dnešním rychle se měnícím podnikatelském prostředí je efektivní řízení bezpečnosti a kvality klíčovým prvkem pro udržitelný růst i jistotu vašeho týmu.",
+    "intro": "Zlepšete bezpečnost, systém a soulad s normami.",
+    "benefits": {
+      "title": "Nabízíme nezávazné audity, které vám pomohou:",
+      "list": [
+        "získat jasný přehled o aktuálním stavu",
+        "identifikovat rizika a nevyhovující postupy",
+        "nastavit systematická zlepšení",
+        "být připraveni na certifikační procesy i návštěvy inspekčních orgánů"
+      ]
+    },
+    "auditTypes": {
+      "title": "Co audit zahrnuje?",
+      "bozp": {
+        "title": "Audit BOZP",
+        "subtitle": "bezpečnost práce a zdraví zaměstnanců",
+        "list": [
+          "prověření existujících opatření a rizik na pracovišti",
+          "kontrola dokumentace, školení a vybavení",
+          "návrhy na praktická zlepšení pro snížení úrazovosti"
+        ]
+      },
+      "po": {
+        "title": "Audit PO",
+        "subtitle": "požární ochrana",
+        "list": [
+          "posouzení technických a organizačních opatření PO",
+          "kontrola evakuačních plánů a hasicích prostředků",
+          "doporučení pro zvýšení účinnosti prevence požárů"
+        ]
+      },
+      "quality": {
+        "title": "Audit kvality",
+        "subtitle": "procesy a normy",
+        "list": [
+          "analýza systémových procesů kvality",
+          "porovnání s normami (např. ISO 9001)",
+          "návrhy na zvýšení efektivity a spokojenosti zákazníků"
+        ]
+      }
+    },
+    "whyUs": {
+      "title": "Proč využít náš audit?",
+      "list": [
+        "Nezávazný a objektivní pohled – bez předem daných závěrů",
+        "Praktická doporučení – s prioritizací podle rizik",
+        "Podpora dalších kroků – od implementace až po opakovanou kontrolu",
+        "Zaměřeno na reálná zlepšení, ne jen papírování"
+      ]
+    },
+    "process": {
+      "title": "Jak to probíhá?",
+      "steps": [
+        { "title": "Úvodní konzultace", "desc": "rychlé zmapování potřeb a priorit" },
+        { "title": "On-site / online audit", "desc": "prohlídka prostor, rozhovory, kontrola dokumentů" },
+        { "title": "Závěrečná zpráva", "desc": "jasná zjištění + doporučení" },
+        { "title": "Následná podpora", "desc": "dle potřeby konzultace a implementace" }
+      ]
+    },
+    "cta": "Společně nastavíme bezpečnější, efektivnější a normám vyhovující prostředí pro váš tým."
   },
   "Products": {
     "badge": "Produkt",

@@ -23,23 +23,68 @@
     "modularity": "Modularity"
   },
   "Services": {
-    "kicker": "What We Do",
-    "title": "Custom IT Solutions",
-    "subtitle": "Custom software development brings innovative solutions to specific problems where off-the-shelf software falls short. We primarily focus on web solutions and enterprise systems, always prepared in accordance with current standards and trends.",
-    "intro": "Every custom project is unique, and we approach our customers accordingly.",
-    "processTitle": "Our Work Consists of:",
-    "steps": {
-      "0": "Analysis of current state and requirements",
-      "1": "Technical concept with functionality demonstration",
-      "2": "User prototype",
-      "3": "Design specification and detailed technical proposal",
-      "4": "Application development",
-      "5": "Integration",
-      "6": "Performance testing and optimization",
-      "7": "Solution installation",
-      "8": "Deployment and testing",
-      "9": "Post-implementation support"
-    }
+    "kicker": "Comprehensive Audits",
+    "title": "Non-binding Audits for OHS, Fire Protection & Quality",
+    "subtitle": "In today's rapidly changing business environment, effective management of safety and quality is key for sustainable growth and team assurance.",
+    "intro": "Improve safety, systems, and compliance.",
+    "benefits": {
+      "title": "We offer non-binding audits to help you:",
+      "list": [
+        "get a clear overview of the current status",
+        "identify risks and non-compliant procedures",
+        "set up systematic improvements",
+        "be prepared for certification processes and inspections"
+      ]
+    },
+    "auditTypes": {
+      "title": "What does the audit include?",
+      "bozp": {
+        "title": "OHS Audit",
+        "subtitle": "Occupational Health and Safety",
+        "list": [
+          "verification of existing measures and risks in the workplace",
+          "check of documentation, training, and equipment",
+          "proposals for practical improvements to reduce accident rates"
+        ]
+      },
+      "po": {
+        "title": "Fire Protection Audit",
+        "subtitle": "Fire Safety Measures",
+        "list": [
+          "assessment of technical and organizational fire protection measures",
+          "check of evacuation plans and fire extinguishing equipment",
+          "recommendations for increasing fire prevention effectiveness"
+        ]
+      },
+      "quality": {
+        "title": "Quality Audit",
+        "subtitle": "processes and standards",
+        "list": [
+          "analysis of quality system processes",
+          "comparison with standards (e.g., ISO 9001)",
+          "proposals for increasing efficiency and customer satisfaction"
+        ]
+      }
+    },
+    "whyUs": {
+      "title": "Why use our audit?",
+      "list": [
+        "Non-binding and objective view – no conclusions determined in advance",
+        "Practical recommendations – prioritized by risk",
+        "Support for next steps – from implementation to re-check",
+        "Focused on real improvements, not just paperwork"
+      ]
+    },
+    "process": {
+      "title": "How does it work?",
+      "steps": [
+        { "title": "Initial Consultation", "desc": "quick mapping of needs and priorities" },
+        { "title": "On-site / Online Audit", "desc": "premises tour, interviews, document check" },
+        { "title": "Final Report", "desc": "clear findings + recommendations" },
+        { "title": "Follow-up Support", "desc": "consultation and implementation as needed" }
+      ]
+    },
+    "cta": "Together, we will set up a safer, more effective, and compliant environment for your team."
   },
   "Products": {
     "badge": "Product",
