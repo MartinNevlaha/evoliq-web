@@ -361,8 +361,8 @@
           "title": "Demo",
           "description": "Vyzkoušejte si AI Control zdarma.",
           "features": [
-            "Přístup k základním modulům",
-            "Omezený počet auditů",
+            "Platnost 30 dní",
+            "Limit 2 audity",
             "Bez mobilní aplikace",
             "Základní podpora"
           ]
@@ -372,21 +372,12 @@
           "description": "Flexibilní licence pro menší a střední firmy.",
           "features": [
             "Licence na 3, 6 nebo 12 měsíců",
-            "Balíčky auditů dle potřeby",
-            "Mobilní aplikace (platba za zařízení)",
+            "5 / 8 / 10 auditů",
+            "Mobilní aplikace: 0 / 3 / 5 / 10 zařízení",
             "Prioritní podpora"
           ]
-        },
-        "enterprise": {
-          "title": "Enterprise",
-          "description": "Komplexní řešení pro náročné klienty.",
-          "features": [
-            "Neomezený počet auditů",
-            "Mobilní aplikace v ceně",
-            "Vlastní integrace",
-            "Dedikovaný account manager"
-          ]
         }
+
       }
     }
   },

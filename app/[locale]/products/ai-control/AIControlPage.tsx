@@ -592,54 +592,6 @@ export default function AIControlPage() {
             </motion.div>
 
             {/* Enterprise Plan */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
-            >
-              <div className="mb-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-                  {t("pricingSection.plans.enterprise.title")}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {t("pricingSection.plans.enterprise.description")}
-                </p>
-              </div>
-              <ul className="mb-8 flex-1 space-y-4">
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  {t("pricingSection.plans.enterprise.features.0")}
-                </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  {t("pricingSection.plans.enterprise.features.1")}
-                </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  {t("pricingSection.plans.enterprise.features.2")}
-                </li>
-                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  {t("pricingSection.plans.enterprise.features.3")}
-                </li>
-              </ul>
-              <Link
-                href="/#contact"
-                className="block w-full rounded-xl bg-gray-900 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-gray-800 dark:bg-neutral-700 dark:hover:bg-neutral-600"
-              >
-                {t("pricingSection.cta")}
-              </Link>
-            </motion.div>
           </div>
         </div>
       </section>

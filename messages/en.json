@@ -361,8 +361,8 @@
           "title": "Demo",
           "description": "Try AI Control for free.",
           "features": [
-            "Access to basic modules",
-            "Limited number of audits",
+            "Validity 30 days",
+            "Limit 2 audits",
             "No mobile app",
             "Basic support"
           ]
@@ -372,21 +372,12 @@
           "description": "Flexible license for small and medium businesses.",
           "features": [
             "License for 3, 6, or 12 months",
-            "Audit packages as needed",
-            "Mobile app (paid per device)",
+            "5 / 8 / 10 audits",
+            "Mobile app: 0 / 3 / 5 / 10 devices",
             "Priority support"
           ]
-        },
-        "enterprise": {
-          "title": "Enterprise",
-          "description": "Comprehensive solution for demanding clients.",
-          "features": [
-            "Unlimited audits",
-            "Mobile app included",
-            "Custom integrations",
-            "Dedicated account manager"
-          ]
         }
+
       }
     }
   },
