@@ -194,8 +194,7 @@
       "titlePrefix": "Posilte své podnikání s",
       "titleSuffix": "Inteligencí",
       "subtitle": "Inteligentní cloudový systém pro komplexní správu auditů, certifikací a kvality",
-      "description": "Multitenant platforma s umělou inteligencí, která automatizuje plánování, vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině.",
-      "startDate": "Start cloudové provozu: 1.2.2026"
+      "description": "Multitenant platforma s umělou inteligencí, která automatizuje plánování, vykonávání a reporting auditů. Dostupná v slovenštině, češtině a angličtině."
     },
     "benefits": {
       "cloud": {
@@ -315,7 +314,7 @@
     },
     "cta": {
       "title": "Připraveni modernizovat váš audit proces?",
-      "desc": "Kontaktujte nás pro demo prezentaci nebo více informací o AI Control systému. Cloudová provoz startuje 1.1.2026.",
+      "desc": "Kontaktujte nás pro demo prezentaci nebo více informací o AI Control systému.",
       "contact": "Kontaktujte nás",
       "caseStudy": "Případová studie",
       "backHome": "Zpět na hlavní stránku"

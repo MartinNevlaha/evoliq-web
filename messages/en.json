@@ -194,8 +194,7 @@
       "titlePrefix": "Empower your business with",
       "titleSuffix": "Intelligence",
       "subtitle": "Intelligent cloud system for comprehensive audit, certification, and quality management",
-      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English.",
-      "startDate": "Cloud operation start: 1.2.2026"
+      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English."
     },
     "benefits": {
       "cloud": {
@@ -315,7 +314,7 @@
     },
     "cta": {
       "title": "Ready to modernize your audit process?",
-      "desc": "Contact us for a demo presentation or more information about the AI Control system. Cloud operation starts 1.2.2026.",
+      "desc": "Contact us for a demo presentation or more information about the AI Control system.",
       "contact": "Contact Us",
       "caseStudy": "Case Study",
       "backHome": "Back to Home"
