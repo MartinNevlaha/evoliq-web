@@ -23,6 +23,10 @@ import {
   UserCog,
   X,
   Cookie,
+  Smartphone,
+  Bot,
+  FileSpreadsheet,
+  Check,
 } from "lucide-react";
 
 export default function AIControlPage() {
@@ -144,6 +148,43 @@ export default function AIControlPage() {
         t("features.multilang.details.1"),
         t("features.multilang.details.2"),
         t("features.multilang.details.3"),
+      ],
+    },
+    {
+      icon: Smartphone,
+      title: t("features.mobile_app.title"),
+      description: t("features.mobile_app.desc"),
+      image: "/audit-plan.png",
+      details: [
+        t("features.mobile_app.details.0"),
+        t("features.mobile_app.details.1"),
+        t("features.mobile_app.details.2"),
+        t("features.mobile_app.details.3"),
+        t("features.mobile_app.details.4"),
+      ],
+    },
+    {
+      icon: FileSpreadsheet,
+      title: t("features.worksheets.title"),
+      description: t("features.worksheets.desc"),
+      image: "/swot.png",
+      details: [
+        t("features.worksheets.details.0"),
+        t("features.worksheets.details.1"),
+        t("features.worksheets.details.2"),
+        t("features.worksheets.details.3"),
+      ],
+    },
+    {
+      icon: Bot,
+      title: t("features.ai_assistant.title"),
+      description: t("features.ai_assistant.desc"),
+      image: "/swot.png",
+      details: [
+        t("features.ai_assistant.details.0"),
+        t("features.ai_assistant.details.1"),
+        t("features.ai_assistant.details.2"),
+        t("features.ai_assistant.details.3"),
       ],
     },
   ];

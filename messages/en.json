@@ -310,6 +310,37 @@
           "Multilingual PDF reports"
         ]
       },
+      "mobile_app": {
+        "title": "Mobile Application",
+        "description": "Native app for iOS and Android. Offline mode, photo documentation, voice notes, and digital signatures directly in the field.",
+        "details": [
+          "Offline/Online synchronization",
+          "Photo, video, and audio documentation",
+          "Digital biometric signatures",
+          "GPS location tracking",
+          "Instant notifications"
+        ]
+      },
+      "worksheets": {
+        "title": "Worksheets & Checklists",
+        "description": "Flexible views for different types of audits. Switch between simple Yes/No checklists and complex Worksheets with open-ended questions.",
+        "details": [
+          "One-click view switching",
+          "Dynamic scoring logic",
+          "Conditional question logic",
+          "Customizable rating scales"
+        ]
+      },
+      "ai_assistant": {
+        "title": "AI Assistant",
+        "description": "Intelligent copilot guiding you through the audit. Suggests answers based on history, identifies anomalies, and helps formulate findings.",
+        "details": [
+          "Real-time anomaly detection",
+          "Smart suggestions for non-conformities",
+          "Voice-to-text with technical vocabulary",
+          "Automated finding categorization"
+        ]
+      },
       "screenshotPlaceholder": "Screenshot will be added"
     },
     "cta": {
@@ -422,6 +453,43 @@
         "admin": "Administration",
         "fieldwork": "Fieldwork",
         "errorRate": "Error Rate"
+      }
+    },
+    "pricing": {
+      "title": "Pricing & Licenses",
+      "subtitle": "Choose the license that best suits your needs.",
+      "cta": "Contact Sales",
+      "plans": {
+        "demo": {
+          "title": "Demo",
+          "description": "Try AI Control for free.",
+          "features": [
+            "Access to basic modules",
+            "Limited number of audits",
+            "No mobile app",
+            "Basic support"
+          ]
+        },
+        "standard": {
+          "title": "Standard",
+          "description": "Flexible license for small and medium businesses.",
+          "features": [
+            "License for 3, 6, or 12 months",
+            "Audit packages as needed",
+            "Mobile app (optional)",
+            "Priority support"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise",
+          "description": "Comprehensive solution for demanding clients.",
+          "features": [
+            "Unlimited audits",
+            "Mobile app included",
+            "Custom integrations",
+            "Dedicated account manager"
+          ]
+        }
       }
     },
     "cta": {

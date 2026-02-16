@@ -310,6 +310,37 @@
           "Vícejazyčné PDF reporty"
         ]
       },
+      "mobile_app": {
+        "title": "Mobilní aplikace",
+        "description": "Nativní aplikace pro iOS a Android. Offline režim, fotodokumentace, hlasové poznámky a digitální podpisy přímo v terénu.",
+        "details": [
+          "Offline/Online synchronizace",
+          "Foto, video a audio dokumentace",
+          "Digitální biometrické podpisy",
+          "GPS lokalizace",
+          "Okamžité notifikace"
+        ]
+      },
+      "worksheets": {
+        "title": "Worksheety a Checklisty",
+        "description": "Flexibilní zobrazení pro různé typy auditů. Přepínejte mezi jednoduchým Ano/Ne checklistem a komplexním Worksheetem s otevřenými otázkami.",
+        "details": [
+          "Přepínání pohledů jedním klikem",
+          "Dynamická logika skórování",
+          "Podmíněná logika otázek",
+          "Přizpůsobitelné škály hodnocení"
+        ]
+      },
+      "ai_assistant": {
+        "title": "AI Asistent",
+        "description": "Inteligentní kopilot, který vás provede auditem. Navrhuje odpovědi na základě historie, identifikuje anomálie a pomáhá formulovat zjištění.",
+        "details": [
+          "Detekce anomálií v reálném čase",
+          "Inteligentní návrhy pro neshody",
+          "Voice-to-text s odbornou slovní zásobou",
+          "Automatická kategorizace zjištění"
+        ]
+      },
       "screenshotPlaceholder": "Screenshot bude doplněn"
     },
     "cta": {
@@ -422,6 +453,43 @@
         "admin": "Administrativa",
         "fieldwork": "Práce v terénu",
         "errorRate": "Chybovost"
+      }
+    },
+    "pricing": {
+      "title": "Ceník a Licence",
+      "subtitle": "Vyberte si licenci, která nejvíce vyhovuje vašim potřebám.",
+      "cta": "Kontaktovat obchod",
+      "plans": {
+        "demo": {
+          "title": "Demo",
+          "description": "Vyzkoušejte si AI Control zdarma.",
+          "features": [
+            "Přístup k základním modulům",
+            "Omezený počet auditů",
+            "Bez mobilní aplikace",
+            "Základní podpora"
+          ]
+        },
+        "standard": {
+          "title": "Standard",
+          "description": "Flexibilní licence pro menší a střední firmy.",
+          "features": [
+            "Licence na 3, 6 nebo 12 měsíců",
+            "Balíčky auditů dle potřeby",
+            "Mobilní aplikace (volitelné)",
+            "Prioritní podpora"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise",
+          "description": "Komplexní řešení pro náročné klienty.",
+          "features": [
+            "Neomezený počet auditů",
+            "Mobilní aplikace v ceně",
+            "Vlastní integrace",
+            "Dedikovaný account manager"
+          ]
+        }
       }
     },
     "cta": {
