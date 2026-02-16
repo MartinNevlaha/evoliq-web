@@ -351,6 +351,43 @@
       "contact": "Kontaktujte nás",
       "caseStudy": "Prípadová štúdia",
       "backHome": "Späť na hlavnú stránku"
+    },
+    "pricingSection": {
+      "title": "Cenník a Licencie",
+      "subtitle": "Vyberte si licenciu, ktorá najviac vyhovuje vašim potrebám.",
+      "cta": "Kontaktovať obchod",
+      "plans": {
+        "demo": {
+          "title": "Demo",
+          "description": "Vyskúšajte si AI Control zadarmo.",
+          "features": [
+            "Prístup k základným modulom",
+            "Obmedzený počet auditov",
+            "Bez mobilnej aplikácie",
+            "Základná podpora"
+          ]
+        },
+        "standard": {
+          "title": "Štandard",
+          "description": "Flexibilná licencia pre menšie a stredné firmy.",
+          "features": [
+            "Licencia na 3, 6 alebo 12 mesiacov",
+            "Balíky auditov podľa potreby",
+            "Mobilná aplikácia (platba za zariadenie)",
+            "Prioritná podpora"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise",
+          "description": "Komplexné riešenie pre náročných klientov.",
+          "features": [
+            "Neobmedzený počet auditov",
+            "Mobilná aplikácia v cene",
+            "Vlastné integrácie",
+            "Dedikovaný account manager"
+          ]
+        }
+      }
     }
   },
   "CaseStudy": {
@@ -456,47 +493,7 @@
         "fieldwork": "Práca v teréne",
         "errorRate": "Chybovosť"
       }
-    },
-    "pricingSection": {
-      "title": "Cenník a Licencie",
-      "subtitle": "Vyberte si licenciu, ktorá najviac vyhovuje vašim potrebám.",
-      "cta": "Kontaktovať obchod",
-      "plans": {
-        "demo": {
-          "title": "Demo",
-          "description": "Vyskúšajte si AI Control zadarmo.",
-          "features": [
-            "Prístup k základným modulom",
-            "Obmedzený počet auditov",
-            "Bez mobilnej aplikácie",
-            "Základná podpora"
-          ]
-        },
-        "standard": {
-          "title": "Štandard",
-          "description": "Flexibilná licencia pre menšie a stredné firmy.",
-          "features": [
-            "Licencia na 3, 6 alebo 12 mesiacov",
-            "Balíky auditov podľa potreby",
-            "Mobilná aplikácia (platba za zariadenie)",
-            "Prioritná podpora"
-          ]
-        },
-        "enterprise": {
-          "title": "Enterprise",
-          "description": "Komplexné riešenie pre náročných klientov.",
-          "features": [
-            "Neobmedzený počet auditov",
-            "Mobilná aplikácia v cene",
-            "Vlastné integrácie",
-            "Dedikovaný account manager"
-          ]
-        }
-      }
-    },
-    "cta": {
-      "title": "Ste pripravení transformovať váš auditný proces?",
-      "desc": "Začnite skúšobnú verziu zdarma ešte dnes."
     }
+
   }
 }
