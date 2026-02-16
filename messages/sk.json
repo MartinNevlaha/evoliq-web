@@ -194,7 +194,9 @@
       "titlePrefix": "Posilnite svoje podnikanie s",
       "titleSuffix": "Inteligenciou",
       "subtitle": "Inteligentný cloudový systém pre komplexnú správu auditov, certifikácií a kvality",
-      "description": "Multitenant platforma s umelou inteligenciou, ktorá automatizuje plánovanie, vykonávanie a reporting auditov. Dostupná v slovenčine, češtine a angličtine."
+      "description": "Multitenant platforma s umelou inteligenciou, ktorá automatizuje plánovanie, vykonávanie a reporting auditov. Dostupná v slovenčine, češtine a angličtine.",
+      "ctaPrimary": "Kontaktovať obchod",
+      "ctaSecondary": "Pozrieť cenník"
     },
     "benefits": {
       "cloud": {

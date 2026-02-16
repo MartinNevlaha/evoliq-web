@@ -305,13 +305,33 @@ export default function AIControlPage() {
             </motion.p>
 
             <motion.p
-              className="mx-auto mb-12 max-w-2xl text-lg text-slate-500 dark:text-slate-400"
+              className="mx-auto mb-10 max-w-2xl text-lg text-slate-500 dark:text-slate-400"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               {t("hero.description")}
             </motion.p>
+
+            <motion.div
+              className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <Link
+                href="/contact"
+                className="rounded-full bg-indigo-600 px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/30"
+              >
+                {t("hero.ctaPrimary")}
+              </Link>
+              <Link
+                href="#pricing"
+                className="rounded-full border-2 border-slate-200 bg-white px-8 py-3 text-lg font-semibold text-slate-700 transition-all hover:border-indigo-600 hover:text-indigo-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-slate-300 dark:hover:border-indigo-500 dark:hover:text-indigo-400"
+              >
+                {t("hero.ctaSecondary")}
+              </Link>
+            </motion.div>
 
             {/* Video Preview */}
             <motion.div
@@ -446,6 +466,180 @@ export default function AIControlPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="relative z-10 px-6 py-24">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+              {t("pricing.title")}
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+              {t("pricing.subtitle")}
+            </p>
+          </motion.div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Demo Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                  {t("pricing.plans.demo.title")}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t("pricing.plans.demo.description")}
+                </p>
+              </div>
+              <ul className="mb-8 flex-1 space-y-4">
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.demo.features.0")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.demo.features.1")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
+                    <X className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.demo.features.2")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.demo.features.3")}
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block w-full rounded-xl bg-gray-100 px-6 py-3 text-center font-semibold text-gray-900 transition-colors hover:bg-gray-200 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
+              >
+                {t("pricing.cta")}
+              </Link>
+            </motion.div>
+
+            {/* Standard Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative flex flex-col rounded-2xl border-2 border-emerald-500 bg-white p-8 shadow-lg dark:bg-neutral-900"
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-4 py-1 text-sm font-medium text-white">
+                Most Popular
+              </div>
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                  {t("pricing.plans.standard.title")}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t("pricing.plans.standard.description")}
+                </p>
+              </div>
+              <ul className="mb-8 flex-1 space-y-4">
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.standard.features.0")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.standard.features.1")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.standard.features.2")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.standard.features.3")}
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block w-full rounded-xl bg-emerald-600 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-emerald-700 shadow-lg shadow-emerald-200 dark:shadow-emerald-900/20"
+              >
+                {t("pricing.cta")}
+              </Link>
+            </motion.div>
+
+            {/* Enterprise Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+            >
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                  {t("pricing.plans.enterprise.title")}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t("pricing.plans.enterprise.description")}
+                </p>
+              </div>
+              <ul className="mb-8 flex-1 space-y-4">
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.enterprise.features.0")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.enterprise.features.1")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.enterprise.features.2")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricing.plans.enterprise.features.3")}
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block w-full rounded-xl bg-gray-900 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-gray-800 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+              >
+                {t("pricing.cta")}
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

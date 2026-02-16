@@ -194,7 +194,9 @@
       "titlePrefix": "Empower your business with",
       "titleSuffix": "Intelligence",
       "subtitle": "Intelligent cloud system for comprehensive audit, certification, and quality management",
-      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English."
+      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English.",
+      "ctaPrimary": "Contact Sales",
+      "ctaSecondary": "View Pricing"
     },
     "benefits": {
       "cloud": {
