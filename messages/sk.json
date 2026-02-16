@@ -457,7 +457,7 @@
         "errorRate": "Chybovosť"
       }
     },
-    "pricing": {
+    "pricingSection": {
       "title": "Cenník a Licencie",
       "subtitle": "Vyberte si licenciu, ktorá najviac vyhovuje vašim potrebám.",
       "cta": "Kontaktovať obchod",
@@ -478,7 +478,7 @@
           "features": [
             "Licencia na 3, 6 alebo 12 mesiacov",
             "Balíky auditov podľa potreby",
-            "Mobilná aplikácia (voliteľné)",
+            "Mobilná aplikácia (platba za zariadenie)",
             "Prioritná podpora"
           ]
         },

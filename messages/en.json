@@ -457,7 +457,7 @@
         "errorRate": "Error Rate"
       }
     },
-    "pricing": {
+    "pricingSection": {
       "title": "Pricing & Licenses",
       "subtitle": "Choose the license that best suits your needs.",
       "cta": "Contact Sales",
@@ -478,7 +478,7 @@
           "features": [
             "License for 3, 6, or 12 months",
             "Audit packages as needed",
-            "Mobile app (optional)",
+            "Mobile app (paid per device)",
             "Priority support"
           ]
         },

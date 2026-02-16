@@ -320,7 +320,7 @@ export default function AIControlPage() {
               transition={{ delay: 0.6 }}
             >
               <Link
-                href="/contact"
+                href="/#contact"
                 className="rounded-full bg-indigo-600 px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/30"
               >
                 {t("hero.ctaPrimary")}
@@ -480,10 +480,10 @@ export default function AIControlPage() {
             className="mb-16 text-center"
           >
             <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
-              {t("pricing.title")}
+              {t("pricingSection.title")}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-              {t("pricing.subtitle")}
+              {t("pricingSection.subtitle")}
             </p>
           </motion.div>
 
@@ -498,10 +498,10 @@ export default function AIControlPage() {
             >
               <div className="mb-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-                  {t("pricing.plans.demo.title")}
+                  {t("pricingSection.plans.demo.title")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  {t("pricing.plans.demo.description")}
+                  {t("pricingSection.plans.demo.description")}
                 </p>
               </div>
               <ul className="mb-8 flex-1 space-y-4">
@@ -509,32 +509,32 @@ export default function AIControlPage() {
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.demo.features.0")}
+                  {t("pricingSection.plans.demo.features.0")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.demo.features.1")}
+                  {t("pricingSection.plans.demo.features.1")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400">
                     <X className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.demo.features.2")}
+                  {t("pricingSection.plans.demo.features.2")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.demo.features.3")}
+                  {t("pricingSection.plans.demo.features.3")}
                 </li>
               </ul>
               <Link
-                href="/contact"
+                href="/#contact"
                 className="block w-full rounded-xl bg-gray-100 px-6 py-3 text-center font-semibold text-gray-900 transition-colors hover:bg-gray-200 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
               >
-                {t("pricing.cta")}
+                {t("pricingSection.cta")}
               </Link>
             </motion.div>
 
@@ -551,10 +551,10 @@ export default function AIControlPage() {
               </div>
               <div className="mb-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-                  {t("pricing.plans.standard.title")}
+                  {t("pricingSection.plans.standard.title")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  {t("pricing.plans.standard.description")}
+                  {t("pricingSection.plans.standard.description")}
                 </p>
               </div>
               <ul className="mb-8 flex-1 space-y-4">
@@ -562,32 +562,32 @@ export default function AIControlPage() {
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.standard.features.0")}
+                  {t("pricingSection.plans.standard.features.0")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.standard.features.1")}
+                  {t("pricingSection.plans.standard.features.1")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.standard.features.2")}
+                  {t("pricingSection.plans.standard.features.2")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.standard.features.3")}
+                  {t("pricingSection.plans.standard.features.3")}
                 </li>
               </ul>
               <Link
-                href="/contact"
+                href="/#contact"
                 className="block w-full rounded-xl bg-emerald-600 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-emerald-700 shadow-lg shadow-emerald-200 dark:shadow-emerald-900/20"
               >
-                {t("pricing.cta")}
+                {t("pricingSection.cta")}
               </Link>
             </motion.div>
 
@@ -601,10 +601,10 @@ export default function AIControlPage() {
             >
               <div className="mb-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-                  {t("pricing.plans.enterprise.title")}
+                  {t("pricingSection.plans.enterprise.title")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  {t("pricing.plans.enterprise.description")}
+                  {t("pricingSection.plans.enterprise.description")}
                 </p>
               </div>
               <ul className="mb-8 flex-1 space-y-4">
@@ -612,32 +612,32 @@ export default function AIControlPage() {
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.enterprise.features.0")}
+                  {t("pricingSection.plans.enterprise.features.0")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.enterprise.features.1")}
+                  {t("pricingSection.plans.enterprise.features.1")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.enterprise.features.2")}
+                  {t("pricingSection.plans.enterprise.features.2")}
                 </li>
                 <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                     <Check className="h-3 w-3" />
                   </div>
-                  {t("pricing.plans.enterprise.features.3")}
+                  {t("pricingSection.plans.enterprise.features.3")}
                 </li>
               </ul>
               <Link
-                href="/contact"
+                href="/#contact"
                 className="block w-full rounded-xl bg-gray-900 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-gray-800 dark:bg-neutral-700 dark:hover:bg-neutral-600"
               >
-                {t("pricing.cta")}
+                {t("pricingSection.cta")}
               </Link>
             </motion.div>
           </div>
