@@ -88,9 +88,9 @@
   },
   "Products": {
     "badge": "Produkt",
-    "titlePrefix": "AI-Control —",
-    "titleSuffix": "Audit & Compliance",
-    "description": "Modulárna platforma pre plánovanie, realizáciu a vyhodnocovanie auditov s pomocou AI. Pre certifikačné spoločnosti, konzultantov i interné audity.",
+    "titlePrefix": "AI Control —",
+    "titleSuffix": "Audity, DMS a Privátna AI",
+    "description": "Modulárna platforma pre plánovanie a realizáciu auditov spojená s Document Management Systemom (DMS) a integrovanou AI. Pre náročných zákazníkov s možnosťou lokálnej prevádzky open-source LLM modelov.",
     "moreInfo": "Viac informácií o AI Control",
     "modules": {
       "planning": {

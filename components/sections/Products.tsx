@@ -159,7 +159,7 @@ export function Products(){
           variants={slideInLeft}
           whileHover={{scale:1.05, y:-10, rotateY:5}} 
           transition={{duration:0.3, type:"spring", stiffness:300}} 
-          onClick={()=>setSelectedImage({src:'/audit-plan.png', alt:t('images.auditPlan')})} 
+          onClick={()=>setSelectedImage({src:'/screenshot-audit.png', alt:t('images.auditPlan')})} 
           className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group"
           style={{perspective:1000}}
         >
@@ -167,7 +167,7 @@ export function Products(){
             whileHover={{scale:1.1}}
             transition={{duration:0.5}}
           >
-            <Image alt={t('images.auditPlan')} src="/audit-plan.png" fill className="object-cover"/>
+            <Image alt={t('images.auditPlan')} src="/screenshot-audit.png" fill className="object-cover"/>
           </motion.div>
           <motion.div 
             className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 flex items-center justify-center"
@@ -189,7 +189,7 @@ export function Products(){
           variants={slideInRight}
           whileHover={{scale:1.05, y:-10, rotateY:-5}} 
           transition={{duration:0.3, type:"spring", stiffness:300}} 
-          onClick={()=>setSelectedImage({src:'/swot.png', alt:t('images.swot')})} 
+          onClick={()=>setSelectedImage({src:'/screenshot-dashboard.png', alt:t('images.swot')})} 
           className="aspect-video rounded-2xl border bg-neutral-200 dark:bg-neutral-800 overflow-hidden relative cursor-pointer group"
           style={{perspective:1000}}
         >
@@ -197,7 +197,7 @@ export function Products(){
             whileHover={{scale:1.1}}
             transition={{duration:0.5}}
           >
-            <Image alt={t('images.swot')} src="/swot.png" fill className="object-cover"/>
+            <Image alt={t('images.swot')} src="/screenshot-dashboard.png" fill className="object-cover"/>
           </motion.div>
           <motion.div 
             className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 flex items-center justify-center"

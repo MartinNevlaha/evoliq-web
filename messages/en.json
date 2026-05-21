@@ -88,9 +88,9 @@
   },
   "Products": {
     "badge": "Product",
-    "titlePrefix": "AI-Control —",
-    "titleSuffix": "Audit & Compliance",
-    "description": "Modular platform for planning, executing, and evaluating audits with AI assistance. For certification bodies, consultants, and internal audits.",
+    "titlePrefix": "AI Control —",
+    "titleSuffix": "Audits, DMS & Private AI",
+    "description": "Modular platform for audit management and Document Management System (DMS) powered by AI. Supporting local, isolated open-source LLM deployments for maximum security.",
     "moreInfo": "More info about AI Control",
     "modules": {
       "planning": {
