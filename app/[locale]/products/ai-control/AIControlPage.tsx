@@ -27,6 +27,8 @@ import {
   Bot,
   FileSpreadsheet,
   Check,
+  Cpu,
+  FolderOpen,
 } from "lucide-react";
 
 export default function AIControlPage() {
@@ -40,7 +42,7 @@ export default function AIControlPage() {
       icon: Building2,
       title: t("features.profile.title"),
       description: t("features.profile.desc"),
-      image: "/swot.png",
+      image: "/screenshot-dashboard.png",
       details: [
         t("features.profile.details.0"),
         t("features.profile.details.1"),
@@ -53,7 +55,7 @@ export default function AIControlPage() {
       icon: UserCog,
       title: t("features.permissions.title"),
       description: t("features.permissions.desc"),
-      image: "/audit-plan.png",
+      image: "/screenshot-dashboard.png",
       details: [
         t("features.permissions.details.0"),
         t("features.permissions.details.1"),
@@ -66,7 +68,7 @@ export default function AIControlPage() {
       icon: Award,
       title: t("features.qualifications.title"),
       description: t("features.qualifications.desc"),
-      image: "/swot.png",
+      image: "/screenshot-dashboard.png",
       details: [
         t("features.qualifications.details.0"),
         t("features.qualifications.details.1"),
@@ -80,7 +82,7 @@ export default function AIControlPage() {
       icon: Calendar,
       title: t("features.calendar.title"),
       description: t("features.calendar.desc"),
-      image: "/audit-plan.png",
+      image: "/screenshot-audit.png",
       details: [
         t("features.calendar.details.0"),
         t("features.calendar.details.1"),
@@ -91,7 +93,7 @@ export default function AIControlPage() {
       icon: FileCheck2,
       title: t("features.planning.title"),
       description: t("features.planning.desc"),
-      image: "/audit-plan.png",
+      image: "/screenshot-audit.png",
       details: [
         t("features.planning.details.0"),
         t("features.planning.details.1"),
@@ -104,7 +106,7 @@ export default function AIControlPage() {
       icon: ClipboardCheck,
       title: t("features.checklist.title"),
       description: t("features.checklist.desc"),
-      image: "/swot.png",
+      image: "/screenshot-audit.png",
       details: [
         t("features.checklist.details.0"),
         t("features.checklist.details.1"),
@@ -117,7 +119,7 @@ export default function AIControlPage() {
       icon: Shield,
       title: t("features.execution.title"),
       description: t("features.execution.desc"),
-      image: "/audit-plan.png",
+      image: "/screenshot-audit.png",
       details: [
         t("features.execution.details.0"),
         t("features.execution.details.1"),
@@ -129,7 +131,7 @@ export default function AIControlPage() {
       icon: Sparkles,
       title: t("features.report.title"),
       description: t("features.report.desc"),
-      image: "/swot.png",
+      image: "/screenshot-dashboard.png",
       details: [
         t("features.report.details.0"),
         t("features.report.details.1"),
@@ -142,7 +144,7 @@ export default function AIControlPage() {
       icon: Languages,
       title: t("features.multilang.title"),
       description: t("features.multilang.desc"),
-      image: "/audit-plan.png",
+      image: "/screenshot-dashboard.png",
       details: [
         t("features.multilang.details.0"),
         t("features.multilang.details.1"),
@@ -153,8 +155,8 @@ export default function AIControlPage() {
     {
       icon: Smartphone,
       title: t("features.mobile_app.title"),
-      description: t("features.mobile_app.desc"),
-      image: "/audit-plan.png",
+      description: t("features.mobile_app.description"),
+      image: "/screenshot-audit.png",
       details: [
         t("features.mobile_app.details.0"),
         t("features.mobile_app.details.1"),
@@ -166,8 +168,8 @@ export default function AIControlPage() {
     {
       icon: FileSpreadsheet,
       title: t("features.worksheets.title"),
-      description: t("features.worksheets.desc"),
-      image: "/swot.png",
+      description: t("features.worksheets.description"),
+      image: "/screenshot-audit.png",
       details: [
         t("features.worksheets.details.0"),
         t("features.worksheets.details.1"),
@@ -178,13 +180,41 @@ export default function AIControlPage() {
     {
       icon: Bot,
       title: t("features.ai_assistant.title"),
-      description: t("features.ai_assistant.desc"),
-      image: "/swot.png",
+      description: t("features.ai_assistant.description"),
+      image: "/screenshot-ai.png",
       details: [
         t("features.ai_assistant.details.0"),
         t("features.ai_assistant.details.1"),
         t("features.ai_assistant.details.2"),
         t("features.ai_assistant.details.3"),
+      ],
+    },
+    {
+      icon: FolderOpen,
+      title: t("features.dms.title"),
+      description: t("features.dms.desc"),
+      image: "/screenshot-dms.png",
+      details: [
+        t("features.dms.details.0"),
+        t("features.dms.details.1"),
+        t("features.dms.details.2"),
+        t("features.dms.details.3"),
+        t("features.dms.details.4"),
+        t("features.dms.details.5"),
+      ],
+    },
+    {
+      icon: Cpu,
+      title: t("features.custom_ai.title"),
+      description: t("features.custom_ai.desc"),
+      image: "/screenshot-ai.png",
+      details: [
+        t("features.custom_ai.details.0"),
+        t("features.custom_ai.details.1"),
+        t("features.custom_ai.details.2"),
+        t("features.custom_ai.details.3"),
+        t("features.custom_ai.details.4"),
+        t("features.custom_ai.details.5"),
       ],
     },
   ];
@@ -313,6 +343,24 @@ export default function AIControlPage() {
               {t("hero.description")}
             </motion.p>
 
+            {/* Hero Badges */}
+            <motion.div
+              className="flex justify-center gap-3 flex-wrap mb-10 mx-auto max-w-4xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+            >
+              <span className="px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-sm font-semibold shadow-sm">
+                {t("hero.badges.0")}
+              </span>
+              <span className="px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-700 dark:text-purple-300 text-sm font-semibold shadow-sm">
+                {t("hero.badges.1")}
+              </span>
+              <span className="px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-700 dark:text-pink-300 text-sm font-semibold shadow-sm">
+                {t("hero.badges.2")}
+              </span>
+            </motion.div>
+
             <motion.div
               className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
               initial={{ opacity: 0, y: 20 }}
@@ -421,23 +469,15 @@ export default function AIControlPage() {
               >
                 {/* Image/Screenshot Placeholder */}
                 <div className="flex-1">
-                  <div className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-neutral-700 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-900 shadow-2xl transition-all hover:scale-[1.02] hover:shadow-3xl">
+                  <div className="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-neutral-800 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-neutral-800 dark:to-neutral-900 shadow-2xl transition-all hover:scale-[1.01] hover:shadow-3xl">
                     <div className="aspect-video">
                       <Image
                         src={feature.image}
                         alt={feature.title}
                         width={800}
                         height={450}
-                        className="h-full w-full object-cover opacity-40 transition-opacity group-hover:opacity-60"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="rounded-2xl bg-white/95 dark:bg-neutral-800/95 px-6 py-4 shadow-xl backdrop-blur-sm">
-                          <feature.icon className="mx-auto mb-2 h-12 w-12 text-indigo-600 dark:text-indigo-400" />
-                          <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                            {t("features.screenshotPlaceholder")}
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -592,6 +632,66 @@ export default function AIControlPage() {
             </motion.div>
 
             {/* Enterprise Plan */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col rounded-2xl border border-indigo-500/30 bg-gradient-to-b from-indigo-950/20 to-purple-950/20 dark:from-indigo-950/40 dark:to-purple-950/40 p-8 shadow-xl backdrop-blur-sm dark:border-indigo-500/50"
+            >
+              <div className="mb-6">
+                <h3 className="mb-2 text-xl font-bold text-indigo-900 dark:text-indigo-200">
+                  {t("pricingSection.plans.enterprise.title")}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {t("pricingSection.plans.enterprise.description")}
+                </p>
+              </div>
+              <ul className="mb-8 flex-1 space-y-4">
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.0")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.1")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.2")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.3")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.4")}
+                </li>
+                <li className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    <Check className="h-3 w-3" />
+                  </div>
+                  {t("pricingSection.plans.enterprise.features.5")}
+                </li>
+              </ul>
+              <Link
+                href="/#contact"
+                className="block w-full rounded-xl bg-indigo-600 px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-indigo-700 shadow-lg shadow-indigo-200 dark:shadow-indigo-900/20"
+              >
+                {t("pricingSection.cta")}
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

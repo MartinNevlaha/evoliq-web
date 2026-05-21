@@ -36,3 +36,16 @@ Thumbs.db
 coverage/
 
 .env.example
+
+# Screenshot source directory
+screenshots_ai_control/
+
+# AI Assistants and Editor configurations
+.mcp/
+.stratus/
+.opencode/
+.claude/
+claude_settings.json
+claude_settings.sjjon
+*settings.json
+*settings.sjjon

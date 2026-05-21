@@ -190,13 +190,18 @@
   },
   "AIControl": {
     "hero": {
-      "product": "Product",
-      "titlePrefix": "Empower your business with",
-      "titleSuffix": "Intelligence",
-      "subtitle": "Intelligent cloud system for comprehensive audit, certification, and quality management",
-      "description": "AI-powered multitenant platform automating audit planning, execution, and reporting. Available in Slovak, Czech, and English.",
-      "ctaPrimary": "Contact Sales",
-      "ctaSecondary": "View Pricing"
+      "product": "Audit | DMS | Optional Private AI",
+      "titlePrefix": "Audit & Document Control with AI That Remains",
+      "titleSuffix": "Under Your Control.",
+      "subtitle": "AI Control combines an audit system and a Document Management System into a single secure platform. For customers with high data protection requirements, we offer integration with a local or private language model.",
+      "description": "Run AI securely in an isolated environment, custom fine-tuned to your guidelines, terminology, and business processes.",
+      "ctaPrimary": "Start with a Pilot Audit",
+      "ctaSecondary": "View Pricing",
+      "badges": [
+        "Up to 70% less time on audit preparation",
+        "Optional local open-source LLM without external cloud",
+        "DMS ready for standards, evidence, and certifications"
+      ]
     },
     "benefits": {
       "cloud": {
@@ -343,6 +348,30 @@
           "Automated finding categorization"
         ]
       },
+      "dms": {
+        "title": "Document Management System (DMS)",
+        "desc": "Intelligent management of controlled documentation fully integrated with audit processes and standards. It not only stores documents securely but understands them completely.",
+        "details": [
+          "Central registry of directives, procedures, and certificates",
+          "Version control, ownership, validity tracking, and approval workflows",
+          "Direct linking of documents to ISO standards and control questions",
+          "AI semantic search and automatic content summarization",
+          "Tracking of risks, approaching expirations, and missing evidence",
+          "Supplier portal for secure collection of external certifications and documents"
+        ]
+      },
+      "custom_ai": {
+        "title": "Local Open-Source LLM & Custom Fine-Tuning",
+        "desc": "Absolute control over your company know-how. Run AI locally without sending sensitive data, and fine-tune models to mirror your internal decision-making style.",
+        "details": [
+          "Integration with local or private large language models (LLMs)",
+          "Complete data isolation – sensitive documents never leave your infrastructure",
+          "Custom fine-tuning tailored to your specific terminology and business processes",
+          "Preparation of custom training datasets from historical audit records",
+          "Traceable AI responses mapped directly to source documents",
+          "Independence from public cloud providers with stable, guaranteed operation"
+        ]
+      },
       "screenshotPlaceholder": "Screenshot will be added"
     },
     "cta": {
@@ -375,6 +404,18 @@
             "5 / 8 / 10 audits",
             "Mobile app: 0 / 3 / 5 / 10 devices",
             "Priority support"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise & Custom AI",
+          "description": "Custom solution with optional private AI and fine-tuning.",
+          "features": [
+            "Deployment on your own servers or private cloud",
+            "Optional local open-source LLM without data leakage",
+            "Model fine-tuning based on your internal data and terminology",
+            "Document Management System (DMS) linked to processes",
+            "Unlimited number of audits and users",
+            "Individual SLA and dedicated support"
           ]
         }
 

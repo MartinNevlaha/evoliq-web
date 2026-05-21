@@ -190,13 +190,18 @@
   },
   "AIControl": {
     "hero": {
-      "product": "Produkt",
-      "titlePrefix": "Posilnite svoje podnikanie s",
-      "titleSuffix": "Inteligenciou",
-      "subtitle": "Inteligentný cloudový systém pre komplexnú správu auditov, certifikácií a kvality",
-      "description": "Multitenant platforma s umelou inteligenciou, ktorá automatizuje plánovanie, vykonávanie a reporting auditov. Dostupná v slovenčine, češtine a angličtine.",
-      "ctaPrimary": "Kontaktovať obchod",
-      "ctaSecondary": "Pozrieť cenník"
+      "product": "Audit | DMS | Voliteľná privátna AI",
+      "titlePrefix": "Riadenie auditov a dokumentov s AI, ktorá zostáva",
+      "titleSuffix": "pod vašou kontrolou.",
+      "subtitle": "AI Control spája auditný systém a Document Management System do jednej bezpečnej platformy. Pre zákazníkov s vyššími nárokmi na ochranu dát ponúkame tiež možnosť napojenia na lokálny alebo privátny jazykový model.",
+      "description": "Prevádzkujte AI bezpečne v izolovanom prostredí, doladenú na mieru vašim smerniciam, terminológii a procesom.",
+      "ctaPrimary": "Začnite pilotným auditom",
+      "ctaSecondary": "Pozrieť cenník",
+      "badges": [
+        "Až 70 % menej času na prípravu auditov",
+        "Možnosť lokálneho open-source LLM bez externého cloudu",
+        "DMS pripravené pre normy, dôkazy a certifikácie"
+      ]
     },
     "benefits": {
       "cloud": {
@@ -343,6 +348,30 @@
           "Automatická kategorizácia zistení"
         ]
       },
+      "dms": {
+        "title": "Document Management System (DMS)",
+        "desc": "Inteligentná správa riadenej dokumentácie plne integrovaná s auditnými procesmi a normami. Dokumenty nielen bezpečne ukladá, ale im aj plne rozumie.",
+        "details": [
+          "Centrálna evidencia smerníc, pracovných postupov a certifikátov",
+          "Riadenie verzií, vlastníkov, platností a schvaľovacích workflow",
+          "Priame prepojenie dokumentov s ISO normami a kontrolnými otázkami",
+          "AI sémantické vyhľadávanie a automatická sumarizácia obsahu",
+          "Sledovanie rizík, blížiacich sa expirácií a chýbajúcich dôkazov",
+          "Dodávateľský portál pre bezpečný zber externých osvedčení a dokumentov"
+        ]
+      },
+      "custom_ai": {
+        "title": "Lokálne open-source LLM & Fine-tuning na mieru",
+        "desc": "Absolútna kontrola nad vaším know-how. Možnosť prevádzkovať AI lokálne bez odosielania citlivých dát a doladiť model pre váš interný rozhodovací štýl.",
+        "details": [
+          "Možnosť napojenia na lokálny alebo privátny jazykový model",
+          "Plná izolácia dát – citlivé dokumenty neopúšťajú vašu infraštruktúru",
+          "Vlastný fine-tuning (doladenie) na vašu terminológiu a firemné procesy",
+          "Príprava vlastných trénovacích datasetov z vašich historických auditov",
+          "Odpovede AI sú vždy dohľadateľné a viazané na zdrojové dokumenty",
+          "Nezávislosť od verejných cloudových poskytovateľov a stabilná prevádzka"
+        ]
+      },
       "screenshotPlaceholder": "Screenshot bude doplnený"
     },
     "cta": {
@@ -375,6 +404,18 @@
             "5 / 8 / 10 auditov",
             "Mobilná aplikácia: 0 / 3 / 5 / 10 zariadení",
             "Prioritná podpora"
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise & Custom AI",
+          "description": "Riešenie na mieru s možnosťou privátnej AI a fine-tuningu.",
+          "features": [
+            "Prevádzka na vlastných serveroch alebo v privátnom cloude",
+            "Možnost lokálneho open-source LLM bez úniku dát",
+            "Trénovanie (fine-tuning) modelu na vaše interné dáta a terminológiu",
+            "Document Management System (DMS) napojený na procesy",
+            "Neobmedzený počet auditov a používateľov",
+            "Individuálne SLA a dedikovaná podpora"
           ]
         }
 
