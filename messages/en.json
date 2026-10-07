@@ -8,7 +8,11 @@
     "products": "Products",
     "about": "About Us",
     "contact": "Contact",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "labs": "Labs",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "navigation": "Main navigation"
   },
   "Hero": {
     "badge": "Evoliq",
@@ -527,5 +531,137 @@
       }
     }
 
+  },
+  "LabsCommon": {
+    "comingSoon": "Coming soon",
+    "researchPreview": "Research preview",
+    "labsLabel": "Labs",
+    "visual": {
+      "title": "The Unflatten model family",
+      "subtitle": "From flat files to editable structures.",
+      "wInput": "PDF / document images",
+      "wOutput": "→ editable DOCX",
+      "xInput": "Documents / tables",
+      "xOutput": "→ structured spreadsheets",
+      "pInput": "Slides / visual layouts",
+      "pOutput": "→ editable presentations",
+      "shared": "SHARED FOUNDATION",
+      "sharedDesc": "layout understanding · structured decoding · deterministic reconstruction"
+    }
+  },
+  "Labs": {
+    "title": "Evoliq Labs",
+    "lead": "Researching practical AI systems for document intelligence, structured reconstruction and private AI.",
+    "family": "Unflatten model family",
+    "familyText": "A growing family of models for reconstructing flat documents into editable Office structures.",
+    "open": "Open Unflatten W research preview",
+    "metadataTitle": "Evoliq Labs — AI research & model previews",
+    "metadataDescription": "Explore Evoliq Labs research in document intelligence, structured reconstruction and private AI, including the Unflatten model family. Research previews under active development.",
+    "metadataKeywords": [
+      "Evoliq Labs",
+      "Unflatten",
+      "AI research",
+      "document intelligence",
+      "document reconstruction",
+      "private AI"
+    ],
+    "ogAlt": "Evoliq Labs — the Unflatten research model family",
+    "eyebrow": "Applied AI research",
+    "statusTitle": "Research in progress",
+    "statusText": "Evoliq Labs projects are under active development. These pages present research previews; product availability has not been announced.",
+    "familyVisualTitle": "One foundation, three document workflows",
+    "familyVisualText": "The Unflatten family explores editable Office reconstruction: Word documents, spreadsheets and presentations built on a shared foundation for document understanding.",
+    "familyVisualAlt": "Unflatten model family with a shared document-understanding foundation: W reconstructs PDFs and document images as editable DOCX, X reconstructs documents and tables as spreadsheets, and P reconstructs slides and visual layouts as presentations."
+  },
+  "UnflattenW": {
+    "metadataTitle": "Unflatten W — Document intelligence research preview | Evoliq Labs",
+    "metadataDescription": "Unflatten W is an Evoliq Labs research preview for reconstructing PDFs and document images into editable, structured DOCX files. Part of the growing Unflatten model family.",
+    "labs": "Evoliq Labs",
+    "eyebrow": "Research preview",
+    "title": "Unflatten W",
+    "subtitle": "From PDF and document images to editable DOCX",
+    "intro": "Unflatten W is a research-driven document intelligence model focused on reconstructing structured Word documents with high fidelity. It is designed to understand visible document layout, structure and content, then rebuild them as clean, editable DOCX files.",
+    "explore": "Explore the model",
+    "technicalOverview": "Read technical overview",
+    "researchDriven": "Research driven",
+    "realDocs": "Real-world documents",
+    "structuredOutput": "Structured output",
+    "input": "PDF / document images",
+    "inputDesc": "Scanned documents, reports, contracts and forms",
+    "understanding": "Canonical AST",
+    "understandingDesc": "Structured document representation",
+    "output": "Editable DOCX",
+    "outputDesc": "Structured, editable and renderer-ready",
+    "pipelineItems": [
+      "Layout analysis",
+      "Structure reconstruction",
+      "Content alignment",
+      "Typed properties"
+    ],
+    "familyTitle": "Introducing the Unflatten family",
+    "familyIntro": "Unflatten is a research family of document intelligence models focused on turning complex files into editable, structured outputs. Each model targets a different office-document workflow while sharing a common foundation in layout understanding, structured decoding and reconstruction quality.",
+    "familyLink": "Explore Evoliq Labs",
+    "shared": "Shared foundation",
+    "sharedDesc": "Layout understanding, structured decoding and model research",
+    "wDesc": "PDF / document images → editable DOCX",
+    "xDesc": "Documents and tables → structured spreadsheet output",
+    "pDesc": "Slides and visual layouts → editable presentation structure",
+    "whatTitle": "What Unflatten W is designed to do",
+    "features": [
+      [
+        "Layout reconstruction",
+        "Paragraphs, headings, lists, sections and multi-column document structure."
+      ],
+      [
+        "Table recovery",
+        "Dense tables, merged cells, spans and structured table reconstruction."
+      ],
+      [
+        "Image & resource handling",
+        "Inline images, document assets and image-resource recovery."
+      ],
+      [
+        "Dense & MoE architecture",
+        "Future research will explore dense and Mixture-of-Experts (MoE) variants built on a shared document core."
+      ]
+    ],
+    "familyVisualTitle": "The Unflatten model family",
+    "familyVisualText": "A single research direction for editable Office reconstruction: Word, spreadsheets and presentations — with a shared document-understanding foundation.",
+    "architectureTitle": "Technical summary",
+    "architectureText": "The current Unflatten W architecture separates learned document reconstruction from deterministic assembly and rendering. The model predicts document structure, visible text and typed properties; deterministic components promote validated output to the Canonical AST and render it to DOCX.",
+    "architecturePills": [
+      "Canonical AST",
+      "Qwen3-VL backbone",
+      "Structured decoding",
+      "DOCX renderer",
+      "Research preview"
+    ],
+    "statusTitle": "Research status",
+    "statusText": "Unflatten W and the wider Unflatten family are under active development at Evoliq Labs. This page is a public research preview, not a production-availability announcement.",
+    "location": "Planned publishing location",
+    "metadataKeywords": [
+      "Evoliq Labs",
+      "Unflatten W",
+      "document intelligence",
+      "PDF to Word",
+      "PDF to DOCX",
+      "document reconstruction",
+      "Canonical AST",
+      "Qwen3-VL",
+      "OCR",
+      "editable DOCX"
+    ],
+    "ogAlt": "Evoliq Labs — Unflatten W document reconstruction research preview",
+    "familyVisualAlt": "Unflatten model family with a shared document-understanding foundation: W reconstructs PDFs and document images as editable DOCX, X reconstructs documents and tables as spreadsheets, and P reconstructs slides and visual layouts as presentations.",
+    "technicalPixels": "Pixels",
+    "technicalInput": "PDF / image input",
+    "technicalModel": "Model",
+    "technicalModelValue": "Qwen3-VL + document reconstruction branch",
+    "technicalValidated": "Validated representation",
+    "technicalOutput": "Canonical AST → deterministic DOCX renderer"
+  },
+  "ThemeToggle": {
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode"
   }
 }

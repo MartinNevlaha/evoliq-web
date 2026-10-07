@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
+import { routing } from '@/i18n/routing';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://evoliq.cz';
   const currentDate = new Date();
 
-  const locales = ['cs', 'en', 'sk'];
-  const routes = ['', '/products/ai-control', '/products/ai-control/case-study'];
+  const routes = ['', '/products/ai-control', '/products/ai-control/case-study', '/labs', '/labs/unflatten-w'];
 
   return routes.flatMap(route => 
-    locales.map(locale => ({
+    routing.locales.map(locale => ({
       url: `${baseUrl}/${locale}${route}`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,

@@ -1,14 +1,20 @@
 "use client";
 import { Moon, Sun } from "lucide-react";
 import React from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function ThemeToggle() {
+  const locale = useLocale();
+  const t = useTranslations('ThemeToggle');
   const [dark, setDark] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
+  React.useLayoutEffect(() => {
+    let preference: string | null = null;
+    try { preference = localStorage.getItem('theme'); } catch {}
+    const isDark = preference === 'dark' || (preference !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', isDark);
     setDark(isDark);
-  }, []);
+  }, [locale]);
 
   function toggle() {
     const el = document.documentElement;
@@ -20,9 +26,9 @@ export default function ThemeToggle() {
 
   const Icon = dark ? Sun : Moon;
   return (
-    <button onClick={toggle} className="inline-flex items-center gap-2 rounded-2xl border px-3 py-2 text-sm hover:opacity-90">
-      <Icon className="h-4 w-4" />
-      <span className="hidden sm:inline">{dark ? "Svetlý" : "Tmavý"} režim</span>
+    <button type="button" onClick={toggle} aria-label={dark ? t('lightMode') : t('darkMode')} aria-pressed={dark} className="inline-flex items-center gap-2 rounded-2xl border px-3 py-2 text-sm hover:opacity-90">
+      <Icon aria-hidden="true" className="h-4 w-4" />
+      <span className="hidden sm:inline">{dark ? t('lightMode') : t('darkMode')}</span>
     </button>
   );
 }
