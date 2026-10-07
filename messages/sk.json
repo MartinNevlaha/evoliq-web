@@ -8,7 +8,11 @@
     "products": "Produkty",
     "about": "O nás",
     "contact": "Kontakt",
-    "contactUs": "Kontaktujte nás"
+    "contactUs": "Kontaktujte nás",
+    "labs": "Labs",
+    "openMenu": "Otvoriť ponuku",
+    "closeMenu": "Zavrieť ponuku",
+    "navigation": "Hlavná navigácia"
   },
   "Hero": {
     "badge": "Evoliq",
@@ -527,5 +531,137 @@
       }
     }
 
+  },
+  "LabsCommon": {
+    "comingSoon": "Už čoskoro",
+    "researchPreview": "Výskumný náhľad",
+    "labsLabel": "Labs",
+    "visual": {
+      "title": "Rodina modelov Unflatten",
+      "subtitle": "Z plochých súborov do editovateľných štruktúr.",
+      "wInput": "PDF / obrázky dokumentov",
+      "wOutput": "→ editovateľný DOCX",
+      "xInput": "Dokumenty / tabuľky",
+      "xOutput": "→ štruktúrované tabuľky",
+      "pInput": "Snímky / vizuálne rozloženie",
+      "pOutput": "→ editovateľné prezentácie",
+      "shared": "SPOLOČNÝ ZÁKLAD",
+      "sharedDesc": "porozumenie rozloženiu · štruktúrované dekódovanie · deterministická rekonštrukcia"
+    }
+  },
+  "Labs": {
+    "title": "Evoliq Labs",
+    "lead": "Výskum praktických AI systémov pre dokumentovú inteligenciu, štruktúrovanú rekonštrukciu a privátnu AI.",
+    "family": "Rodina modelov Unflatten",
+    "familyText": "Rastúca rodina modelov na rekonštrukciu plochých dokumentov do editovateľných Office štruktúr.",
+    "open": "Otvoriť výskumný náhľad Unflatten W",
+    "metadataTitle": "Evoliq Labs — výskum AI a náhľady modelov",
+    "metadataDescription": "Objavte výskum Evoliq Labs v oblasti dokumentovej inteligencie, štruktúrovanej rekonštrukcie a privátnej AI vrátane rodiny modelov Unflatten. Výskumné náhľady v aktívnom vývoji.",
+    "metadataKeywords": [
+      "Evoliq Labs",
+      "Unflatten",
+      "výskum AI",
+      "dokumentová inteligencia",
+      "rekonštrukcia dokumentov",
+      "privátna AI"
+    ],
+    "ogAlt": "Evoliq Labs — rodina výskumných modelov Unflatten",
+    "eyebrow": "Výskum praktických AI systémov",
+    "statusTitle": "Prebiehajúci výskum",
+    "statusText": "Projekty Evoliq Labs sú v aktívnom vývoji. Tieto stránky predstavujú výskumné náhľady; dostupnosť produktov zatiaľ nebola oznámená.",
+    "familyVisualTitle": "Jeden základ, tri typy dokumentov",
+    "familyVisualText": "Rodina Unflatten skúma rekonštrukciu editovateľných dokumentov Office: dokumentov Word, tabuliek a prezentácií so spoločným základom na porozumenie dokumentom.",
+    "familyVisualAlt": "Rodina modelov Unflatten so spoločným základom na porozumenie dokumentom: W rekonštruuje PDF a obrázky dokumentov do editovateľného DOCX, X dokumenty a tabuľky do tabuľkových súborov a P snímky a vizuálne rozloženie do prezentácií."
+  },
+  "UnflattenW": {
+    "metadataTitle": "Unflatten W — výskumný náhľad dokumentovej inteligencie | Evoliq Labs",
+    "metadataDescription": "Unflatten W je výskumný náhľad modelu Evoliq Labs na rekonštrukciu PDF a obrázkov dokumentov do editovateľných štruktúrovaných súborov DOCX. Súčasť rodiny modelov Unflatten.",
+    "labs": "Evoliq Labs",
+    "eyebrow": "Výskumný náhľad",
+    "title": "Unflatten W",
+    "subtitle": "Z PDF a obrazov dokumentov do editovateľného DOCX",
+    "intro": "Unflatten W je výskumný model dokumentovej inteligencie zameraný na vernú rekonštrukciu štruktúrovaných dokumentov Word. Cieľom je porozumieť viditeľnému rozloženiu, štruktúre a obsahu dokumentu a následne ich znovu zostaviť ako čistý, editovateľný DOCX.",
+    "explore": "Preskúmať model",
+    "technicalOverview": "Technický prehľad",
+    "researchDriven": "Výskumný vývoj",
+    "realDocs": "Reálne dokumenty",
+    "structuredOutput": "Štruktúrovaný výstup",
+    "input": "PDF / obrazy dokumentov",
+    "inputDesc": "Skeny, správy, zmluvy a formuláre",
+    "understanding": "Canonical AST",
+    "understandingDesc": "Štruktúrovaná reprezentácia dokumentu",
+    "output": "Editovateľný DOCX",
+    "outputDesc": "Štruktúrovaný, editovateľný a pripravený na renderovanie",
+    "pipelineItems": [
+      "Analýza rozloženia",
+      "Rekonštrukcia štruktúry",
+      "Zarovnanie obsahu",
+      "Typované vlastnosti"
+    ],
+    "familyTitle": "Predstavujeme rodinu Unflatten",
+    "familyIntro": "Unflatten je výskumná rodina modelov dokumentovej inteligencie zameraná na prevod zložitých súborov do editovateľných štruktúrovaných výstupov. Jednotlivé modely cielia na rôzne kancelárske formáty, no zdieľajú spoločný základ na porozumenie rozloženiu, štruktúrované dekódovanie a vernú rekonštrukciu.",
+    "familyLink": "Preskúmať Evoliq Labs",
+    "shared": "Spoločný základ",
+    "sharedDesc": "Porozumenie rozloženiu, štruktúrované dekódovanie a výskum modelov",
+    "wDesc": "PDF / obrazy dokumentov → editovateľný DOCX",
+    "xDesc": "Dokumenty a tabuľky → štruktúrovaný tabuľkový výstup",
+    "pDesc": "Snímky a vizuálne rozloženie → editovateľná štruktúra prezentácie",
+    "whatTitle": "Čo má Unflatten W dokázať",
+    "features": [
+      [
+        "Rekonštrukcia rozloženia",
+        "Odseky, nadpisy, zoznamy, sekcie a viacstĺpcová štruktúra dokumentu."
+      ],
+      [
+        "Rekonštrukcia tabuliek",
+        "Tabuľky s veľkým množstvom údajov, zlúčené bunky, bunky cez viacero riadkov či stĺpcov a obnova tabuľkovej štruktúry."
+      ],
+      [
+        "Obrázky a zdroje",
+        "Vložené obrázky, súvisiace súbory a obnova obrazových zdrojov dokumentu."
+      ],
+      [
+        "Architektúra Dense a MoE",
+        "V budúcom výskume chceme skúmať dense architektúry a varianty Mixture-of-Experts (MoE) so spoločným jadrom na prácu s dokumentmi."
+      ]
+    ],
+    "familyVisualTitle": "Rodina modelov Unflatten",
+    "familyVisualText": "Jedna výskumná línia pre editovateľnú rekonštrukciu Office dokumentov: Word, tabuľky a prezentácie so spoločným základom porozumenia dokumentom.",
+    "architectureTitle": "Technické zhrnutie",
+    "architectureText": "Aktuálna architektúra Unflatten W oddeľuje naučenú rekonštrukciu dokumentu od deterministického skladania a renderovania. Model predikuje štruktúru dokumentu, viditeľný text a typované vlastnosti; deterministické komponenty validovaný výstup povýšia do Canonical AST a vyrenderujú ho do DOCX.",
+    "architecturePills": [
+      "Canonical AST",
+      "Qwen3-VL backbone",
+      "Štruktúrované dekódovanie",
+      "DOCX renderer",
+      "Výskumný náhľad"
+    ],
+    "statusTitle": "Stav výskumu",
+    "statusText": "Unflatten W aj širšia rodina Unflatten sú v aktívnom vývoji v Evoliq Labs. Táto stránka je verejný výskumný náhľad, nie oznámenie produkčnej dostupnosti.",
+    "location": "Plánované umiestnenie stránky",
+    "metadataKeywords": [
+      "Evoliq Labs",
+      "Unflatten W",
+      "dokumentová inteligencia",
+      "PDF do Wordu",
+      "PDF do DOCX",
+      "rekonštrukcia dokumentov",
+      "Canonical AST",
+      "Qwen3-VL",
+      "OCR",
+      "editovateľný DOCX"
+    ],
+    "ogAlt": "Evoliq Labs — výskumný náhľad rekonštrukcie dokumentov Unflatten W",
+    "familyVisualAlt": "Rodina modelov Unflatten so spoločným základom na porozumenie dokumentom: W rekonštruuje PDF a obrázky dokumentov do editovateľného DOCX, X dokumenty a tabuľky do tabuľkových súborov a P snímky a vizuálne rozloženie do prezentácií.",
+    "technicalPixels": "Obrazové body",
+    "technicalInput": "Vstup: PDF / obrázok",
+    "technicalModel": "Model",
+    "technicalModelValue": "Qwen3-VL + vetva na rekonštrukciu dokumentov",
+    "technicalValidated": "Overená reprezentácia",
+    "technicalOutput": "Canonical AST → deterministický renderer DOCX"
+  },
+  "ThemeToggle": {
+    "lightMode": "Svetlý režim",
+    "darkMode": "Tmavý režim"
   }
 }

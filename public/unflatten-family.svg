@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">One foundation, three document workflows</title>
+  <desc id="desc">Unflatten model family with a shared document-understanding foundation: W reconstructs PDFs and document images as editable DOCX, X reconstructs documents and tables as spreadsheets, and P reconstructs slides and visual layouts as presentations.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eef6ff"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0369a1" flood-opacity=".10"/></filter>
+  </defs>
+  <rect width="1200" height="675" rx="42" fill="url(#bg)"/>
+  <g fill="#0f172a" font-family="Arial,Helvetica,sans-serif">
+    <text x="72" y="82" font-size="22" font-weight="700" letter-spacing="4">EVOLIQ LABS</text>
+    <text x="72" y="136" font-size="44" font-weight="800">The Unflatten model family</text>
+    <text x="72" y="177" font-size="19" fill="#475569">From flat files to editable structures.</text>
+  </g>
+  <g transform="translate(72 230)" filter="url(#shadow)">
+    <rect width="314" height="252" rx="28" fill="#fff" stroke="#bae6fd"/>
+    <circle cx="56" cy="58" r="28" fill="#e0f2fe"/><path d="M47 43h18l12 12v26H47z" fill="none" stroke="#0284c7" stroke-width="4"/><path d="M65 43v13h12" fill="none" stroke="#0284c7" stroke-width="4"/>
+    <text x="34" y="120" font-family="Arial" font-size="31" font-weight="800" fill="#0f172a">Unflatten W</text>
+    <text x="34" y="157" font-family="Arial" font-size="18" fill="#475569">PDF / document images</text>
+    <text x="34" y="186" font-family="Arial" font-size="18" fill="#0284c7">→ editable DOCX</text>
+    <rect x="34" y="207" width="178" height="28" rx="14" fill="#eff6ff" stroke="#93c5fd"/><text x="49" y="226" font-family="Arial" font-size="12" font-weight="700" fill="#2563eb">Coming soon</text>
+  </g>
+  <g transform="translate(443 230)" filter="url(#shadow)">
+    <rect width="314" height="252" rx="28" fill="#fff" stroke="#bae6fd"/>
+    <circle cx="56" cy="58" r="28" fill="#e0f2fe"/><g fill="none" stroke="#0284c7" stroke-width="4"><rect x="42" y="44" width="29" height="29" rx="3"/><path d="M52 44v29M61 44v29M42 54h29M42 64h29"/></g>
+    <text x="34" y="120" font-family="Arial" font-size="31" font-weight="800" fill="#0f172a">Unflatten X</text>
+    <text x="34" y="157" font-family="Arial" font-size="18" fill="#475569">Documents / tables</text>
+    <text x="34" y="186" font-family="Arial" font-size="18" fill="#0284c7">→ structured spreadsheets</text>
+    <rect x="34" y="207" width="178" height="28" rx="14" fill="#eff6ff" stroke="#93c5fd"/><text x="49" y="226" font-family="Arial" font-size="12" font-weight="700" fill="#2563eb">Coming soon</text>
+  </g>
+  <g transform="translate(814 230)" filter="url(#shadow)">
+    <rect width="314" height="252" rx="28" fill="#fff" stroke="#bae6fd"/>
+    <circle cx="56" cy="58" r="28" fill="#e0f2fe"/><g fill="none" stroke="#0284c7" stroke-width="4"><rect x="39" y="43" width="35" height="24" rx="4"/><path d="M56 67v12M47 79h18"/><circle cx="56" cy="55" r="5"/></g>
+    <text x="34" y="120" font-family="Arial" font-size="31" font-weight="800" fill="#0f172a">Unflatten P</text>
+    <text x="34" y="157" font-family="Arial" font-size="18" fill="#475569">Slides / visual layouts</text>
+    <text x="34" y="186" font-family="Arial" font-size="18" fill="#0284c7">→ editable presentations</text>
+    <rect x="34" y="207" width="178" height="28" rx="14" fill="#eff6ff" stroke="#93c5fd"/><text x="49" y="226" font-family="Arial" font-size="12" font-weight="700" fill="#2563eb">Coming soon</text>
+  </g>
+  <g stroke="#38bdf8" stroke-width="4" fill="none" opacity=".8"><path d="M229 493v48h371"/><path d="M600 493v48"/><path d="M971 493v48H600"/></g>
+  <g transform="translate(330 541)"><rect width="540" height="82" rx="28" fill="url(#blue)"/><text x="270" y="34" text-anchor="middle" font-family="Arial" font-size="19" font-weight="700" fill="#fff">SHARED FOUNDATION</text><text x="270" y="61" text-anchor="middle" font-family="Arial" font-size="12" fill="#e0f2fe">layout understanding · structured decoding · deterministic reconstruction</text></g>
+</svg>
