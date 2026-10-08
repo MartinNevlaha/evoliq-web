@@ -9,6 +9,7 @@ import LabsBrand from '@/components/labs/LabsBrand';
 import UnflattenFamily from '@/components/labs/UnflattenFamily';
 import FamilyVisual from '@/components/labs/FamilyVisual';
 import ResearchStatus from '@/components/labs/ResearchStatus';
+import ArchitectureVisuals from '@/components/labs/ArchitectureVisuals';
 
 export default async function UnflattenWPage() {
   const t = await getTranslations('UnflattenW');
@@ -102,6 +103,7 @@ export default async function UnflattenWPage() {
             </div>
           </div>
         </section>
+        <ArchitectureVisuals />
         <ResearchStatus namespace="UnflattenW" />
       </main>
       <Footer />
