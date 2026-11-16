@@ -28,7 +28,7 @@
 **Interfaces:** one release constant provides confirmed model name/version and public model/tool/docs URLs to page components and JSON-LD; translated content provides public-facing text.
 
 - [x] Contact release agent and audit current site; baseline smoke tests pass (7/7).
-- [ ] Confirm the model agent's release brief and public repository state.
+- [x] Confirm the model agent's release brief and public repository state.
 - [x] Extend HTTP tests to require Dense release status and links, preview status on X/P/Forms, release JSON-LD, qualified evaluation, and current imagery.
 - [x] Run against the old production build; expect release assertions to fail.
 - [x] Implement localized guide, scoped status and consistent SEO using verified source facts.
@@ -47,3 +47,5 @@
 Execution note: prepare the local draft from the existing release documents while publication proceeds. Final source confirmation and anonymous link checks remain mandatory before publishing. Baseline 7/7 passed; release regression tests fail on the expected missing released family-card status.
 
 Verification: production build passed; HTTP tests 7/7 passed; 36 browser viewport/theme/locale checks passed without horizontal overflow or page errors. Independent review found no factual blockers. Applied suggestions to guide the primary CTA to setup, explain automatic model download, and consolidate repeated cautions. Public source availability and final release-agent brief are still pending; do not deploy before those checks.
+
+Final source confirmation: publishing agent completed the release and supplied public docs/RELEASE.md on 16 November 2026. Anonymous model/repository API checks returned 200 with private=false; model card, licence, application README, launcher and API guide all returned 200. The final brief confirms the prepared facts and adds the normalized CER ≤ 2% tolerance definition and application v1.0.0 release. These details are linked and summarized on the page. The previous publication gate is satisfied.

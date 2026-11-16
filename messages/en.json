@@ -695,7 +695,7 @@
     "docsLink": "Read the setup and API documentation",
     "licenseLink": "Read the licence",
     "quickstartTitle": "Start a local conversion",
-    "quickstartText": "Clone or extract the application repository and run ./Start.sh from its directory. Follow the setup prompts, create a local password and wait for model preparation. Upload a PDF, PNG or JPEG through the local interface, follow the job's page progress and download the resulting Word document. The application coordinates multipage documents; the model processes one raster page per call. The launcher automatically downloads, verifies and prepares the public model; a Hugging Face account or token is not required.",
+    "quickstartText": "Clone or extract the application repository and run ./Start.sh. The launcher automatically downloads, verifies and prepares the public model; no Hugging Face account or token is needed. Create a local password, upload PDF, PNG or JPEG, follow the job progress and download Word. The application interface is available in Slovak and English.",
     "requirementsTitle": "What you need",
     "requirements": [
       "Linux, Docker Engine with the Compose plugin, NVIDIA Container Toolkit and an NVIDIA driver compatible with the runtime's CUDA 13.",
@@ -707,7 +707,7 @@
     "licenseTitle": "Personal and commercial use",
     "licenseText": "EVOLIQ's original contributions are free for an individual's private, noncommercial use under the EVOLIQ Personal Use and Commercial License 1.0. Business use, internal organizational use, professional or client work, product integration and hosted services require a separate paid written agreement with EVOLIQ s.r.o. before use. Third-party components retain their own licences, including Apache 2.0 for the Qwen backbone.",
     "evaluationTitle": "Validation results and their limits",
-    "evaluationIntro": "Dense 1.0 was evaluated on the same 100 fixed validation pages using the same decoding setup. The following diagnostic measures describe that validation set.",
+    "evaluationIntro": "Dense 1.0 was compared on the same 100 fixed validation pages using the same decoding setup. The text-tolerance criterion is a normalized character error rate ≤ 2%. The release notes explain the text normalization; 90 / 100 is a page-level pass rate.",
     "evaluationRows": [
       [
         "Pages passing the configured text-tolerance test",
@@ -738,6 +738,9 @@
       "CUDA inference was verified on NVIDIA DGX Spark. Other platforms and fresh installations need their own validation.",
       "The distributed model uses BF16. A separate experimental FP8 test bundle is not distributed with this release."
     ],
-    "sourcesLabel": "Model card, application README and API guide"
+    "sourcesLabel": "Model card, application README and API guide",
+    "publishedOn": "Released 16 November 2026",
+    "releaseLink": "Get application v1.0.0",
+    "notesLink": "Detailed release notes"
   }
 }

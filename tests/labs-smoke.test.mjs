@@ -61,12 +61,16 @@ for (const locale of locales) {
         const anchors = tags(html, 'a');
         assert.ok(anchors.some(link => link.href === modelUrl), 'public model link');
         assert.ok(anchors.some(link => link.href === toolUrl), 'public inference tool link');
+        assert.ok(anchors.some(link => link.href === `${toolUrl}/releases/tag/v1.0.0`), 'versioned application release');
+        assert.ok(anchors.some(link => link.href === `${toolUrl}/blob/main/docs/RELEASE.md`), 'agent-provided release facts and methodology');
         assert.ok(anchors.some(link => link.href === `${toolUrl}/blob/main/docs/API.md`), 'headless API documentation link');
         assert.ok(anchors.some(link => link.href === `${modelUrl}/blob/main/LICENSE`), 'actual model licence link');
         assert.ok(html.includes('./Start.sh'), 'documented local launcher');
         assert.ok(html.includes('90 / 100') && html.includes('99 / 100'), 'scoped diagnostic evaluation');
+        assert.ok(/≤\s*2\s?%/.test(html), 'explicit normalized text-tolerance criterion');
         assert.ok(html.includes('BF16') && html.includes('16 GB'), 'distributed runtime and memory recommendation');
         assert.equal(researchSchema.about.softwareVersion, '1.0');
+        assert.equal(researchSchema.about.datePublished, '2026-11-16');
         assert.equal(researchSchema.about.downloadUrl, modelUrl);
         assert.ok(!tags(html, 'img').some(tag => /unflatten-w-(dense|moe)-architecture/.test(tag.src)), 'unverified historical diagrams do not describe the release');
       }

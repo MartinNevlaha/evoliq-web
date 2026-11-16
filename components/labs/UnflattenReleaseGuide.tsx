@@ -14,10 +14,11 @@ export default async function UnflattenReleaseGuide() {
   return (
     <section id="release" className="mx-auto max-w-6xl scroll-mt-32 px-4 pt-14 sm:pt-20">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t('title')}</h2>
+      <p className="mt-3 text-sm font-medium text-neutral-500 dark:text-neutral-400"><time dateTime={unflattenRelease.date}>{t('publishedOn')}</time></p>
       <p className="mt-4 max-w-4xl leading-7 text-neutral-600 dark:text-neutral-300">{t('intro')}</p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a href={unflattenRelease.model} className={linkClass}><Download aria-hidden="true" className="h-4 w-4" />{t('modelLink')}</a>
-        <a href={unflattenRelease.tool} className={linkClass}>{t('toolLink')}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></a>
+        <a href={unflattenRelease.applicationRelease} className={linkClass}>{t('releaseLink')}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></a>
       </div>
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         <div className={cardClass}>
@@ -44,7 +45,7 @@ export default async function UnflattenReleaseGuide() {
         <div className={cardClass}>
           <h3 className="text-xl font-bold">{t('limitationsTitle')}</h3>
           <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-neutral-600 dark:text-neutral-300">{limitations.map(item => <li key={item}>{item}</li>)}</ul>
-          <p className="mt-6 text-sm leading-7 text-neutral-600 dark:text-neutral-300">{t('sourcesLabel')} <a href={unflattenRelease.model} className="font-semibold text-sky-700 underline dark:text-sky-300">{t('modelLink')}</a> · <a href={unflattenRelease.tool} className="font-semibold text-sky-700 underline dark:text-sky-300">{t('toolLink')}</a></p>
+          <p className="mt-6 text-sm leading-7 text-neutral-600 dark:text-neutral-300">{t('sourcesLabel')} <a href={unflattenRelease.model} className="font-semibold text-sky-700 underline dark:text-sky-300">{t('modelLink')}</a> · <a href={unflattenRelease.tool} className="font-semibold text-sky-700 underline dark:text-sky-300">{t('toolLink')}</a> · <a href={unflattenRelease.notes} className="font-semibold text-sky-700 underline dark:text-sky-300">{t('notesLink')}</a></p>
         </div>
       </div>
     </section>

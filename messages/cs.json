@@ -695,7 +695,7 @@
     "docsLink": "Přečíst návod ke spuštění a dokumentaci API",
     "licenseLink": "Přečíst licenci",
     "quickstartTitle": "Spusťte místní převod",
-    "quickstartText": "Naklonujte nebo rozbalte repozitář aplikace a v jeho složce spusťte ./Start.sh. Projděte úvodním nastavením, vytvořte místní heslo a počkejte na přípravu modelu. V místním rozhraní nahrajte PDF, PNG nebo JPEG, sledujte průběh zpracování jednotlivých stránek a stáhněte výsledný dokument Word. Vícestránkové dokumenty koordinuje aplikace; model zpracovává jednu rastrovou stránku na volání. Spouštěč veřejný model automaticky stáhne, ověří a připraví; účet ani token Hugging Face nejsou potřeba.",
+    "quickstartText": "Naklonujte nebo rozbalte repozitář aplikace a spusťte ./Start.sh. Spouštěč veřejný model automaticky stáhne, ověří a připraví; účet ani token Hugging Face nejsou potřeba. Vytvořte si lokální heslo, nahrajte PDF, PNG nebo JPEG, sledujte průběh úlohy a stáhněte Word. Rozhraní aplikace je dostupné ve slovenštině a angličtině.",
     "requirementsTitle": "Co potřebujete",
     "requirements": [
       "Linux, Docker Engine s pluginem Compose, NVIDIA Container Toolkit a ovladač NVIDIA kompatibilní s CUDA 13 používanou běhovým prostředím.",
@@ -707,7 +707,7 @@
     "licenseTitle": "Osobní a komerční použití",
     "licenseText": "Původní příspěvky EVOLIQ jsou podle EVOLIQ Personal Use and Commercial License 1.0 zdarma pro soukromé nekomerční použití jednotlivcem. Firemní použití, interní použití v organizaci, profesionální práce či práce pro klienty, integrace do produktů a hostované služby vyžadují před použitím samostatnou placenou písemnou dohodu s EVOLIQ s.r.o. Komponenty třetích stran si ponechávají vlastní licence, včetně Apache 2.0 pro základ Qwen.",
     "evaluationTitle": "Validační výsledky a jejich meze",
-    "evaluationIntro": "Dense 1.0 byl hodnocen na stejných 100 pevně daných validačních stránkách se stejným nastavením dekódování. Následující diagnostické ukazatele popisují tuto validační sadu.",
+    "evaluationIntro": "Dense 1.0 byl porovnán na stejných 100 pevně daných validačních stranách se stejným nastavením dekódování. Kritériem tolerance textu je normalizovaná chybovost znaků ≤ 2 %. Normalizaci textu vysvětluje přehled vydání; 90 / 100 vyjadřuje počet stran, které kritérium splnily.",
     "evaluationRows": [
       [
         "Stránky splňující nastavený test tolerance textu",
@@ -738,6 +738,9 @@
       "Inference CUDA byla ověřena na NVIDIA DGX Spark. Ostatní platformy a nové instalace vyžadují vlastní ověření.",
       "Distribuovaný model používá BF16. Samostatný experimentální testovací balíček FP8 není součástí tohoto vydání."
     ],
-    "sourcesLabel": "Karta modelu, README aplikace a příručka API"
+    "sourcesLabel": "Karta modelu, README aplikace a příručka API",
+    "publishedOn": "Vydáno 16. listopadu 2026",
+    "releaseLink": "Získat aplikaci v1.0.0",
+    "notesLink": "Podrobný přehled vydání"
   }
 }
