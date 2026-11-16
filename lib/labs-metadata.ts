@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { unflattenRelease } from "@/lib/unflatten-release";
 
 export type LabsLocale = (typeof routing.locales)[number];
 export type LabsRoute = "/labs" | "/labs/unflatten-w";
@@ -94,7 +95,7 @@ export async function createLabsJsonLd(locale: LabsLocale) {
   ]);
   const url = labsUrl(locale, "/labs");
   const modelUrl = labsUrl(locale, "/labs/unflatten-w");
-  const status = `${common("researchPreview")} · ${common("comingSoon")}`;
+  const status = common("released");
 
   return {
     "@context": "https://schema.org",
@@ -140,7 +141,7 @@ export async function createUnflattenWJsonLd(locale: LabsLocale) {
   ]);
   const url = labsUrl(locale, "/labs/unflatten-w");
   const collectionUrl = labsUrl(locale, "/labs");
-  const status = `${common("researchPreview")} · ${common("comingSoon")}`;
+  const status = common("released");
 
   return {
     "@context": "https://schema.org",
@@ -171,10 +172,16 @@ export async function createUnflattenWJsonLd(locale: LabsLocale) {
     about: {
       "@type": "SoftwareApplication",
       "@id": `${url}#research-model`,
-      name: "Unflatten W",
+      name: unflattenRelease.name,
       url,
       description: t("metadataDescription"),
-      applicationCategory: "ResearchApplication",
+      applicationCategory: "DeveloperApplication",
+      softwareVersion: unflattenRelease.version,
+      downloadUrl: unflattenRelease.model,
+      license: unflattenRelease.license,
+      sameAs: [unflattenRelease.model, unflattenRelease.tool],
+      softwareHelp: unflattenRelease.api,
+      operatingSystem: "Linux (NVIDIA CUDA)",
       creativeWorkStatus: status,
     },
   };

@@ -82,10 +82,22 @@
     "process": {
       "title": "How does it work?",
       "steps": [
-        { "title": "Initial Consultation", "desc": "quick mapping of needs and priorities" },
-        { "title": "On-site / Online Audit", "desc": "premises tour, interviews, document check" },
-        { "title": "Final Report", "desc": "clear findings + recommendations" },
-        { "title": "Follow-up Support", "desc": "consultation and implementation as needed" }
+        {
+          "title": "Initial Consultation",
+          "desc": "quick mapping of needs and priorities"
+        },
+        {
+          "title": "On-site / Online Audit",
+          "desc": "premises tour, interviews, document check"
+        },
+        {
+          "title": "Final Report",
+          "desc": "clear findings + recommendations"
+        },
+        {
+          "title": "Follow-up Support",
+          "desc": "consultation and implementation as needed"
+        }
       ]
     },
     "cta": "Together, we will set up a safer, more effective, and compliant environment for your team."
@@ -422,7 +434,6 @@
             "Individual SLA and dedicated support"
           ]
         }
-
       }
     }
   },
@@ -530,7 +541,6 @@
         "errorRate": "Error Rate"
       }
     }
-
   },
   "LabsCommon": {
     "comingSoon": "Coming soon",
@@ -548,16 +558,18 @@
       "pOutput": "→ editable presentations",
       "shared": "SHARED FOUNDATION",
       "sharedDesc": "layout understanding · structured decoding · deterministic reconstruction"
-    }
+    },
+    "released": "Publicly available",
+    "publishing": "Publication in progress"
   },
   "Labs": {
     "title": "Evoliq Labs",
     "lead": "Researching practical AI systems for document intelligence, structured reconstruction and private AI.",
     "family": "Unflatten model family",
-    "familyText": "A growing family of previews for reconstructing flat documents into editable Word documents, spreadsheets, presentations and forms: Unflatten W, X, P and Forms.",
-    "open": "Open Unflatten W research preview",
-    "metadataTitle": "Evoliq Labs — AI research & model previews",
-    "metadataDescription": "Explore Unflatten W, X, P and Forms at Evoliq Labs. The Unflatten W Dense model already exists and awaits public release; MoE remains a research direction.",
+    "familyText": "The Unflatten family covers editable Word documents, spreadsheets, presentations and forms. Unflatten W Dense 1.0 is publicly released as a research candidate; X, P and Forms are planned, and MoE remains research.",
+    "open": "Open Unflatten W Dense 1.0",
+    "metadataTitle": "Evoliq Labs — AI research and Unflatten W Dense 1.0",
+    "metadataDescription": "Explore the Unflatten family at Evoliq Labs. Unflatten W Dense 1.0 is a public research candidate for local PDF and image conversion to Word. X, P and Forms are planned; MoE remains research.",
     "metadataKeywords": [
       "Evoliq Labs",
       "Unflatten",
@@ -568,21 +580,21 @@
     ],
     "ogAlt": "Evoliq Labs — the Unflatten research model family",
     "eyebrow": "Applied AI research",
-    "statusTitle": "Research in progress",
-    "statusText": "The Unflatten W Dense model already exists and awaits public release. Unflatten W, X, P and Forms are presented here as previews; MoE remains a research direction.",
+    "statusTitle": "Release and research status",
+    "statusText": "Unflatten W Dense 1.0 is publicly released as a research candidate with a local application. X, P and Forms are planned; MoE remains a research direction. Generated documents require review.",
     "familyVisualTitle": "One foundation, four document workflows",
-    "familyVisualText": "Unflatten W, X, P and Forms bring together four document workflows: Word documents, spreadsheets, presentations and structured, editable forms, with a shared foundation for document understanding.",
+    "familyVisualText": "W targets editable Word documents; X, P and Forms are planned for spreadsheets, presentations and structured, editable forms. The family shares a research foundation in document understanding.",
     "familyVisualAlt": "Brand illustration of the Unflatten model family featuring Unflatten W, Unflatten X, Unflatten P and Unflatten Forms."
   },
   "UnflattenW": {
-    "metadataTitle": "Unflatten W — Document intelligence research preview | Evoliq Labs",
-    "metadataDescription": "Unflatten W focuses on PDF and document image reconstruction into editable DOCX. Its Dense model already exists and awaits public release; MoE remains a research direction.",
+    "metadataTitle": "Unflatten W Dense 1.0 — local PDF to Word | Evoliq Labs",
+    "metadataDescription": "Download Unflatten W Dense 1.0 and its local application to reconstruct PDF pages and document images into editable Word. A released research candidate; review output text and layout.",
     "labs": "Evoliq Labs",
-    "eyebrow": "Research preview",
-    "title": "Unflatten W",
+    "eyebrow": "Dense 1.0 · research candidate",
+    "title": "Unflatten W Dense 1.0",
     "subtitle": "From PDF and document images to editable DOCX",
-    "intro": "Unflatten W is an Evoliq Labs document intelligence model for reconstructing PDFs and document images into structured, editable Word documents. Its Dense model already exists and is awaiting public release.",
-    "explore": "Explore the model",
+    "intro": "Unflatten W Dense 1.0 is an Evoliq Labs research candidate for reconstructing PDF pages and document images into structured, editable Word documents. The public model runs through a dedicated local application; generated documents require review.",
+    "explore": "Download and get started",
     "technicalOverview": "Read technical overview",
     "researchDriven": "Research driven",
     "realDocs": "Real-world documents",
@@ -600,7 +612,7 @@
       "Typed properties"
     ],
     "familyTitle": "Introducing the Unflatten family",
-    "familyIntro": "The Unflatten family brings together previews of W for Word documents, X for spreadsheets, P for presentations and Forms for structured, editable forms. They share a foundation in layout understanding, structured decoding and reconstruction quality.",
+    "familyIntro": "Unflatten W Dense 1.0 is publicly released as a research candidate for Word documents. X for spreadsheets, P for presentations and Forms for structured, editable forms are planned. MoE remains a research direction.",
     "familyLink": "Explore Evoliq Labs",
     "shared": "Shared foundation",
     "sharedDesc": "Layout understanding, structured decoding and model research",
@@ -612,44 +624,44 @@
     "features": [
       [
         "Layout reconstruction",
-        "Paragraphs, headings, lists, sections and multi-column document structure."
+        "Reconstructs paragraphs, headings, lists, sections and document structure."
       ],
       [
         "Table recovery",
-        "Dense tables, merged cells, spans and structured table reconstruction."
+        "Reconstructs table structure and cell properties."
       ],
       [
-        "Image & resource handling",
-        "Inline images, document assets and image-resource recovery."
+        "Images and resources",
+        "Reconstructs image placement and document resources."
       ],
       [
-        "Dense & MoE architecture",
-        "The Dense model already exists and awaits public release. MoE remains a research direction."
+        "Dense release and MoE research",
+        "Dense 1.0 is a released research candidate. MoE remains a research direction."
       ]
     ],
     "familyVisualTitle": "The Unflatten model family",
-    "familyVisualText": "The Unflatten family brand brings together W, X, P and Forms: four previews for Word documents, spreadsheets, presentations and structured, editable forms.",
+    "familyVisualText": "The Unflatten family brings together W for Word and the planned X, P and Forms directions for spreadsheets, presentations and structured, editable forms.",
     "architectureTitle": "Technical summary",
-    "architectureText": "The current Unflatten W architecture separates learned document reconstruction from deterministic assembly and rendering. The model predicts document structure, visible text and typed properties; deterministic components promote validated output to the Canonical AST and render it to DOCX.",
+    "architectureText": "Dense 1.0 combines the frozen Qwen3-VL-4B-Instruct backbone with trained document-reconstruction modules and typed property heads. The local runtime uses BF16 and constrained document decoding. A deterministic renderer converts the validated Canonical AST into DOCX; valid structure does not guarantee correct text or layout.",
     "architectureVisualsTitle": "Dense & MoE architecture diagrams",
-    "architectureVisualsIntro": "The diagrams show the existing Dense model, which awaits public release, and the MoE architecture as a research preview.",
+    "architectureVisualsIntro": "The diagrams introduce the Dense architecture and the separate MoE research direction. See the release guide for the distributed Dense 1.0 runtime and its limitations.",
     "denseVisualTitle": "Dense architecture",
-    "denseVisualCaption": "The Dense model already exists and awaits public release. Diagram labels are in English and Slovak.",
-    "denseVisualAlt": "Architecture diagram for the existing Unflatten Dense model, awaiting public release, with English and Slovak labels.",
+    "denseVisualCaption": "Architecture overview for the released Dense 1.0 research candidate. Diagram labels are in English and Slovak; the release guide describes the supported runtime.",
+    "denseVisualAlt": "Architecture overview of the Unflatten Dense model, with English and Slovak labels.",
     "moeVisualTitle": "MoE architecture — research preview",
     "moeVisualCaption": "Research preview of the Mixture-of-Experts (MoE) architecture. Diagram labels are in English.",
     "moeVisualAlt": "English-language architecture diagram for Unflatten MoE, shown as a research preview.",
     "openVisual": "View full-size diagram",
     "architecturePills": [
       "Canonical AST",
-      "Qwen3-VL backbone",
-      "Structured decoding",
+      "Qwen3-VL-4B",
+      "BF16 constrained decoding",
       "DOCX renderer",
-      "Research preview"
+      "Research candidate"
     ],
-    "statusTitle": "Research status",
-    "statusText": "The Unflatten W Dense model already exists and awaits public release. This page presents a preview ahead of release, while MoE remains a research direction.",
-    "location": "Planned publishing location",
+    "statusTitle": "Release status",
+    "statusText": "Unflatten W Dense 1.0 and its local application are publicly available as a research release. X, P and Forms are planned, while MoE remains a research direction.",
+    "location": "Project page",
     "metadataKeywords": [
       "Evoliq Labs",
       "Unflatten W",
@@ -662,17 +674,70 @@
       "OCR",
       "editable DOCX"
     ],
-    "ogAlt": "Evoliq Labs — Unflatten W document reconstruction research preview",
+    "ogAlt": "Evoliq Labs — Unflatten W Dense 1.0 research candidate for local document reconstruction",
     "familyVisualAlt": "Brand illustration of the Unflatten model family featuring Unflatten W, Unflatten X, Unflatten P and Unflatten Forms.",
     "technicalPixels": "Pixels",
     "technicalInput": "PDF / image input",
     "technicalModel": "Model",
-    "technicalModelValue": "Qwen3-VL + document reconstruction branch",
+    "technicalModelValue": "Qwen3-VL-4B + document reconstruction modules",
     "technicalValidated": "Validated representation",
     "technicalOutput": "Canonical AST → deterministic DOCX renderer"
   },
   "ThemeToggle": {
     "lightMode": "Light mode",
     "darkMode": "Dark mode"
+  },
+  "UnflattenRelease": {
+    "title": "Download and run locally",
+    "intro": "The public Dense 1.0 research release includes a document reconstruction model and a dedicated local application for PDF and image conversion to editable Word.",
+    "modelLink": "Download the model on Hugging Face",
+    "toolLink": "Get the local application on GitHub",
+    "docsLink": "Read the setup and API documentation",
+    "licenseLink": "Read the licence",
+    "quickstartTitle": "Start a local conversion",
+    "quickstartText": "Clone or extract the application repository and run ./Start.sh from its directory. Follow the setup prompts, create a local password and wait for model preparation. Upload a PDF, PNG or JPEG through the local interface, follow the job's page progress and download the resulting Word document. The application coordinates multipage documents; the model processes one raster page per call. The launcher automatically downloads, verifies and prepares the public model; a Hugging Face account or token is not required.",
+    "requirementsTitle": "What you need",
+    "requirements": [
+      "Linux, Docker Engine with the Compose plugin, NVIDIA Container Toolkit and an NVIDIA driver compatible with the runtime's CUDA 13.",
+      "An NVIDIA CUDA GPU; at least 16 GB of GPU memory is recommended for the distributed BF16 model. Available memory and other GPU workloads affect whether it fits.",
+      "About 11 GB for the downloaded model, plus space for containers and documents. The first build and model download require internet access."
+    ],
+    "apiTitle": "API and headless use",
+    "apiText": "Use a Bearer API token to upload a document, poll its job status and download the Word result. This token is separate from the application password and any Hugging Face download token. Swagger and OpenAPI are served by your local installation. The repository's API guide documents authentication, requests and a Python client for conversion without the application interface.",
+    "licenseTitle": "Personal and commercial use",
+    "licenseText": "EVOLIQ's original contributions are free for an individual's private, noncommercial use under the EVOLIQ Personal Use and Commercial License 1.0. Business use, internal organizational use, professional or client work, product integration and hosted services require a separate paid written agreement with EVOLIQ s.r.o. before use. Third-party components retain their own licences, including Apache 2.0 for the Qwen backbone.",
+    "evaluationTitle": "Validation results and their limits",
+    "evaluationIntro": "Dense 1.0 was evaluated on the same 100 fixed validation pages using the same decoding setup. The following diagnostic measures describe that validation set.",
+    "evaluationRows": [
+      [
+        "Pages passing the configured text-tolerance test",
+        "90 / 100"
+      ],
+      [
+        "Exact text matches",
+        "9 / 100"
+      ],
+      [
+        "Diagnostic Word files produced",
+        "99 / 100"
+      ],
+      [
+        "Character error rate (raw aggregate)",
+        "13.8949%"
+      ],
+      [
+        "Word error rate",
+        "8.1013%"
+      ]
+    ],
+    "evaluationNote": "Producing a Word file measures diagnostic output, not visual fidelity or 99% accuracy. These are validation results, not an independent benchmark or evidence of production quality. Compared with the parent model, one more page passed the text-tolerance test and one more Word file was produced, while aggregate text errors were slightly higher.",
+    "limitationsTitle": "Current limitations",
+    "limitations": [
+      "Each model call accepts one raster page. The application coordinates the pages of a multipage PDF.",
+      "Text, reading order, layout, tables and image placement can contain errors. Review the generated document before relying on it.",
+      "CUDA inference was verified on NVIDIA DGX Spark. Other platforms and fresh installations need their own validation.",
+      "The distributed model uses BF16. A separate experimental FP8 test bundle is not distributed with this release."
+    ],
+    "sourcesLabel": "Model card, application README and API guide"
   }
 }

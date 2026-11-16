@@ -4,12 +4,12 @@ import { Link } from '@/i18n/routing';
 import NavBar from '@/components/sections/NavBar';
 import { Footer } from '@/components/sections/Footer';
 import CookieConsent from '@/components/common/CookieConsent';
-import ComingSoonBadge from '@/components/labs/ComingSoonBadge';
+import ModelStatusBadge from '@/components/labs/ModelStatusBadge';
 import LabsBrand from '@/components/labs/LabsBrand';
 import UnflattenFamily from '@/components/labs/UnflattenFamily';
 import FamilyVisual from '@/components/labs/FamilyVisual';
 import ResearchStatus from '@/components/labs/ResearchStatus';
-import ArchitectureVisuals from '@/components/labs/ArchitectureVisuals';
+import UnflattenReleaseGuide from '@/components/labs/UnflattenReleaseGuide';
 
 export default async function UnflattenWPage() {
   const t = await getTranslations('UnflattenW');
@@ -31,13 +31,13 @@ export default async function UnflattenWPage() {
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(14,165,233,0.13),transparent_34%),radial-gradient(circle_at_15%_10%,rgba(99,102,241,0.08),transparent_30%)]" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-[1.02fr_.98fr] lg:py-20">
             <div className="min-w-0">
-              <div className="mb-5 flex flex-wrap items-center gap-3"><LabsBrand /><ComingSoonBadge /></div>
+              <div className="mb-5 flex flex-wrap items-center gap-3"><LabsBrand /><ModelStatusBadge status="released" /></div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700 dark:text-sky-400">{t('eyebrow')}</p>
               <h1 className="mt-3 text-5xl font-black tracking-[-0.05em] sm:text-6xl lg:text-7xl">{t('title')}</h1>
               <p className="mt-5 max-w-2xl text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">{t('subtitle')}</p>
               <p className="mt-5 max-w-2xl leading-7 text-neutral-600 dark:text-neutral-300 sm:text-lg sm:leading-8">{t('intro')}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#capabilities" className="inline-flex items-center gap-2 rounded-2xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500">{t('explore')}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
+                <a href="#release" className="inline-flex items-center gap-2 rounded-2xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500">{t('explore')}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
                 <a href="#technical" className="inline-flex items-center gap-2 rounded-2xl border border-sky-300 px-5 py-3 text-sm font-semibold text-sky-700 transition-colors hover:bg-sky-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 dark:text-sky-300 dark:hover:bg-sky-950/40">{t('technicalOverview')}<FileOutput aria-hidden="true" className="h-4 w-4" /></a>
               </div>
               <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-xs font-semibold text-neutral-500 dark:text-neutral-400">
@@ -45,7 +45,7 @@ export default async function UnflattenWPage() {
               </div>
             </div>
             <div className="min-w-0 rounded-[2rem] border border-sky-100 bg-gradient-to-br from-sky-50/90 via-white to-indigo-50/80 p-5 shadow-[0_24px_80px_rgba(14,165,233,0.10)] dark:border-sky-900/60 dark:from-sky-950/30 dark:via-neutral-900 dark:to-indigo-950/30 sm:p-7">
-              <div className="flex flex-wrap items-center justify-between gap-3"><p className="text-xl font-bold">{t('title')}</p><ComingSoonBadge compact /></div>
+              <div className="flex flex-wrap items-center justify-between gap-3"><p className="text-xl font-bold">{t('title')}</p><ModelStatusBadge compact status="released" /></div>
               <ol className="mt-8 grid items-center gap-3 sm:grid-cols-[1fr_auto_1.15fr_auto_1fr]">
                 <li className="min-w-0 rounded-2xl border border-neutral-200 bg-white p-4 text-center dark:border-neutral-700 dark:bg-neutral-900"><FileText aria-hidden="true" className="mx-auto h-9 w-9 text-red-500" /><p className="mt-3 text-sm font-semibold">{t('input')}</p></li>
                 <li aria-hidden="true" className="mx-auto text-sky-500"><ArrowDown className="h-5 w-5 sm:hidden" /><ArrowRight className="hidden h-5 w-5 sm:block" /></li>
@@ -63,6 +63,7 @@ export default async function UnflattenWPage() {
             </div>
           </div>
         </section>
+        <UnflattenReleaseGuide />
         <section className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t('familyTitle')}</h2><p className="mt-4 max-w-4xl leading-7 text-neutral-600 dark:text-neutral-300">{t('familyIntro')}</p></div>
@@ -72,7 +73,7 @@ export default async function UnflattenWPage() {
         </section>
         <section id="capabilities" className="scroll-mt-32 border-y border-neutral-200 bg-neutral-50/70 dark:border-neutral-800 dark:bg-neutral-900/50">
           <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
-            <div className="flex flex-wrap items-center justify-between gap-4"><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t('whatTitle')}</h2><ComingSoonBadge /></div>
+            <div className="flex flex-wrap items-center justify-between gap-4"><h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t('whatTitle')}</h2><ModelStatusBadge status="released" /></div>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {features.map(([title, description], index) => {
                 const Icon = featureIcons[index];
@@ -86,7 +87,7 @@ export default async function UnflattenWPage() {
           <div className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
             <div className="grid items-center gap-8 lg:grid-cols-[1fr_.95fr]">
               <div>
-                <ComingSoonBadge />
+                <ModelStatusBadge status="released" />
                 <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">{t('architectureTitle')}</h2>
                 <p className="mt-4 max-w-3xl leading-7 text-neutral-600 dark:text-neutral-300">{t('architectureText')}</p>
                 <ul className="mt-6 flex flex-wrap gap-2">{architecturePills.map(pill => <li key={pill} className="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-medium dark:border-neutral-700 dark:bg-neutral-900">{pill}</li>)}</ul>
@@ -103,7 +104,6 @@ export default async function UnflattenWPage() {
             </div>
           </div>
         </section>
-        <ArchitectureVisuals />
         <ResearchStatus namespace="UnflattenW" />
       </main>
       <Footer />
