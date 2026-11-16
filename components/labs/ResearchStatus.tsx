@@ -1,6 +1,6 @@
 import { FlaskConical } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import ComingSoonBadge from './ComingSoonBadge';
+import ModelStatusBadge from './ModelStatusBadge';
 
 export default async function ResearchStatus({ namespace }: { namespace: 'Labs' | 'UnflattenW' }) {
   const t = await getTranslations(namespace);
@@ -11,7 +11,7 @@ export default async function ResearchStatus({ namespace }: { namespace: 'Labs' 
         <div className="flex flex-wrap items-center gap-3">
           <FlaskConical aria-hidden="true" className="h-5 w-5 text-sky-600 dark:text-sky-400" />
           <h2 className="text-xl font-bold">{t('statusTitle')}</h2>
-          <ComingSoonBadge compact />
+          <ModelStatusBadge compact status="researchPreview" />
         </div>
         <p className="mt-3 max-w-4xl text-sm leading-7 text-neutral-600 dark:text-neutral-300">{t('statusText')}</p>
       </div>

@@ -7,7 +7,9 @@ const baseUrl = process.env.LABS_TEST_BASE_URL || 'http://localhost:3000';
 const locales = ['cs', 'sk', 'en'];
 const routes = ['/labs', '/labs/unflatten-w'];
 const badges = { cs: 'Již brzy', sk: 'Už čoskoro', en: 'Coming soon' };
-const denseExists = { cs: 'již existuje', sk: 'už existuje', en: 'already exists' };
+const released = { cs: 'Veřejně dostupné', sk: 'Verejne dostupné', en: 'Publicly available' };
+const modelUrl = 'https://huggingface.co/Evoliq/Unflatten-W-Dense-1.0';
+const toolUrl = 'https://github.com/EvoliqCZ/UnflattenW_Inference_tool-';
 
 function decodeHtml(value) {
   const entities = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>' };
@@ -22,7 +24,7 @@ function tags(html, name) {
 
 for (const locale of locales) {
   for (const route of routes) {
-    test(`${locale}${route}: localized research page, SEO and assets`, async () => {
+    test(`${locale}${route}: Dense release, unreleased family, SEO and assets`, async () => {
       const response = await fetch(`${baseUrl}/${locale}${route}`);
       assert.equal(response.status, 200);
       const html = await response.text();
@@ -33,7 +35,10 @@ for (const locale of locales) {
       assert.ok(/<h3\b[^>]*>Unflatten Forms<\/h3>/.test(html), 'Forms is a model card');
       const formsCard = [...html.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)].map(([article]) => article).find(article => article.includes('Unflatten Forms'));
       assert.ok(formsCard?.includes(badges[locale]), 'Forms retains localized Coming soon status');
-      assert.ok(html.includes(denseExists[locale]), 'Dense already exists and awaits release');
+      const wCard = [...html.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)].map(([article]) => article).find(article => /<h3\b[^>]*>Unflatten W<\/h3>/.test(article));
+      assert.ok(wCard?.includes(released[locale]), 'Dense is publicly available in the family card');
+      assert.ok(!wCard.includes(badges[locale]), 'released Dense is not marked Coming soon');
+      assert.ok(html.includes('Unflatten W Dense 1.0'), 'exact release identity');
       assert.ok(!html.includes('Coming soon / Již brzy / Už čoskoro'));
       assert.ok(html.includes(`href="/${locale}/labs"`), 'localized Labs navigation');
       const links = tags(html, 'link');
@@ -48,15 +53,26 @@ for (const locale of locales) {
       const schemas = [...html.matchAll(/<script\b[^>]*\btype="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(([, json]) => JSON.parse(json));
       const researchSchema = schemas.find(schema => JSON.stringify(schema).includes(`https://evoliq.cz/${locale}${route}`));
       assert.ok(researchSchema, 'localized research JSON-LD');
-      assert.ok(JSON.stringify(researchSchema).includes(messages.LabsCommon.researchPreview), 'explicit research preview status');
+      assert.ok(JSON.stringify(researchSchema).includes(released[locale]), 'released model status in JSON-LD');
       assert.ok(!JSON.stringify(researchSchema).includes('"offers"'), 'no sales or availability offer');
       const imageSources = tags(html, 'img').map(tag => tag.src).filter(src => /unflatten-(family|w-(dense|moe)-architecture)/.test(src));
       assert.ok(imageSources.some(src => src.includes('unflatten-family')), 'provided family visual is used');
       if (route === '/labs/unflatten-w') {
-        for (const architecture of ['dense', 'moe']) {
-          const sources = tags(html, 'img').map(tag => tag.src);
-          assert.ok(sources.some(src => src.includes(`unflatten-w-${architecture}-architecture`)), `${architecture} architecture visual is used`);
-        }
+        const anchors = tags(html, 'a');
+        assert.ok(anchors.some(link => link.href === modelUrl), 'public model link');
+        assert.ok(anchors.some(link => link.href === toolUrl), 'public inference tool link');
+        assert.ok(anchors.some(link => link.href === `${toolUrl}/releases/tag/v1.0.0`), 'versioned application release');
+        assert.ok(anchors.some(link => link.href === `${toolUrl}/blob/main/docs/RELEASE.md`), 'agent-provided release facts and methodology');
+        assert.ok(anchors.some(link => link.href === `${toolUrl}/blob/main/docs/API.md`), 'headless API documentation link');
+        assert.ok(anchors.some(link => link.href === `${modelUrl}/blob/main/LICENSE`), 'actual model licence link');
+        assert.ok(html.includes('./Start.sh'), 'documented local launcher');
+        assert.ok(html.includes('90 / 100') && html.includes('99 / 100'), 'scoped diagnostic evaluation');
+        assert.ok(/≤\s*2\s?%/.test(html), 'explicit normalized text-tolerance criterion');
+        assert.ok(html.includes('BF16') && html.includes('16 GB'), 'distributed runtime and memory recommendation');
+        assert.equal(researchSchema.about.softwareVersion, '1.0');
+        assert.equal(researchSchema.about.datePublished, '2026-11-16');
+        assert.equal(researchSchema.about.downloadUrl, modelUrl);
+        assert.ok(!tags(html, 'img').some(tag => /unflatten-w-(dense|moe)-architecture/.test(tag.src)), 'unverified historical diagrams do not describe the release');
       }
       for (const src of new Set(imageSources)) {
         const image = await fetch(new URL(src, baseUrl));

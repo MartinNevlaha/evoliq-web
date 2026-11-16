@@ -1,26 +1,26 @@
 import { ArrowRight, ClipboardList, FileText, Layers3, Presentation, Table2 } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import ComingSoonBadge from './ComingSoonBadge';
+import ModelStatusBadge from './ModelStatusBadge';
 
 export default async function UnflattenFamily({ linkToModel = false }: { linkToModel?: boolean }) {
   const t = await getTranslations('UnflattenW');
   const labs = await getTranslations('Labs');
   const cards = [
-    { icon: FileText, title: t('title'), description: t('wDesc'), model: true },
+    { icon: FileText, title: 'Unflatten W', description: t('wDesc'), model: true },
     { icon: Table2, title: 'Unflatten X', description: t('xDesc') },
     { icon: Presentation, title: 'Unflatten P', description: t('pDesc') },
     { icon: ClipboardList, title: 'Unflatten Forms', description: t('formsDesc') },
-    { icon: Layers3, title: t('shared'), description: t('sharedDesc') },
+    { icon: Layers3, title: t('shared'), description: t('sharedDesc'), research: true },
   ];
 
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-      {cards.map(({ icon: Icon, title, description, model }) => (
+      {cards.map(({ icon: Icon, title, description, model, research }) => (
         <article key={title} className={`flex min-w-0 flex-col rounded-3xl border p-5 last:md:col-span-2 last:xl:col-span-1 ${model ? 'border-sky-300 bg-gradient-to-br from-sky-50 to-indigo-50/50 dark:border-sky-800 dark:from-sky-950/40 dark:to-indigo-950/20' : 'border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900'}`}>
           <div className="mb-5 flex flex-wrap items-start justify-between gap-2">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300"><Icon aria-hidden="true" className="h-6 w-6" /></span>
-            <ComingSoonBadge compact />
+            <ModelStatusBadge compact status={model ? 'released' : research ? 'researchPreview' : 'comingSoon'} />
           </div>
           <h3 className="text-xl font-bold tracking-tight">{title}</h3>
           <p className="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-300">{description}</p>

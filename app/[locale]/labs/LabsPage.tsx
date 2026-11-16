@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import NavBar from '@/components/sections/NavBar';
 import { Footer } from '@/components/sections/Footer';
 import CookieConsent from '@/components/common/CookieConsent';
-import ComingSoonBadge from '@/components/labs/ComingSoonBadge';
+import ModelStatusBadge from '@/components/labs/ModelStatusBadge';
 import LabsBrand from '@/components/labs/LabsBrand';
 import UnflattenFamily from '@/components/labs/UnflattenFamily';
 import FamilyVisual from '@/components/labs/FamilyVisual';
@@ -22,7 +22,7 @@ export default async function LabsPage() {
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-sky-700 dark:text-sky-400">{t('eyebrow')}</p>
             <h1 className="mt-3 text-5xl font-black tracking-tight sm:text-6xl">{t('title')}</h1>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-neutral-600 dark:text-neutral-300">{t('lead')}</p>
-            <div className="mt-7"><ComingSoonBadge /></div>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3"><span className="text-sm font-semibold">Unflatten W Dense 1.0</span><ModelStatusBadge status="released" /></div>
           </div>
         </section>
         <section className="mx-auto max-w-6xl px-4 pt-14 sm:pt-20">

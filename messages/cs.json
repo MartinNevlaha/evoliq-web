@@ -82,10 +82,22 @@
     "process": {
       "title": "Jak to probíhá?",
       "steps": [
-        { "title": "Úvodní konzultace", "desc": "rychlé zmapování potřeb a priorit" },
-        { "title": "On-site / online audit", "desc": "prohlídka prostor, rozhovory, kontrola dokumentů" },
-        { "title": "Závěrečná zpráva", "desc": "jasná zjištění + doporučení" },
-        { "title": "Následná podpora", "desc": "dle potřeby konzultace a implementace" }
+        {
+          "title": "Úvodní konzultace",
+          "desc": "rychlé zmapování potřeb a priorit"
+        },
+        {
+          "title": "On-site / online audit",
+          "desc": "prohlídka prostor, rozhovory, kontrola dokumentů"
+        },
+        {
+          "title": "Závěrečná zpráva",
+          "desc": "jasná zjištění + doporučení"
+        },
+        {
+          "title": "Následná podpora",
+          "desc": "dle potřeby konzultace a implementace"
+        }
       ]
     },
     "cta": "Společně nastavíme bezpečnější, efektivnější a normám vyhovující prostředí pro váš tým."
@@ -422,7 +434,6 @@
             "Individuální SLA a dedikovaná podpora"
           ]
         }
-
       }
     }
   },
@@ -530,7 +541,6 @@
         "errorRate": "Chybovost"
       }
     }
-
   },
   "LabsCommon": {
     "comingSoon": "Již brzy",
@@ -548,16 +558,18 @@
       "pOutput": "→ editovatelné prezentace",
       "shared": "SPOLEČNÝ ZÁKLAD",
       "sharedDesc": "porozumění rozvržení · strukturované dekódování · deterministická rekonstrukce"
-    }
+    },
+    "released": "Veřejně dostupné",
+    "publishing": "Probíhá zveřejnění"
   },
   "Labs": {
     "title": "Evoliq Labs",
     "lead": "Výzkum praktických AI systémů pro dokumentovou inteligenci, strukturovanou rekonstrukci a privátní AI.",
     "family": "Rodina modelů Unflatten",
-    "familyText": "Rostoucí rodina náhledů modelů pro rekonstrukci plochých dokumentů do editovatelných dokumentů Word, tabulek, prezentací a formulářů: Unflatten W, X, P a Forms.",
-    "open": "Otevřít výzkumný náhled Unflatten W",
-    "metadataTitle": "Evoliq Labs — výzkum AI a náhledy modelů",
-    "metadataDescription": "Objevte Unflatten W, X, P a Forms v Evoliq Labs. Dense model Unflatten W již existuje a čeká na veřejné vydání; MoE zůstává směrem výzkumu.",
+    "familyText": "Rodina Unflatten zahrnuje editovatelné dokumenty Word, tabulky, prezentace a formuláře. Unflatten W Dense 1.0 je veřejně vydaný výzkumný kandidát; X, P a Forms jsou plánované a MoE zůstává výzkumem.",
+    "open": "Otevřít Unflatten W Dense 1.0",
+    "metadataTitle": "Evoliq Labs — výzkum AI a Unflatten W Dense 1.0",
+    "metadataDescription": "Prozkoumejte rodinu Unflatten v Evoliq Labs. Unflatten W Dense 1.0 je veřejný výzkumný kandidát pro místní převod PDF a obrázků do Wordu. X, P a Forms jsou plánované; MoE zůstává výzkumem.",
     "metadataKeywords": [
       "Evoliq Labs",
       "Unflatten",
@@ -568,21 +580,21 @@
     ],
     "ogAlt": "Evoliq Labs — rodina výzkumných modelů Unflatten",
     "eyebrow": "Výzkum praktických AI systémů",
-    "statusTitle": "Probíhající výzkum",
-    "statusText": "Dense model Unflatten W již existuje a čeká na veřejné vydání. Unflatten W, X, P a Forms jsou zde představeny jako náhledy; MoE zůstává směrem dalšího výzkumu.",
+    "statusTitle": "Stav vydání a výzkumu",
+    "statusText": "Unflatten W Dense 1.0 je veřejně vydaný výzkumný kandidát s místní aplikací. X, P a Forms jsou plánované; MoE zůstává směrem výzkumu. Vygenerované dokumenty vyžadují kontrolu.",
     "familyVisualTitle": "Jeden základ, čtyři typy dokumentů",
-    "familyVisualText": "Unflatten W, X, P a Forms propojují čtyři typy dokumentů: dokumenty Word, tabulky, prezentace a strukturované, editovatelné formuláře se společným základem pro porozumění dokumentům.",
+    "familyVisualText": "W se zaměřuje na editovatelné dokumenty Word; X, P a Forms jsou plánované pro tabulky, prezentace a strukturované editovatelné formuláře. Rodina sdílí výzkumný základ pro porozumění dokumentům.",
     "familyVisualAlt": "Ilustrace značky rodiny modelů Unflatten s označením Unflatten W, Unflatten X, Unflatten P a Unflatten Forms."
   },
   "UnflattenW": {
-    "metadataTitle": "Unflatten W — výzkumný náhled dokumentové inteligence | Evoliq Labs",
-    "metadataDescription": "Unflatten W se zaměřuje na rekonstrukci PDF a obrázků dokumentů do editovatelného DOCX. Dense model již existuje a čeká na veřejné vydání; MoE zůstává směrem výzkumu.",
+    "metadataTitle": "Unflatten W Dense 1.0 — místní převod PDF do Wordu | Evoliq Labs",
+    "metadataDescription": "Stáhněte Unflatten W Dense 1.0 a místní aplikaci pro rekonstrukci stránek PDF a obrázků dokumentů do editovatelného Wordu. Vydaný výzkumný kandidát; výstup vyžaduje kontrolu textu a rozvržení.",
     "labs": "Evoliq Labs",
-    "eyebrow": "Výzkumný náhled",
-    "title": "Unflatten W",
+    "eyebrow": "Dense 1.0 · výzkumný kandidát",
+    "title": "Unflatten W Dense 1.0",
     "subtitle": "Z PDF a obrazů dokumentů do editovatelného DOCX",
-    "intro": "Unflatten W je model dokumentové inteligence Evoliq Labs pro rekonstrukci PDF a obrázků dokumentů do strukturovaných, editovatelných dokumentů Word. Jeho Dense varianta již existuje a čeká na veřejné vydání.",
-    "explore": "Prozkoumat model",
+    "intro": "Unflatten W Dense 1.0 je výzkumný kandidát Evoliq Labs pro rekonstrukci stránek PDF a obrázků dokumentů do strukturovaných editovatelných dokumentů Word. Veřejný model používá samostatnou místní aplikaci; vygenerované dokumenty vyžadují kontrolu.",
+    "explore": "Stáhnout a začít",
     "technicalOverview": "Technický přehled",
     "researchDriven": "Výzkumný vývoj",
     "realDocs": "Reálné dokumenty",
@@ -600,7 +612,7 @@
       "Typované vlastnosti"
     ],
     "familyTitle": "Představujeme rodinu Unflatten",
-    "familyIntro": "Rodina Unflatten představuje náhledy modelů W pro dokumenty Word, X pro tabulky, P pro prezentace a Forms pro strukturované, editovatelné formuláře. Sdílejí společný základ pro porozumění rozvržení, strukturované dekódování a věrnou rekonstrukci.",
+    "familyIntro": "Unflatten W Dense 1.0 je veřejně vydaný výzkumný kandidát pro dokumenty Word. X pro tabulky, P pro prezentace a Forms pro strukturované editovatelné formuláře jsou plánované. MoE zůstává směrem výzkumu.",
     "familyLink": "Prozkoumat Evoliq Labs",
     "shared": "Sdílený základ",
     "sharedDesc": "Porozumění rozvržení, strukturované dekódování a výzkum modelů",
@@ -612,44 +624,44 @@
     "features": [
       [
         "Rekonstrukce rozvržení",
-        "Odstavce, nadpisy, seznamy, sekce a vícesloupcová struktura dokumentu."
+        "Rekonstruuje odstavce, nadpisy, seznamy, sekce a strukturu dokumentu."
       ],
       [
         "Rekonstrukce tabulek",
-        "Tabulky s velkým množstvím údajů, sloučené buňky, buňky přes více řádků či sloupců a obnova tabulkové struktury."
+        "Rekonstruuje strukturu tabulek a vlastnosti buněk."
       ],
       [
         "Obrázky a zdroje",
-        "Vložené obrázky, související soubory a obnova obrazových zdrojů dokumentu."
+        "Rekonstruuje umístění obrázků a zdroje dokumentu."
       ],
       [
-        "Architektura Dense a MoE",
-        "Dense model již existuje a čeká na veřejné vydání. MoE zůstává směrem dalšího výzkumu."
+        "Vydání Dense a výzkum MoE",
+        "Dense 1.0 je vydaný výzkumný kandidát. MoE zůstává směrem výzkumu."
       ]
     ],
     "familyVisualTitle": "Rodina modelů Unflatten",
-    "familyVisualText": "Značka rodiny Unflatten propojuje W, X, P a Forms: čtyři náhledy modelů pro dokumenty Word, tabulky, prezentace a strukturované, editovatelné formuláře.",
+    "familyVisualText": "Rodina Unflatten propojuje W pro Word a plánované směry X, P a Forms pro tabulky, prezentace a strukturované editovatelné formuláře.",
     "architectureTitle": "Technické shrnutí",
-    "architectureText": "Aktuální architektura Unflatten W odděluje naučenou rekonstrukci dokumentu od deterministického skládání a renderování. Model predikuje strukturu dokumentu, viditelný text a typované vlastnosti; deterministické komponenty validovaný výstup povýší do Canonical AST a vyrenderují jej do DOCX.",
+    "architectureText": "Dense 1.0 kombinuje zmrazený základ Qwen3-VL-4B-Instruct s natrénovanými moduly pro rekonstrukci dokumentů a hlavami pro typované vlastnosti. Místní běhové prostředí používá BF16 a dekódování omezené gramatikou dokumentu. Deterministický renderer převádí validovaný Canonical AST do DOCX; platná struktura nezaručuje správný text ani rozvržení.",
     "architectureVisualsTitle": "Diagramy architektur Dense a MoE",
-    "architectureVisualsIntro": "Diagramy představují existující Dense model, který čeká na veřejné vydání, a architekturu MoE jako výzkumný náhled.",
+    "architectureVisualsIntro": "Diagramy představují architekturu Dense a samostatný výzkumný směr MoE. Distribuované běhové prostředí Dense 1.0 a jeho omezení popisuje průvodce vydáním.",
     "denseVisualTitle": "Architektura Dense",
-    "denseVisualCaption": "Dense model již existuje a čeká na veřejné vydání. Popisky diagramu jsou v angličtině a slovenštině.",
-    "denseVisualAlt": "Diagram architektury existujícího modelu Unflatten Dense, který čeká na veřejné vydání, s anglickými a slovenskými popisky.",
+    "denseVisualCaption": "Přehled architektury vydaného výzkumného kandidáta Dense 1.0. Popisky jsou v angličtině a slovenštině; podporované běhové prostředí popisuje průvodce vydáním.",
+    "denseVisualAlt": "Přehled architektury modelu Unflatten Dense s anglickými a slovenskými popisky.",
     "moeVisualTitle": "Architektura MoE — výzkumný náhled",
     "moeVisualCaption": "Výzkumný náhled architektury Mixture-of-Experts (MoE). Popisky diagramu jsou v angličtině.",
     "moeVisualAlt": "Diagram architektury Unflatten MoE s anglickými popisky, představený jako výzkumný náhled.",
     "openVisual": "Zobrazit diagram v plné velikosti",
     "architecturePills": [
       "Canonical AST",
-      "Qwen3-VL backbone",
-      "Strukturované dekódování",
+      "Qwen3-VL-4B",
+      "BF16 a omezené dekódování",
       "DOCX renderer",
-      "Výzkumný náhled"
+      "Výzkumný kandidát"
     ],
-    "statusTitle": "Stav výzkumu",
-    "statusText": "Dense model Unflatten W již existuje a čeká na veřejné vydání. Tato stránka představuje náhled před vydáním, zatímco MoE zůstává směrem dalšího výzkumu.",
-    "location": "Plánované umístění stránky",
+    "statusTitle": "Stav vydání",
+    "statusText": "Unflatten W Dense 1.0 a jeho lokální aplikace jsou veřejně dostupné jako výzkumné vydání. X, P a Forms jsou plánované, zatímco MoE zůstává směrem výzkumu.",
+    "location": "Stránka projektu",
     "metadataKeywords": [
       "Evoliq Labs",
       "Unflatten W",
@@ -662,17 +674,73 @@
       "OCR",
       "editovatelný DOCX"
     ],
-    "ogAlt": "Evoliq Labs — výzkumný náhled rekonstrukce dokumentů Unflatten W",
+    "ogAlt": "Evoliq Labs — výzkumný kandidát Unflatten W Dense 1.0 pro místní rekonstrukci dokumentů",
     "familyVisualAlt": "Ilustrace značky rodiny modelů Unflatten s označením Unflatten W, Unflatten X, Unflatten P a Unflatten Forms.",
     "technicalPixels": "Obrazové body",
     "technicalInput": "Vstup: PDF / obrázek",
     "technicalModel": "Model",
-    "technicalModelValue": "Qwen3-VL + větev pro rekonstrukci dokumentů",
+    "technicalModelValue": "Qwen3-VL-4B + moduly pro rekonstrukci dokumentů",
     "technicalValidated": "Ověřená reprezentace",
     "technicalOutput": "Canonical AST → deterministický renderer DOCX"
   },
   "ThemeToggle": {
     "lightMode": "Světlý režim",
     "darkMode": "Tmavý režim"
+  },
+  "UnflattenRelease": {
+    "title": "Stažení a lokální spuštění",
+    "intro": "Veřejné výzkumné vydání Dense 1.0 zahrnuje model pro rekonstrukci dokumentů a samostatnou lokální aplikaci pro převod PDF a obrázků do editovatelného Wordu.",
+    "modelLink": "Stáhnout model z Hugging Face",
+    "toolLink": "Získat místní aplikaci na GitHubu",
+    "docsLink": "Přečíst návod ke spuštění a dokumentaci API",
+    "licenseLink": "Přečíst licenci",
+    "quickstartTitle": "Spusťte místní převod",
+    "quickstartText": "Naklonujte nebo rozbalte repozitář aplikace a spusťte ./Start.sh. Spouštěč veřejný model automaticky stáhne, ověří a připraví; účet ani token Hugging Face nejsou potřeba. Vytvořte si lokální heslo, nahrajte PDF, PNG nebo JPEG, sledujte průběh úlohy a stáhněte Word. Rozhraní aplikace je dostupné ve slovenštině a angličtině.",
+    "requirementsTitle": "Co potřebujete",
+    "requirements": [
+      "Linux, Docker Engine s pluginem Compose, NVIDIA Container Toolkit a ovladač NVIDIA kompatibilní s CUDA 13 používanou běhovým prostředím.",
+      "Grafickou kartu NVIDIA s podporou CUDA; pro distribuovaný model BF16 doporučujeme alespoň 16 GB grafické paměti. Dostupná paměť a další úlohy na GPU ovlivňují, zda se model vejde.",
+      "Přibližně 11 GB pro stažený model a další prostor pro kontejnery a dokumenty. První sestavení a stažení modelu vyžadují připojení k internetu."
+    ],
+    "apiTitle": "API a použití bez rozhraní",
+    "apiText": "Pomocí Bearer API tokenu nahrajete dokument, průběžně zjistíte stav úlohy a stáhnete výsledek ve Wordu. Tento token je oddělený od hesla aplikace i případného tokenu pro stažení z Hugging Face. Swagger a OpenAPI poskytuje vaše místní instalace. Příručka API v repozitáři popisuje ověření, požadavky a klienta v Pythonu pro převod bez aplikačního rozhraní.",
+    "licenseTitle": "Osobní a komerční použití",
+    "licenseText": "Původní příspěvky EVOLIQ jsou podle EVOLIQ Personal Use and Commercial License 1.0 zdarma pro soukromé nekomerční použití jednotlivcem. Firemní použití, interní použití v organizaci, profesionální práce či práce pro klienty, integrace do produktů a hostované služby vyžadují před použitím samostatnou placenou písemnou dohodu s EVOLIQ s.r.o. Komponenty třetích stran si ponechávají vlastní licence, včetně Apache 2.0 pro základ Qwen.",
+    "evaluationTitle": "Validační výsledky a jejich meze",
+    "evaluationIntro": "Dense 1.0 byl porovnán na stejných 100 pevně daných validačních stranách se stejným nastavením dekódování. Kritériem tolerance textu je normalizovaná chybovost znaků ≤ 2 %. Normalizaci textu vysvětluje přehled vydání; 90 / 100 vyjadřuje počet stran, které kritérium splnily.",
+    "evaluationRows": [
+      [
+        "Stránky splňující nastavený test tolerance textu",
+        "90 / 100"
+      ],
+      [
+        "Přesné shody textu",
+        "9 / 100"
+      ],
+      [
+        "Vytvořené diagnostické soubory Word",
+        "99 / 100"
+      ],
+      [
+        "Chybovost znaků (hrubý souhrnný výpočet)",
+        "13,8949 %"
+      ],
+      [
+        "Chybovost slov",
+        "8,1013 %"
+      ]
+    ],
+    "evaluationNote": "Vytvoření souboru Word měří diagnostický výstup, nikoli vizuální věrnost nebo 99% přesnost. Jde o validační výsledky, nikoli o nezávislý benchmark či důkaz produkční kvality. Oproti předchozímu modelu prošla testem tolerance textu o jednu stránku více a vznikl o jeden soubor Word více, zatímco souhrnná chybovost textu byla mírně vyšší.",
+    "limitationsTitle": "Současná omezení",
+    "limitations": [
+      "Jedno volání modelu přijímá jednu rastrovou stránku. Stránky vícestránkového PDF koordinuje aplikace.",
+      "Text, pořadí čtení, rozvržení, tabulky i umístění obrázků mohou obsahovat chyby. Než se na výstup spolehnete, dokument zkontrolujte.",
+      "Inference CUDA byla ověřena na NVIDIA DGX Spark. Ostatní platformy a nové instalace vyžadují vlastní ověření.",
+      "Distribuovaný model používá BF16. Samostatný experimentální testovací balíček FP8 není součástí tohoto vydání."
+    ],
+    "sourcesLabel": "Karta modelu, README aplikace a příručka API",
+    "publishedOn": "Vydáno 16. listopadu 2026",
+    "releaseLink": "Získat aplikaci v1.0.0",
+    "notesLink": "Podrobný přehled vydání"
   }
 }
